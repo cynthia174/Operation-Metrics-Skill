@@ -1,3 +1,7 @@
 # Microsoft Office temporary lock files
 ~$*
 **/~$*
+
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
