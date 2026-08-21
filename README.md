@@ -16,6 +16,7 @@ src/
 │   ├── channel_rules.py      # S2、S3规则
 │   └── category_rules.py     # S1规则
 ├── rule_result.py            # Rule Result对象、校验、CSV/JSON序列化
+├── formatter.py              # Rule Result JSON → LLM分析上下文
 └── run_rules.py              # Rule Engine命令行入口
 ```
 
@@ -56,6 +57,28 @@ $python = 'C:\Users\a\.cache\codex-runtimes\codex-primary-runtime\dependencies\p
 规则评价包含命中与未命中记录，LLM可直接筛选`hit=true`生成风险分析，也可用未命中记录说明当前检查正常。`metrics`是机器可读数值，`evidence`是可直接引用的事实文本；LLM不应重新计算阈值或比例。
 
 唯一键为`rule_id + dimension.type + dimension.name + period.start + period.end`。导出前会拒绝重复键、NaN和inf；JSON使用严格模式，不允许非标准浮点值。
+
+## LLM数据适配层
+
+formatter读取Rule Engine的原始JSON，并生成按`模块 → 维度 → 周期`组织的Prompt上下文：
+
+```powershell
+& $python src\formatter.py `
+  outputs\engine\rule_results.json `
+  outputs\engine\llm_context.json
+```
+
+输入是符合现有`rule_result.schema.json`的`rule_results.json`。输出`llm_context.json`包含：
+
+- `source`：原始Schema版本、结果数和命中数。
+- `usage`：Prompt使用约束，明确禁止LLM重新计算指标。
+- `rule_catalog`：将`rule_id`和原始`rule_name`组合为可读规则信息。
+- `modules[].dimensions[].periods[]`：按模块、维度、周期组织的结果。
+- `results[].fact`：未经改写的完整原始Rule Result记录。
+
+formatter只增加展示和分组元数据，不修改`fact`中的`hit`、`metrics`、`threshold`或`evidence`。分组层的`result_count`和`hit_count`只用于上下文导航，不是新的业务指标。
+
+输出使用紧凑JSON，减少直接注入Prompt时的无效空白字符；结构和事实字段保持完整。
 
 ## 现行计算口径
 

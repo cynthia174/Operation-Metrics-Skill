@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "report-output.mvp.schema.json",
+  "title": "MVP Structured Business Analysis Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["report_id", "title", "as_of", "executive_summary", "sections", "report_caveats"],
+  "properties": {
+    "report_id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "as_of": { "type": "string", "format": "date" },
+    "executive_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["headline", "priority_section_codes", "narrative"],
+      "properties": {
+        "headline": { "type": "string", "minLength": 1 },
+        "priority_section_codes": {
+          "type": "array",
+          "items": { "enum": ["S1", "S2", "S3", "S5", "S6", "S7", "S10"] },
+          "uniqueItems": true
+        },
+        "narrative": { "type": "string", "minLength": 1 }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/section" }
+    },
+    "report_caveats": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "$defs": {
+    "sourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "source_type"],
+      "properties": {
+        "source_id": { "type": "string", "minLength": 1 },
+        "source_type": { "enum": ["metric", "rule", "methodology"] }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "metric_code", "value", "display_value", "period", "dimension", "caliber_ref", "metric_version", "as_of", "source_ref"],
+      "properties": {
+        "evidence_id": { "type": "string", "pattern": "^EV-[A-Za-z0-9_-]+$" },
+        "metric_code": { "type": "string", "minLength": 1 },
+        "value": { "type": ["number", "integer", "string", "boolean", "null"] },
+        "display_value": { "type": "string", "minLength": 1 },
+        "unit": { "type": ["string", "null"] },
+        "period": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start", "end"],
+          "properties": {
+            "start": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}$" },
+            "end": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}$" }
+          }
+        },
+        "dimension": { "type": "object" },
+        "caliber_ref": { "type": ["string", "null"] },
+        "metric_version": { "type": "string", "minLength": 1 },
+        "as_of": { "type": "string", "format": "date" },
+        "source_ref": { "type": "string", "minLength": 1 }
+      }
+    },
+    "triggeredRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule_result_id", "rule_code", "rule_name", "rule_text", "threshold_detail", "is_default_caliber", "evidence_ids"],
+      "properties": {
+        "rule_result_id": { "type": "string", "minLength": 1 },
+        "rule_code": { "type": "string", "pattern": "^R[0-9]+(?:\\.[0-9]+)?$" },
+        "rule_name": { "type": "string", "minLength": 1 },
+        "rule_text": { "type": "string", "minLength": 1 },
+        "threshold_detail": { "type": "string", "minLength": 1 },
+        "is_default_caliber": { "type": "boolean" },
+        "default_caliber_notice": { "type": ["string", "null"] },
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "^EV-[A-Za-z0-9_-]+$" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["section_code", "section_title", "status", "conclusion", "evidence", "triggered_rules", "reasoning_summary", "narrative", "source_refs", "caveats"],
+      "properties": {
+        "section_code": { "enum": ["S1", "S2", "S3", "S5", "S6", "S7", "S10"] },
+        "section_title": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["generated", "insufficient_data", "not_applicable"] },
+        "conclusion": { "type": "string" },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+        "triggered_rules": { "type": "array", "items": { "$ref": "#/$defs/triggeredRule" } },
+        "reasoning_summary": {
+          "description": "仅记录规则排序与表达取舍，不记录隐式思维链，不渲染到业务报告。",
+          "type": ["string", "null"]
+        },
+        "narrative": { "type": "string" },
+        "source_refs": { "type": "array", "items": { "$ref": "#/$defs/sourceRef" } },
+        "caveats": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    }
+  }
+}
