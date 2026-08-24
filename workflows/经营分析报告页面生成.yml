@@ -1,0 +1,7395 @@
+app:
+  description: 根据经营数据和规则诊断结果，生成结构化的分析页面JSON
+  icon: 📊
+  icon_background: '#E8F3FF'
+  icon_type: emoji
+  mode: workflow
+  name: 经营分析报告页面生成
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openrouter:0.1.7@b7042a30570e7c308016cdda45a3b1ee2fa91aa42c8d4a4587b304d769415363
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        sourceType: if-else
+        targetType: llm
+      id: router-channel
+      selected: false
+      source: page-router
+      sourceHandle: case_channel
+      target: generate-channel
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        sourceType: if-else
+        targetType: llm
+      id: router-customer
+      selected: false
+      source: page-router
+      sourceHandle: case_customer
+      target: generate-customer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        sourceType: if-else
+        targetType: llm
+      id: router-product
+      selected: false
+      source: page-router
+      sourceHandle: case_product
+      target: generate-product
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        sourceType: if-else
+        targetType: llm
+      id: router-efficiency
+      selected: false
+      source: page-router
+      sourceHandle: case_efficiency
+      target: generate-efficiency
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        sourceType: llm
+        targetType: end
+      id: channel-end
+      selected: false
+      source: generate-channel
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        sourceType: llm
+        targetType: end
+      id: customer-end
+      selected: false
+      source: generate-customer
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        sourceType: llm
+        targetType: end
+      id: product-end
+      selected: false
+      source: generate-product
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        sourceType: llm
+        targetType: end
+      id: efficiency-end
+      selected: false
+      source: generate-efficiency
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        sourceType: llm
+        targetType: end
+      id: growth-end
+      selected: false
+      source: generate-growth
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: template-transform
+      id: start-source-1787555272356-target
+      selected: false
+      source: start
+      sourceHandle: source
+      target: '1787555272356'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: if-else
+      id: 1787555272356-source-page-router-target
+      selected: false
+      source: '1787555272356'
+      sourceHandle: source
+      target: page-router
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: page-router-case_summary-generate-growth-target
+      selected: false
+      source: page-router
+      sourceHandle: case_summary
+      target: generate-growth
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: page-router-fe1bf163-c1a4-446d-913f-ef20e5f53543-17875591113700-target
+      source: page-router
+      sourceHandle: fe1bf163-c1a4-446d-913f-ef20e5f53543
+      target: '17875591113700'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: page-router-fe1bf163-c1a4-446d-913f-ef20e5f53543-17875591222380-target
+      source: page-router
+      sourceHandle: fe1bf163-c1a4-446d-913f-ef20e5f53543
+      target: '17875591222380'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: page-router-fe1bf163-c1a4-446d-913f-ef20e5f53543-17875590938010-target
+      source: page-router
+      sourceHandle: fe1bf163-c1a4-446d-913f-ef20e5f53543
+      target: '17875590938010'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: page-router-fe1bf163-c1a4-446d-913f-ef20e5f53543-17875591360310-target
+      source: page-router
+      sourceHandle: fe1bf163-c1a4-446d-913f-ef20e5f53543
+      target: '17875591360310'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17875591113700-source-17875591427710-target
+      source: '17875591113700'
+      sourceHandle: source
+      target: '17875591427710'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17875591222380-source-17875591427710-target
+      source: '17875591222380'
+      sourceHandle: source
+      target: '17875591427710'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17875590938010-source-17875591427710-target
+      source: '17875590938010'
+      sourceHandle: source
+      target: '17875591427710'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17875591360310-source-17875591427710-target
+      source: '17875591360310'
+      sourceHandle: source
+      target: '17875591427710'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 17875591427710-source-end-target
+      source: '17875591427710'
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 17875591113700-source-end-target
+      source: '17875591113700'
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 17875591222380-source-end-target
+      source: '17875591222380'
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 17875590938010-source-end-target
+      source: '17875590938010'
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 17875591360310-source-end-target
+      source: '17875591360310'
+      sourceHandle: source
+      target: end
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - hint: ''
+          label: type
+          options:
+          - channel
+          - customer
+          - product
+          - efficiency
+          - growth_quality
+          - summary
+          - all
+          placeholder: ''
+          required: true
+          type: select
+          variable: type
+      height: 109
+      id: start
+      position:
+        x: -270.66666666666686
+        y: 91.00000000000006
+      positionAbsolute:
+        x: -270.66666666666686
+        y: 91.00000000000006
+      selected: false
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: case_channel
+          conditions:
+          - comparison_operator: is
+            value: channel
+            varType: string
+            variable_selector:
+            - start
+            - type
+          id: case_channel
+          logical_operator: and
+        - case_id: case_customer
+          conditions:
+          - comparison_operator: is
+            value: product
+            varType: string
+            variable_selector:
+            - start
+            - type
+          id: case_customer
+          logical_operator: and
+        - case_id: case_product
+          conditions:
+          - comparison_operator: is
+            value: customer
+            varType: string
+            variable_selector:
+            - start
+            - type
+          id: case_product
+          logical_operator: and
+        - case_id: case_efficiency
+          conditions:
+          - comparison_operator: contains
+            value: efficiency
+            varType: string
+            variable_selector:
+            - start
+            - type
+          id: case_efficiency
+          logical_operator: and
+        - case_id: case_summary
+          conditions:
+          - comparison_operator: contains
+            value: summary
+            varType: string
+            variable_selector:
+            - start
+            - type
+          id: case_summary
+          logical_operator: and
+        - case_id: fe1bf163-c1a4-446d-913f-ef20e5f53543
+          conditions:
+          - comparison_operator: contains
+            id: 323a609b-4eab-4137-9e23-b47cd91658e7
+            value: all
+            varType: string
+            variable_selector:
+            - start
+            - type
+          id: fe1bf163-c1a4-446d-913f-ef20e5f53543
+          logical_operator: and
+        logical_operator: and
+        selected: false
+        title: 页面路由
+        type: if-else
+      height: 412
+      id: page-router
+      position:
+        x: 306.2971357921763
+        y: -67.57027761118323
+      positionAbsolute:
+        x: 306.2971357921763
+        y: -67.57027761118323
+      selected: false
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: fb3f6215-1204-413c-9a5d-e1f0b9211ef3
+          role: system
+          text: '# 输出安全规则
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+            禁止输出任何内部推理过程。
+
+
+            包括但不限于：
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+            只输出最终报告。
+
+
+
+            如果需要进行复杂分析：
+
+
+            请在内部完成，不得展示。
+
+
+
+            最终输出只能包含：
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+            禁止出现：
+
+
+            <think>
+
+            </think>
+
+
+            或者任何类似：
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+            等内部工作语言。
+
+
+            # 第一屏 · 渠道全景
+
+
+            开始。
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+            你的任务：
+
+
+            把渠道数据转化成管理层能够快速理解的经营判断。
+
+
+            你不是数据整理工具。
+
+
+            你需要像咨询顾问一样：
+
+            - 发现结构变化；
+
+            - 提炼经营矛盾；
+
+            - 提醒潜在风险。
+
+
+
+            # 输出范围
+
+
+            只生成：
+
+
+            # 第一屏 · 渠道全景
+
+
+
+            禁止讨论：
+
+
+            - 产品
+
+            - 用户画像
+
+            - 复购
+
+            - 运营策略
+
+
+
+            # 分析原则
+
+
+            所有结论必须来自输入。
+
+
+            但是：
+
+
+            不要机械复述指标。
+
+
+            不要写：
+
+
+            “8月XX，9月XX，10月XX”
+
+
+            而应该转换为：
+
+
+            “规模正在收缩”
+
+            “效率正在改善”
+
+            “结构依赖正在增强”
+
+
+
+            # 数据缺失规则
+
+
+            正文优先完成分析。
+
+
+            不要因为缺少字段直接输出：
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+            正确方式：
+
+
+            如果某部分数据不存在：
+
+
+            直接跳过。
+
+
+            例如：
+
+
+            没有渠道类型：
+
+            不要输出渠道结构章节。
+
+
+            没有趋势：
+
+            不要输出趋势章节。
+
+
+            最后统一：
+
+
+            ## 数据缺口
+
+
+            列出：
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+            # 评论风格
+
+
+            学习以下语言：
+
+
+            ---
+
+
+            错误：
+
+
+            外部投放占94%，内部流转占3%。
+
+
+            正确：
+
+
+            当前渠道结构高度集中于外部投放。
+
+
+            三平台解决了单平台风险，但没有改变“主要依靠购买流量”的结构。
+
+
+
+            ---
+
+
+            错误：
+
+
+            CAC下降。
+
+
+            正确：
+
+
+            获客成本正在改善。
+
+
+            但效率提升来自单位投入优化，而不是渠道入口扩大。
+
+
+
+            ---
+
+
+            错误：
+
+
+            投放规模下降72%。
+
+
+            正确：
+
+
+            进水口正在快速收缩。
+
+
+            即使每一滴水利用率提高，也难以完全抵消入口缩小带来的压力。
+
+
+
+            ---
+
+
+            # 输出要求
+
+
+            每个发现必须按照：
+
+
+            ## 发现：一句具有经营含义的标题
+
+
+            正文：
+
+
+            2-4句话。
+
+
+            结构：
+
+
+            第一句：
+
+            描述核心变化。
+
+
+            第二句：
+
+            解释经营意义。
+
+
+            第三句：
+
+            指出风险或机会。
+
+
+            证据：
+
+
+            - 数据
+
+            - 数据
+
+
+
+            # 允许使用表达
+
+
+            可以使用：
+
+
+            - 结构性风险
+
+            - 渠道单一
+
+            - 依赖增强
+
+            - 效率改善
+
+            - 规模收缩
+
+            - 获客入口
+
+            - 增长来源
+
+
+
+            禁止使用：
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+            # 输出模板
+
+
+            # 第一屏 · 渠道全景
+
+
+
+            ## 渠道结构
+
+
+            表格。
+
+
+
+            ## 渠道效率趋势
+
+
+            表格。
+
+
+
+            ## 关键发现
+
+
+            最多3条。
+
+
+
+            ## 规则诊断
+
+
+
+            ## 数据缺口
+
+
+
+            # 最终要求
+
+
+            你的输出应该像：
+
+
+            “业务负责人看完后知道渠道发生了什么变化”
+
+
+            而不是：
+
+
+            “数据分析师检查字段是否完整”。
+
+            '
+        - id: e884cb62-fabb-4b1b-8694-1fcc11b9b9b1
+          role: user
+          text: '{{#1787555272356.output#}}'
+        selected: false
+        title: 生成渠道分析页面
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: generate-channel
+      position:
+        x: 650
+        y: -387.1442325576571
+      positionAbsolute:
+        x: 650
+        y: -387.1442325576571
+      selected: false
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: 79635f75-70db-4094-9120-b99fa4400a02
+          role: system
+          text: '# 输出安全规则
+
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+
+            禁止输出任何内部推理过程。
+
+
+
+            包括但不限于：
+
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+
+            只输出最终报告。
+
+
+
+
+            如果需要进行复杂分析：
+
+
+
+            请在内部完成，不得展示。
+
+
+
+
+            最终输出只能包含：
+
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+
+            禁止出现：
+
+
+
+            <think>
+
+            </think>
+
+
+
+            或者任何类似：
+
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+
+            等内部工作语言。
+
+
+
+            # 第二屏 · 品类营收结构
+
+
+
+            开始。
+
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+
+            你的任务：
+
+
+
+            把品类营收数据转化成管理层能够快速理解的经营判断。
+
+
+
+            你不是数据整理工具。
+
+
+
+            你需要像咨询顾问一样：
+
+            - 判断下行是个别现象还是整体趋势；
+
+            - 识别品类之间的分化程度；
+
+            - 提醒收入结构正在往哪个方向变化。
+
+
+
+
+            # 输出范围
+
+
+
+            只生成：
+
+
+
+            # 第二屏 · 品类营收结构
+
+
+
+
+            禁止讨论：
+
+
+
+            - 渠道
+
+            - 用户画像
+
+            - 复购
+
+            - 运营策略
+
+
+
+
+            # 分析原则
+
+
+
+            所有结论必须来自输入。
+
+
+
+            但是：
+
+
+
+            不要机械复述指标。
+
+
+
+            不要写：
+
+
+
+            “8月1571万，9月1489万，10月1361万”
+
+
+
+            而应该转换为：
+
+
+
+            “头部品类的规模在持续收缩”
+
+            “下行已经从个别品类扩散开”
+
+            “收入结构正在分化”
+
+
+
+
+            # 品类判断规则
+
+
+
+            集中度和下行判定来自输入的规则结果。
+
+
+
+            不要重新计算，不要调整阈值。
+
+
+
+            品类的经营类型必须来自输入中的正式标签。
+
+
+
+            不要根据品类名称自行判断：
+
+
+
+            “获客型”
+
+            “深耕型”
+
+            “核心品类”
+
+
+
+            首单营收不等于全量营收，不要描述为整体收入或利润。
+
+
+
+            极端增速可能来自极小基数。
+
+
+
+            引用这类数值时，同时说明基数很小，不要当作重要变化。
+
+
+
+
+            # 数据缺失规则
+
+
+
+            正文优先完成分析。
+
+
+
+            不要因为缺少字段直接输出：
+
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+
+            正确方式：
+
+
+
+            如果某部分数据不存在：
+
+
+
+            直接跳过。
+
+
+
+            例如：
+
+
+
+            没有集中度规则结果：
+
+            不要输出集中度章节。
+
+
+
+            没有分化规则结果：
+
+            不要输出分化章节。
+
+
+
+            最后统一：
+
+
+
+            ## 数据缺口
+
+
+
+            列出：
+
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+
+            # 评论风格
+
+
+
+            学习以下语言：
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            10个品类连续三个月下降。
+
+
+
+            正确：
+
+
+
+            下行不是个别品类的问题。
+
+
+
+            同时出现连续下降的品类已经形成规模，说明这是整体性的变化而不是局部波动。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            Top1占比30.5%，Top3占比59.4%。
+
+
+
+            正确：
+
+
+
+            收入没有过度集中在单一品类上。
+
+
+
+            头部结构相对分散，这降低了单点风险，但也意味着没有一个品类能独立支撑规模。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            最大环比70.4%，最小环比-100%。
+
+
+
+            正确：
+
+
+
+            品类之间的表现正在两极分化。
+
+
+
+            同一时期内既有快速放大的品类，也有几乎归零的品类，收入结构的稳定性在下降。
+
+
+
+
+            ---
+
+
+
+            # 输出要求
+
+
+
+            每个发现必须按照：
+
+
+
+            ## 发现：一句具有经营含义的标题
+
+
+
+            正文：
+
+
+
+            2-4句话。
+
+
+
+            结构：
+
+
+
+            第一句：
+
+            描述核心变化。
+
+
+
+            第二句：
+
+            解释经营意义。
+
+
+
+            第三句：
+
+            指出风险或机会。
+
+
+
+            证据：
+
+
+
+            - 数据
+
+            - 数据
+
+
+
+
+            # 允许使用表达
+
+
+
+            可以使用：
+
+
+
+            - 结构性风险
+
+            - 系统性下行
+
+            - 两极分化
+
+            - 集中度
+
+            - 规模收缩
+
+            - 头部品类
+
+            - 稳定性下降
+
+
+
+
+            禁止使用：
+
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+
+            # 输出模板
+
+
+
+            # 第二屏 · 品类营收结构
+
+
+
+
+            ## 品类营收概览
+
+
+
+            表格。
+
+
+
+
+            ## 持续下行品类
+
+
+
+            表格。
+
+
+
+
+            ## 关键发现
+
+
+
+            最多3条。
+
+
+
+
+            ## 规则诊断
+
+
+
+
+            ## 数据缺口
+
+
+
+
+            # 最终要求
+
+
+
+            你的输出应该像：
+
+
+
+            “业务负责人看完后知道收入结构发生了什么变化”
+
+
+
+            而不是：
+
+
+
+            “数据分析师列出了各品类的月度营收”。'
+        - id: d0a056be-366a-477d-88be-ab8501cb453a
+          role: user
+          text: '{{#1787555272356.output#}}'
+        selected: false
+        title: 生成品类营收页面
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: generate-customer
+      position:
+        x: 650
+        y: -285.1098282162624
+      positionAbsolute:
+        x: 650
+        y: -285.1098282162624
+      selected: false
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: 3ac25d64-ff5d-4890-a1fa-1fe443d1fc7c
+          role: system
+          text: '# 输出安全规则
+
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+
+            禁止输出任何内部推理过程。
+
+
+
+            包括但不限于：
+
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+
+            只输出最终报告。
+
+
+
+
+            如果需要进行复杂分析：
+
+
+
+            请在内部完成，不得展示。
+
+
+
+
+            最终输出只能包含：
+
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+
+            禁止出现：
+
+
+
+            <think>
+
+            </think>
+
+
+
+            或者任何类似：
+
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+
+            等内部工作语言。
+
+
+
+            # 第三屏 · 获客成本信号
+
+
+
+            开始。
+
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+
+            你的任务：
+
+
+
+            把渠道获客成本的变化转化成管理层能够快速理解的经营判断。
+
+
+
+            你不是数据整理工具。
+
+
+
+            你需要像咨询顾问一样：
+
+            - 区分持续上行和单期波动；
+
+            - 判断成本压力覆盖了多大范围；
+
+            - 提醒哪些渠道需要优先复核。
+
+
+
+
+            # 输出范围
+
+
+
+            只生成：
+
+
+
+            # 第三屏 · 获客成本信号
+
+
+
+
+            本屏只讨论渠道获客成本。
+
+
+
+            不讨论客户结构。
+
+
+
+            禁止讨论：
+
+
+
+            - 客户分层
+
+            - 复购
+
+            - 留存
+
+            - 用户生命周期
+
+            - 运营策略
+
+
+
+
+            # 分析原则
+
+
+
+            所有结论必须来自输入。
+
+
+
+            但是：
+
+
+
+            不要机械复述指标。
+
+
+
+            不要写：
+
+
+
+            “8月0.63，9月1.54，10月2.53”
+
+
+
+            而应该转换为：
+
+
+
+            “这个渠道的获客成本在持续上行”
+
+            “成本压力不是短期波动”
+
+            “上行速度已经超出正常范围”
+
+
+
+
+            # 成本信号判断规则
+
+
+
+            持续上行和单期跳升是两类不同信号，必须分开表述。
+
+
+
+            持续上行：
+
+
+
+            说明趋势已经形成。
+
+
+
+            单期跳升：
+
+
+
+            只说明某一个月出现明显变化，不等于趋势。
+
+
+
+            同一渠道同时出现两类信号时：
+
+
+
+            合并表述为需要优先复核，不重复列两次。
+
+
+
+            数量较多时：
+
+
+
+            优先展示同时命中两类信号的渠道，其余给出规模说明。
+
+
+
+            不要根据成本上行推断原因。
+
+
+
+            不要写：
+
+
+
+            “平台竞价加剧”
+
+            “素材衰退”
+
+            “预算不足”
+
+            “投放策略失误”
+
+
+
+            不要给出停投、加投或预算调整结论。
+
+
+
+
+            # 数据缺失规则
+
+
+
+            正文优先完成分析。
+
+
+
+            不要因为缺少字段直接输出：
+
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+
+            正确方式：
+
+
+
+            如果某部分数据不存在：
+
+
+
+            直接跳过。
+
+
+
+            例如：
+
+
+
+            没有持续上行的渠道：
+
+            不要输出持续上行章节。
+
+
+
+            没有单期跳升的渠道：
+
+            不要输出单期跳升章节。
+
+
+
+            最后统一：
+
+
+
+            ## 数据缺口
+
+
+
+            列出：
+
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+
+            # 评论风格
+
+
+
+            学习以下语言：
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            5个渠道命中CAC连续上升。
+
+
+
+            正确：
+
+
+
+            成本压力不是个别渠道的问题。
+
+
+
+            多个渠道同时出现持续上行，说明这是一种共同的变化，而不是单个投放动作的结果。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            某渠道CAC率从0.63升到2.53。
+
+
+
+            正确：
+
+
+
+            这个渠道的获客成本已经翻了数倍。
+
+
+
+            上行幅度远超其他渠道，它应该排在复核清单的最前面。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            62个渠道出现CAC跳升。
+
+
+
+            正确：
+
+
+
+            单月波动的范围很广，但波动本身不等于趋势。
+
+
+
+            需要区分的是哪些渠道只是短期抖动，哪些已经形成了持续上行。
+
+
+
+
+            ---
+
+
+
+            # 输出要求
+
+
+
+            每个发现必须按照：
+
+
+
+            ## 发现：一句具有经营含义的标题
+
+
+
+            正文：
+
+
+
+            2-4句话。
+
+
+
+            结构：
+
+
+
+            第一句：
+
+            描述核心变化。
+
+
+
+            第二句：
+
+            解释经营意义。
+
+
+
+            第三句：
+
+            指出风险或机会。
+
+
+
+            证据：
+
+
+
+            - 数据
+
+            - 数据
+
+
+
+
+            # 允许使用表达
+
+
+
+            可以使用：
+
+
+
+            - 结构性风险
+
+            - 持续上行
+
+            - 单期波动
+
+            - 成本压力
+
+            - 覆盖范围
+
+            - 优先复核
+
+            - 效率恶化
+
+
+
+
+            禁止使用：
+
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+
+            # 输出模板
+
+
+
+            # 第三屏 · 获客成本信号
+
+
+
+
+            ## 成本信号总览
+
+
+
+            表格。
+
+
+
+
+            ## 持续上行渠道
+
+
+
+            表格。
+
+
+
+
+            ## 关键发现
+
+
+
+            最多3条。
+
+
+
+
+            ## 优先复核清单
+
+
+
+
+            ## 数据缺口
+
+
+
+
+            # 最终要求
+
+
+
+            你的输出应该像：
+
+
+
+            “业务负责人看完后知道哪些渠道的成本在恶化、先去看哪几个”
+
+
+
+            而不是：
+
+
+
+            “数据分析师列出了所有渠道的CAC数值”。'
+        - id: cb0b2199-7e2c-4a9b-a5e5-1e24fe5b431b
+          role: user
+          text: '{{#1787555272356.output#}}'
+        selected: false
+        title: 生成获客成本信号页面
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: generate-product
+      position:
+        x: 650
+        y: -188.92541118297066
+      positionAbsolute:
+        x: 650
+        y: -188.92541118297066
+      selected: false
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: 5a4cd05d-e17e-4b7d-a73f-c20ade04eb07
+          role: system
+          text: '# 输出安全规则
+
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+
+            禁止输出任何内部推理过程。
+
+
+
+            包括但不限于：
+
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+
+            只输出最终报告。
+
+
+
+
+            如果需要进行复杂分析：
+
+
+
+            请在内部完成，不得展示。
+
+
+
+
+            最终输出只能包含：
+
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+
+            禁止出现：
+
+
+
+            <think>
+
+            </think>
+
+
+
+            或者任何类似：
+
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+
+            等内部工作语言。
+
+
+
+            # 第四屏 · 投放有效性
+
+
+
+            开始。
+
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+
+            你的任务：
+
+
+
+            把投放有效性的检查结果转化成管理层能够快速理解的风险判断。
+
+
+
+            你不是数据整理工具。
+
+
+
+            你需要像咨询顾问一样：
+
+            - 说明这项风险当前处于什么状态；
+
+            - 指出低效消耗的规模在往哪个方向走；
+
+            - 明确这个判断覆盖了什么、没覆盖什么。
+
+
+
+
+            # 输出范围
+
+
+
+            只生成：
+
+
+
+            # 第四屏 · 投放有效性
+
+
+
+
+            本屏只讨论低效消耗占比这一项风险。
+
+
+
+            禁止讨论：
+
+
+
+            - 渠道集中度
+
+            - 付费与自然流量结构
+
+            - 品类
+
+            - 用户画像
+
+            - 运营策略
+
+
+
+
+            # 分析原则
+
+
+
+            所有结论必须来自输入。
+
+
+
+            但是：
+
+
+
+            不要机械复述指标。
+
+
+
+            不要写：
+
+
+
+            “8月3.8%，9月2.9%，10月1.0%”
+
+
+
+            而应该转换为：
+
+
+
+            “低效消耗的规模在持续缩小”
+
+            “这项风险目前没有触发”
+
+            “投放的有效性在改善”
+
+
+
+
+            # 覆盖边界规则
+
+
+
+            本屏的判断范围只有一项：低效消耗占全部消耗的比例。
+
+
+
+            风险未触发时：
+
+
+
+            只说明这项检查的条件没有成立。
+
+
+
+            不要写成：
+
+
+
+            “投放整体健康”
+
+            “渠道结构没有问题”
+
+            “风险已排除”
+
+
+
+            必须明确说明这个结论覆盖的范围有限。
+
+
+
+            阈值和判定来自输入。
+
+
+
+            不要重新计算，不要调整阈值。
+
+
+
+
+            # 数据缺失规则
+
+
+
+            正文优先完成分析。
+
+
+
+            不要因为缺少字段直接输出：
+
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+
+            正确方式：
+
+
+
+            如果某部分数据不存在：
+
+
+
+            直接跳过。
+
+
+
+            例如：
+
+
+
+            只有单个月份：
+
+            不要输出趋势章节。
+
+
+
+            最后统一：
+
+
+
+            ## 数据缺口
+
+
+
+            列出：
+
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+
+            # 评论风格
+
+
+
+            学习以下语言：
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            R61未命中，占比3.8%、2.9%、1.0%，均低于20%阈值。
+
+
+
+            正确：
+
+
+
+            投放有效性风险目前没有触发。
+
+
+
+            低效消耗的规模在三个月里持续缩小，这个方向暂时不是主要矛盾。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            低效渠道成本从488万降到105万。
+
+
+
+            正确：
+
+
+
+            明显跑不出效果的投放正在被收掉。
+
+
+
+            这说明投放调整是有执行力的，问题不在于低效消耗失控。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            投放整体健康。
+
+
+
+            正确：
+
+
+
+            这个结论只覆盖低效消耗这一项。
+
+
+
+            渠道集中度、流量来源结构、渠道级利润都不在本项检查范围内，不能由此推出投放整体没有问题。
+
+
+
+
+            ---
+
+
+
+            # 输出要求
+
+
+
+            每个发现必须按照：
+
+
+
+            ## 发现：一句具有经营含义的标题
+
+
+
+            正文：
+
+
+
+            2-4句话。
+
+
+
+            结构：
+
+
+
+            第一句：
+
+            描述核心变化。
+
+
+
+            第二句：
+
+            解释经营意义。
+
+
+
+            第三句：
+
+            指出风险或机会。
+
+
+
+            证据：
+
+
+
+            - 数据
+
+            - 数据
+
+
+
+
+            # 允许使用表达
+
+
+
+            可以使用：
+
+
+
+            - 结构性风险
+
+            - 未触发
+
+            - 持续改善
+
+            - 低效消耗
+
+            - 覆盖范围有限
+
+            - 尚未检查
+
+            - 效率改善
+
+
+
+
+            禁止使用：
+
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+
+            # 输出模板
+
+
+
+            # 第四屏 · 投放有效性
+
+
+
+
+            ## 检查结果
+
+
+
+            表格。
+
+
+
+
+            ## 关键发现
+
+
+
+            最多2条。
+
+
+
+
+            ## 覆盖边界
+
+
+
+
+            ## 数据缺口
+
+
+
+
+            # 最终要求
+
+
+
+            你的输出应该像：
+
+
+
+            “业务负责人看完后知道这项风险的状态，也知道它没管到哪些地方”
+
+
+
+            而不是：
+
+
+
+            “数据分析师核对了阈值是否被突破”。'
+        - id: 3f6705c2-73f0-40ee-aa78-3fa732d33e80
+          role: user
+          text: '{{#1787555272356.output#}}'
+        selected: false
+        title: 生成投放有效性页面
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: generate-efficiency
+      position:
+        x: 650
+        y: -91.04148259161636
+      positionAbsolute:
+        x: 650
+        y: -91.04148259161636
+      selected: false
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: 35b86df1-7af6-406b-b93b-4ce0e0171920
+          role: system
+          text: '# 输出安全规则
+
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+
+            禁止输出任何内部推理过程。
+
+
+
+            包括但不限于：
+
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+
+            只输出最终报告。
+
+
+
+
+            如果需要进行复杂分析：
+
+
+
+            请在内部完成，不得展示。
+
+
+
+
+            最终输出只能包含：
+
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+
+            禁止出现：
+
+
+
+            <think>
+
+            </think>
+
+
+
+            或者任何类似：
+
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+
+            等内部工作语言。
+
+
+
+            # 第五屏 · 总结
+
+
+
+            开始。
+
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+
+            你的任务：
+
+
+
+            把前四屏的分析压缩成管理层能够记住的几条判断。
+
+
+
+            你不是数据整理工具。
+
+
+
+            你需要像咨询顾问一样：
+
+            - 找出真正的核心矛盾；
+
+            - 区分已经确认的事实和还需要验证的判断；
+
+            - 告诉管理层下一步该去查什么。
+
+
+
+
+            # 输出范围
+
+
+
+            只生成：
+
+
+
+            # 第五屏 · 总结
+
+
+
+
+            本屏只消费前四屏的内容。
+
+
+
+            不重新读取明细数据。
+
+
+
+            不生成前四屏没有出现过的结论、数字或规则。
+
+
+
+            禁止讨论：
+
+
+
+            - 用户画像
+
+            - 复购
+
+            - 运营策略
+
+
+
+
+            # 分析原则
+
+
+
+            所有结论必须来自前四屏。
+
+
+
+            但是：
+
+
+
+            不要逐屏复述。
+
+
+
+            不要写：
+
+
+
+            “第一屏说了A，第二屏说了B”
+
+
+
+            而应该转换为：
+
+
+
+            “核心矛盾是收入端在收缩、成本端在上行”
+
+            “已经确认的风险有两个”
+
+            “真正需要先查清楚的是这一件事”
+
+
+
+            结论之间要有主次。
+
+
+
+            覆盖范围更广、持续时间更长的排在前面。
+
+
+
+
+            # 表述限制规则
+
+
+
+            前四屏中的推断不要在这里升级为确定性结论。
+
+
+
+            “可能”不要改写成“确实”。
+
+
+
+            未触发不要写成“没有风险”。
+
+
+
+            尚未检查不要写成“检查通过”。
+
+
+
+            不要输出泛化建议，例如：
+
+
+
+            “优化投放”
+
+            “加强品牌”
+
+            “调整KPI”
+
+
+
+            行动方案属于另一个阶段。
+
+
+
+
+            # 数据缺失规则
+
+
+
+            正文优先完成分析。
+
+
+
+            不要因为缺少字段直接输出：
+
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+
+            正确方式：
+
+
+
+            如果某部分内容在前四屏中不存在：
+
+
+
+            直接跳过。
+
+
+
+            例如：
+
+
+
+            前四屏没有待验证判断：
+
+            不要输出待验证章节。
+
+
+
+            最后统一：
+
+
+
+            ## 数据缺口
+
+
+
+            列出：
+
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+
+            # 评论风格
+
+
+
+            学习以下语言：
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            第二屏发现品类下行，第三屏发现渠道成本上升。
+
+
+
+            正确：
+
+
+
+            核心矛盾是收入端在收缩、成本端在上行。
+
+
+
+            两个方向同时发生，意味着当前的经营压力不是来自单一环节，而是两头挤压。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            低效消耗占比下降，投放有效性未触发风险。
+
+
+
+            正确：
+
+
+
+            投放执行层面没有失控。
+
+
+
+            问题不在于钱花在了明显无效的地方，而在于花得有效的部分也在变贵。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            建议优化品类结构。
+
+
+
+            正确：
+
+
+
+            真正需要先查清楚的是下行的性质。
+
+
+
+            在这个问题有答案之前，任何品类调整都只是在已经收缩的盘子里做分配。
+
+
+
+
+            ---
+
+
+
+            # 输出要求
+
+
+
+            每条结论必须按照：
+
+
+
+            ## 结论：一句具有经营含义的标题
+
+
+
+            正文：
+
+
+
+            2-4句话。
+
+
+
+            结构：
+
+
+
+            第一句：
+
+            描述已经确认的事实。
+
+
+
+            第二句：
+
+            解释它对经营的含义。
+
+
+
+            第三句：
+
+            指出这条结论的边界或还缺什么。
+
+
+
+            证据：
+
+
+
+            - 来自前四屏的数据
+
+            - 来自前四屏的数据
+
+
+
+
+            # 允许使用表达
+
+
+
+            可以使用：
+
+
+
+            - 核心矛盾
+
+            - 结构性风险
+
+            - 已确认风险
+
+            - 尚未检查
+
+            - 优先复核
+
+            - 规模收缩
+
+            - 成本压力
+
+
+
+
+            禁止使用：
+
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+
+            # 输出模板
+
+
+
+            # 第五屏 · 总结
+
+
+
+
+            ## 核心结论
+
+
+
+            最多4条。
+
+
+
+
+            ## 已确认风险
+
+
+
+            表格。
+
+
+
+
+            ## 优先核查顺序
+
+
+
+
+            ## 数据缺口
+
+
+
+
+            # 最终要求
+
+
+
+            你的输出应该像：
+
+
+
+            “业务负责人看完后知道最重要的是什么、下一步该去查什么”
+
+
+
+            而不是：
+
+
+
+            “数据分析师把前面四屏的内容又抄了一遍”。'
+        - id: 01488a47-2bab-4ae9-8aef-47201289a54e
+          role: user
+          text: '{{#1787555272356.output#}}'
+        selected: false
+        title: 生成总结页面
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: generate-growth
+      position:
+        x: 650
+        y: 5.458795739589302
+      positionAbsolute:
+        x: 650
+        y: 5.458795739589302
+      selected: false
+      type: custom
+      width: 242
+    - data:
+        outputs:
+        - value_selector:
+          - generate-channel
+          - text
+          value_type: string
+          variable: channel_page
+        - value_selector:
+          - generate-customer
+          - text
+          value_type: string
+          variable: customer_page
+        - value_selector:
+          - generate-product
+          - text
+          value_type: string
+          variable: product_page
+        - value_selector:
+          - generate-efficiency
+          - text
+          value_type: string
+          variable: efficiency_page
+        - value_selector:
+          - generate-growth
+          - text
+          value_type: string
+          variable: growth_page
+        - value_selector:
+          - '17875590938010'
+          - text
+          value_type: string
+          variable: text
+        - value_selector:
+          - '17875591113700'
+          - text
+          value_type: string
+          variable: text_1
+        - value_selector:
+          - '17875591222380'
+          - text
+          value_type: string
+          variable: text_2
+        - value_selector:
+          - '17875591360310'
+          - text
+          value_type: string
+          variable: text_3
+        - value_selector:
+          - '17875591427710'
+          - text
+          value_type: string
+          variable: text_4
+        selected: false
+        title: 输出结果
+        type: end
+      height: 322
+      id: end
+      position:
+        x: 1056.8418364796605
+        y: 223.789662409294
+      positionAbsolute:
+        x: 1056.8418364796605
+        y: 223.789662409294
+      selected: false
+      type: custom
+      width: 242
+    - data:
+        selected: false
+        template: "{% raw %}\r\n# S3 五屏共用固定上下文\r\n\r\n## 完整五屏生成框架\r\n# S3 渠道结构诊断报告生成框架\r\
+          \n\r\n## 1. 文档目标\r\n\r\n一期仅生成 S3 渠道结构诊断报告，不生成 S1、S2、S4 报告内容。\r\n\r\n本框架将\
+          \ S3 报告拆分为五个屏幕：\r\n\r\n1. 渠道全景\r\n2. 品类营收结构\r\n3. 获客成本信号\r\n4. 投放有效性\r\n\
+          5. 总结\r\n\r\n原框架中的「品类 × 渠道依赖度」「内部渠道」「转介绍」三屏，因当前指标层缺少 `acquisition_source_type`、月\
+          \ × 品类 × 渠道交叉聚合、`customer_id`、`referral_*` 等支撑字段，一期不生成，也不作为占位屏输出。待相应字段接入后再补齐为独立屏。\r\
+          \n\r\n本框架只定义报告生成方式，不预先编写实际诊断结论。核心要求如下：\r\n\r\n- 每个结论必须可追溯到指标数据或规则结果。\r\n\
+          - LLM 不得创造业务原因。\r\n- 所有解释性推理必须明确标注“推断”。\r\n- 指标由指标层计算，规则由 Rule Engine 判断，LLM\
+          \ 只负责受约束的语言组织。\r\n\r\n---\r\n\r\n## 2. 总体生成原则\r\n\r\n### 2.1 结论类型\r\n\r\n\
+          系统只允许输出三类结论。\r\n\r\n| 结论类型 | 含义 | 固定前缀 | 必须携带的信息 |\r\n| --- | --- | ---\
+          \ | --- |\r\n| 数据事实 | 指标层直接计算所得 | `【数据事实】` | 指标、数值、单位、期间、维度、数据引用 |\r\n|\
+          \ 规则结论 | Rule Engine 已执行并返回 | `【规则结论】` | `rule_id`、命中状态、阈值、指标快照、证据 |\r\n\
+          | 受限推断 | 基于多个事实进行的解释性归纳 | `【推断】` | 支撑事实、推断边界、置信度、待验证项 |\r\n\r\n不属于以上三类，或不能提供证据引用的内容，不进入最终报告。\r\
+          \n\r\n### 2.2 统一证据引用协议\r\n\r\n每条结论必须绑定 `evidence_refs`。\r\n\r\n```json\r\
+          \n{\r\n  \"conclusion_id\": \"S3-P1-C01\",\r\n  \"conclusion_type\": \"\
+          data_fact | rule_result | inference\",\r\n  \"statement\": \"结论文本\",\r\n\
+          \  \"evidence_refs\": [\r\n    {\r\n      \"source_type\": \"metric | rule\"\
+          ,\r\n      \"source_id\": \"channel_month_metrics\",\r\n      \"metric\"\
+          : \"cost_share\",\r\n      \"dimension\": {\r\n        \"channel_group\"\
+          : \"PAID_EXTERNAL\"\r\n      },\r\n      \"period\": {\r\n        \"start\"\
+          : \"YYYY-MM\",\r\n        \"end\": \"YYYY-MM\"\r\n      },\r\n      \"value\"\
+          : 0.0,\r\n      \"unit\": \"RATIO\"\r\n    }\r\n  ],\r\n  \"inference_label\"\
+          : null,\r\n  \"confidence\": \"high | medium\",\r\n  \"unverified_items\"\
+          : []\r\n}\r\n```\r\n\r\n约束：\r\n\r\n- `data_fact` 和 `rule_result` 不得包含模型生成的业务原因。\r\
+          \n- `inference` 的正文必须以“推断：”开头。\r\n- 推断只能描述现象之间可能存在的关系，不能断言因果。\r\n- 没有证据引用的结论在渲染前直接拦截。\r\
+          \n- 原始值、比例、环比、同比均由指标层计算，LLM 不自行运算。\r\n\r\n### 2.3 渠道分类前置条件\r\n\r\n当前指标层未提供版本化渠道分类表，五屏均不使用\
+          \ `acquisition_source_type`，全部按 `month + channel`（三级渠道）或 `month + category`（品类）聚合。渠道类型分类表：\r\
+          \n\r\n| 编码 | 含义 |\r\n| --- | --- |\r\n| `PAID_EXTERNAL` | 外部付费 |\r\n| `INTERNAL_TRANSFER`\
+          \ | 内部流转 |\r\n| `REFERRAL` | 转介绍 |\r\n| `NATURAL` | 自然获客 |\r\n| `UNCLASSIFIED`\
+          \ | 未分类 |\r\n\r\n待以下版本化渠道分类表接入后，可在此基础上恢复渠道类型结构分解：\r\n\r\n```text\r\nchannel\r\
+          \nacquisition_source_type\r\neffective_start\r\neffective_end\r\nmapping_version\r\
+          \nmapping_basis\r\n```\r\n\r\n在渠道分类表接入前，不得让 LLM 根据渠道名称猜测其属于内部、外部、转介绍或自然渠道。\r\
+          \n\r\n### 2.4 通用数据质量字段\r\n\r\n每一屏都应包含以下数据质量信息：\r\n\r\n```text\r\ndata_period_start\r\
+          \ndata_period_end\r\ncomplete_months\r\nincomplete_months\r\nmissing_fields\r\
+          \nunsupported_metrics\r\nunsupported_rules\r\n```\r\n\r\n不完整月份可以展示，但不得参与跨月趋势规则。\r\
+          \n\r\n---\r\n\r\n## 3. 第一屏：渠道全景\r\n\r\n### 3.1 分析目标\r\n\r\n回答三个事实问题：\r\n\
+          \r\n- 当前获客由哪些三级渠道构成，规模分布如何。\r\n- 各渠道的成本、线索、首单量和收入占比如何。\r\n- 整体及主要渠道的规模与效率在观察期内如何变化。\r\
+          \n\r\n本屏按 `month + channel`（三级渠道）聚合，不依赖渠道类型映射表；渠道类型（外部付费/内部流转/转介绍/自然获客/未分类）结构分解待版本化分类表接入后再恢复。本屏只描述全局渠道结构，不解释变化原因。\r\
+          \n\r\n### 3.2 需要输入的数据字段\r\n\r\n基础字段：\r\n\r\n```text\r\nmonth\r\nis_complete_month\r\
+          \nchannel\r\ncost\r\nleads\r\nfirst_order_orders\r\nfirst_order_revenue\r\
+          \nfirst_order_net_revenue\r\n```\r\n\r\n指标层派生字段：\r\n\r\n```text\r\ncost_share\r\
+          \nlead_share\r\nfirst_order_share\r\nrevenue_share\r\ncac\r\ncac_rate\r\n\
+          first_order_conversion_rate\r\nchannel_roi\r\n```\r\n\r\n口径限制：\r\n\r\n-\
+          \ `first_order_orders` 只能作为首购用户代理，不能称为去重客户数。\r\n- 趋势只使用完整、连续月份。\r\n\r\n\
+          ### 3.3 可使用的规则结果\r\n\r\n- R61：无效投放。\r\n- R48：外部投放 ROI 亏损，仅在规则实际执行后使用。\r\n\
+          - R49：内部获客 ROI 健康，仅在规则实际执行后使用。\r\n- 渠道集中度和付费获客占比等一期优先作为指标事实，不得冒充已执行规则。\r\
+          \n\r\n### 3.4 LLM 允许推理范围\r\n\r\n允许：\r\n\r\n- 根据结构占比描述“集中”“分散”或“主要由某类渠道构成”。\r\
+          \n- 根据连续期间数据描述“上升”“下降”或“波动”。\r\n- 比较获客量趋势与转化效率趋势是否同向。\r\n- 将“高占比 + 明显波动”标记为结构稳定性关注项。\r\
+          \n\r\n合规句式：\r\n\r\n> 【推断】从渠道占比和期间波动看，该渠道类型可能是整体获客稳定性的主要敏感项。\r\n\r\n### 3.5\
+          \ 禁止推理内容\r\n\r\n禁止：\r\n\r\n- 将获客量下降归因于平台算法、竞争加剧、素材疲劳或预算不足。\r\n- 将相关性表达为因果关系。\r\
+          \n- 把首单订单数称为去重客户数。\r\n- 根据渠道名称自行识别渠道属于内部、外部、转介绍或自然获客。\r\n- 仅凭首单 ROI 判断完整商业模式是否盈利。\r\
+          \n- 使用不完整月份生成长期趋势结论。\r\n\r\n### 3.6 输出格式\r\n\r\n```json\r\n{\r\n  \"screen_id\"\
+          : \"S3-P1\",\r\n  \"title\": \"渠道全景\",\r\n  \"period\": {},\r\n  \"data_quality\"\
+          : {},\r\n  \"channel_mix_table\": [],\r\n  \"trend_series\": [],\r\n  \"\
+          conclusions\": [],\r\n  \"data_gaps\": []\r\n}\r\n```\r\n\r\n建议视觉组件：\r\n\
+          \r\n- 渠道结构占比卡片。\r\n- 成本、线索、首单量结构图。\r\n- 月度规模与效率趋势图。\r\n- 最多三条有证据的观察结论。\r\
+          \n\r\n---\r\n\r\n## 4. 第二屏：品类营收结构\r\n\r\n### 4.1 分析目标\r\n\r\n集中展示 S3 规则的：\r\
+          \n\r\n回答：品类营收的下行是个别现象还是整体趋势，品类之间是否出现分化。\r\n\r\n本屏分析对象是品类首单营收，不涉及渠道。\r\n\r\
+          \n### 4.2 需要输入的数据字段\r\n\r\n```text\r\nmonth\r\ncategory\r\nis_complete_month\r\
+          \ncategory_revenue\r\nrevenue_share\r\n```\r\n\r\nRule Result 字段（module=S1）：\r\
+          \n\r\n```text\r\nrule_id\r\nrule_name\r\nhit\r\ndimension.type\r\ndimension.name\r\
+          \nperiod.start\r\nperiod.end\r\nmetrics\r\nthreshold\r\nevidence\r\n```\r\
+          \n\r\n### 4.3 可使用的规则结果\r\n\r\n当前规则引擎实际可执行：\r\n\r\n- R3：营收集中度（Top1品类首单营收占比\
+          \ > 0.50）。\r\n- R4：营收过于分散（Top3品类首单营收占比 < 0.50）。\r\n- R5：核心品类下行趋势（连续3个完整月下降）。\r\
+          \n- R8：涨跌两极分化（同时存在环比 >30% 与 <-30%）。\r\n- R9：系统性下跌（> 3个品类连续3个完整月下降）。\r\n\r\
+          \n参考报告使用的 R15、R17、R18 等编号与当前规则总表及执行引擎不一致，不得沿用。\r\n\r\n### 4.4 LLM 允许推理范围\r\
+          \n\r\n允许：\r\n\r\n- 复述规则是否命中。\r\n- 将多个品类的 R5 命中归纳为整体性下行表现（结合 R9）。\r\n- 对命中规则按覆盖品类数、持续月份排序。\r\
+          \n- 说明规则未执行是因为缺字段或不满足计算条件。\r\n\r\n### 4.5 禁止推理内容\r\n\r\n禁止：\r\n\r\n- 修改规则阈值，自行重算规则是否命中。\r\
+          \n- 将 `hit=false` 解释为“业务健康”。\r\n- 根据品类名称判断“获客型”“深耕型”等经营类型，除非业务提供正式标签。\r\n\
+          - 把首单营收等同于整体收入或利润。\r\n- 引用 R8 的极端增速时，不说明基数是否极小，直接当作重要变化。\r\n- 根据一条规则命中创造业务原因。\r\
+          \n\r\n### 4.6 输出格式\r\n\r\n```json\r\n{\r\n  \"screen_id\": \"S3-P2\",\r\n\
+          \  \"title\": \"品类营收结构\",\r\n  \"category_revenue_table\": [],\r\n  \"declining_categories\"\
+          : [],\r\n  \"conclusions\": [],\r\n  \"data_gaps\": []\r\n}\r\n```\r\n\r\
+          \n---\r\n\r\n## 5. 第三屏：获客成本信号\r\n\r\n### 5.1 分析目标\r\n\r\n识别：\r\n\r\n- 哪些渠道的获客成本出现持续性上行。\r\
+          \n- 持续上行与单期跳升的区别与覆盖范围。\r\n- 需要优先复核的渠道清单。\r\n\r\n本屏分析对象是渠道 CAC 率，不涉及客户结构。代码中\
+          \ R36/R37 的 module 标为 S2，但事实语义是渠道获客成本，报告标题不写“客户结构”。\r\n\r\n### 5.2 需要输入的数据字段\r\
+          \n\r\n```text\r\nmonth\r\nchannel\r\ncac_rate\r\n```\r\n\r\nRule Result\
+          \ 字段（module=S2）：\r\n\r\n```text\r\nrule_id\r\nrule_name\r\nhit\r\ndimension.type\r\
+          \ndimension.name\r\nperiod.start\r\nperiod.end\r\nmetrics\r\nthreshold\r\
+          \nevidence\r\n```\r\n\r\n### 5.3 可使用的规则结果\r\n\r\n- R36：CAC连续上升（连续3个完整月上升）。\r\
+          \n- R37：CAC环比跳升（单期环比 > 0.05，即5个百分点）。\r\n\r\n### 5.4 LLM 允许推理范围\r\n\r\n允许：\r\
+          \n\r\n- 复述规则是否命中。\r\n- 将多个渠道的同类命中归纳为共同风险表现。\r\n- 同一渠道同时命中 R36 与 R37 时，合并表述为需要优先复核，不重复列两次。\r\
+          \n- 对命中渠道按覆盖范围、持续月份或变化幅度排序。\r\n\r\n### 5.5 禁止推理内容\r\n\r\n禁止：\r\n\r\n- 修改规则阈值，自行重算规则是否命中。\r\
+          \n- 将 `hit=false` 解释为“业务健康”。\r\n- 把本屏标题写成“客户结构”。\r\n- 推断成本上行的原因（平台竞价、素材衰退、预算不足、投放策略失误等）。\r\
+          \n- 给出停投、加投或预算调整结论。\r\n\r\n### 5.6 输出格式\r\n\r\n```json\r\n{\r\n  \"screen_id\"\
+          : \"S3-P3\",\r\n  \"title\": \"获客成本信号\",\r\n  \"signal_summary_table\":\
+          \ [],\r\n  \"sustained_increase_channels\": [],\r\n  \"priority_review_list\"\
+          : [],\r\n  \"conclusions\": [],\r\n  \"data_gaps\": []\r\n}\r\n```\r\n\r\
+          \n---\r\n\r\n## 6. 第四屏：投放有效性\r\n\r\n### 6.1 分析目标\r\n\r\n回答：无效投放（ROI<0.5\
+          \ 渠道消耗占比）风险当前是否触发，覆盖范围是什么。\r\n\r\n本屏只讨论低效消耗占比这一项风险，不讨论渠道集中度、付费与自然流量结构。\r\
+          \n\r\n### 6.2 需要输入的数据字段\r\n\r\n```text\r\nmonth\r\nineffective_cost\r\n\
+          total_cost\r\nineffective_cost_share\r\n```\r\n\r\n### 6.3 可使用的规则结果\r\n\r\
+          \n- R61：无效投放(P0)（ROI<0.5渠道消耗占比 > 0.20）。\r\n\r\n### 6.4 LLM 允许推理范围\r\n\r\n\
+          允许：\r\n\r\n- 复述规则是否命中。\r\n- 根据连续月份数据描述低效消耗规模是扩大还是缩小。\r\n- 说明本屏结论只覆盖低效消耗占比这一项。\r\
+          \n\r\n### 6.5 禁止推理内容\r\n\r\n禁止：\r\n\r\n- 修改规则阈值，自行重算是否命中。\r\n- 将未命中写成“投放整体健康”或“渠道结构没有问题”。\r\
+          \n- 不说明本屏结论的覆盖边界，直接推广为渠道结构整体判断。\r\n\r\n### 6.6 输出格式\r\n\r\n```json\r\n{\r\
+          \n  \"screen_id\": \"S3-P4\",\r\n  \"title\": \"投放有效性\",\r\n  \"check_result_table\"\
+          : [],\r\n  \"coverage_boundary\": [],\r\n  \"conclusions\": [],\r\n  \"\
+          data_gaps\": []\r\n}\r\n```\r\n\r\n---\r\n\r\n## 7. 第五屏：总结\r\n\r\n### 7.1\
+          \ 分析目标\r\n\r\n将前四屏已经生成并通过证据校验的内容压缩为：\r\n\r\n- 核心事实。\r\n- 规则风险。\r\n- 受限推断。\r\
+          \n- 数据盲区。\r\n- 后续验证方向。\r\n\r\n第五屏不能产生前四屏从未出现的新结论。\r\n\r\n### 7.2 需要输入的数据字段\r\
+          \n\r\n总结屏不重新读取明细数据，只消费前四屏的结构化输出：\r\n\r\n```text\r\nscreen_id\r\nconclusion_id\r\
+          \nconclusion_type\r\nstatement\r\nevidence_refs\r\nrule_id\r\nseverity\r\
+          \nconfidence\r\nunverified_items\r\ndata_gaps\r\n```\r\n\r\n用于排序的可选字段：\r\
+          \n\r\n```text\r\naffected_cost\r\naffected_leads\r\naffected_first_orders\r\
+          \naffected_categories\r\nduration_months\r\n```\r\n\r\n### 7.3 可使用的规则结果\r\
+          \n\r\n只能使用前四屏已经验证的规则状态：\r\n\r\n- `HIT`\r\n- `NOT_HIT`\r\n- `NOT_EXECUTABLE`\r\
+          \n\r\n不得在总结阶段自行调用或重算规则。\r\n\r\n### 7.4 LLM 允许推理范围\r\n\r\n允许：\r\n\r\n- 合并重复结论。\r\
+          \n- 按覆盖范围、持续时间和规则优先级排序。\r\n- 区分“已确认事实”和“待验证推断”。\r\n- 根据证据覆盖度给出高、中置信度。\r\n\
+          - 将数据缺口转化为明确的验证问题。\r\n\r\n### 7.5 禁止推理内容\r\n\r\n禁止：\r\n\r\n- 生成新的业务原因。\r\
+          \n- 生成未经数据支持的战略动作。\r\n- 把“可能”改写成确定性结论。\r\n- 把规则未命中写成“没有风险”。\r\n- 把数据缺失写成“指标为零”。\r\
+          \n- 输出“优化投放、加强品牌、调整 KPI”等泛化建议，除非另行进入行动方案阶段。\r\n\r\n### 7.6 输出格式\r\n\r\n\
+          ```json\r\n{\r\n  \"screen_id\": \"S3-P5\",\r\n  \"title\": \"总结\",\r\n\
+          \  \"confirmed_facts\": [],\r\n  \"rule_findings\": [],\r\n  \"inferences\"\
+          : [],\r\n  \"data_gaps\": [],\r\n  \"verification_priorities\": [],\r\n\
+          \  \"coverage\": {\r\n    \"screens_used\": [],\r\n    \"evidence_count\"\
+          : 0,\r\n    \"unsupported_conclusion_count\": 0\r\n  }\r\n}\r\n```\r\n\r\
+          \n总结屏固定展示四个栏目：\r\n\r\n| 栏目 | 内容来源 |\r\n| --- | --- |\r\n| 已确认事实 | 数据指标 |\r\
+          \n| 已命中、未命中规则 | Rule Engine |\r\n| 推断 | 前四屏已标注的推断 |\r\n| 待验证问题 | 数据盲区或推断所需的补充数据\
+          \ |\r\n\r\n---\r\n\r\n## 8. 报告生成链路\r\n\r\n```text\r\n渠道明细数据\r\n  → 字段标准化\r\
+          \n  → 月 × 渠道 / 月 × 品类聚合\r\n  → 指标计算\r\n  → S3 Rule Engine\r\n  → 证据对象\r\n\
+          \  → 五屏内容生成器\r\n  → 结论追溯校验\r\n  → 屏幕 JSON\r\n  → 前端渲染\r\n```\r\n\r\n各层职责必须分离：\r\
+          \n\r\n| 层级 | 职责 |\r\n| --- | --- |\r\n| 字段标准化层 | 将源字段映射为标准业务字段并校验缺列、类型和空值\
+          \ |\r\n| 指标层 | 聚合基础数值并计算比例、趋势和效率指标 |\r\n| 规则层 | 根据固定规则和阈值判断是否命中 |\r\n| LLM\
+          \ 层 | 组织语言、执行受限归纳、标注推断 |\r\n| 校验层 | 拦截无证据结论、越界因果和错误规则状态 |\r\n| 前端层 | 渲染结构化屏幕结果，不重新计算指标或规则\
+          \ |\r\n\r\n---\r\n\r\n## 9. Prompt 输入契约\r\n\r\nLLM 每次只接收单屏所需的最小上下文：\r\n\r\
+          \n```json\r\n{\r\n  \"screen_contract\": {},\r\n  \"period\": {},\r\n  \"\
+          data_quality\": {},\r\n  \"metrics\": [],\r\n  \"rule_results\": [],\r\n\
+          \  \"allowed_inferences\": [],\r\n  \"forbidden_inferences\": [],\r\n  \"\
+          required_output_schema\": {}\r\n}\r\n```\r\n\r\n系统提示必须明确：\r\n\r\n1. 不重新计算输入数值。\r\
+          \n2. 不修改规则命中状态。\r\n3. 不创建输入中不存在的指标、事实或规则。\r\n4. 不推断业务原因。\r\n5. 所有推断必须带“推断：”前缀。\r\
+          \n6. 每条输出结论必须引用 `evidence_refs`。\r\n7. 证据不足时输出 `data_gap`，不得补全故事。\r\n\r\n\
+          ---\r\n\r\n## 10. 上线前强制校验\r\n\r\n每屏生成后必须执行以下检查：\r\n\r\n1. 每条结论都有唯一的 `conclusion_id`。\r\
+          \n2. 每条结论至少有一个 `evidence_ref`。\r\n3. `rule_result` 必须关联真实存在的 `rule_id`。\r\
+          \n4. `inference` 必须以“推断：”开头。\r\n5. 推断必须包含 `unverified_items`。\r\n6. 数值必须能够在指标层或规则结果中按原值定位。\r\
+          \n7. 不允许 LLM 输出输入中不存在的新数值。\r\n8. 不允许 LLM 自行计算比例、环比或同比。\r\n9. 不允许出现“因为、导致、根因、说明了”等确定性因果表达，除非存在专门的因果证据。\r\
+          \n10. `NOT_EXECUTABLE` 与 `NOT_HIT` 必须严格区分。\r\n11. 第五屏不得出现前四屏不存在的结论 ID。\r\
+          \n12. `unsupported_conclusion_count` 必须为 0，报告才允许发布。\r\n\r\n---\r\n\r\n##\
+          \ 11. 一期能力边界与待补数据\r\n\r\n### 11.1 当前可以直接使用\r\n\r\n- 月 × 三级渠道的成本、线索、首单订单和首单收入指标。\r\
+          \n- 月 × 品类的首单营收和占比指标。\r\n- `cac`、`cac_rate`、首单转化率、渠道首单 ROI 等现有派生指标。\r\n\
+          - 现有 Rule Result JSON 协议。\r\n- 当前实际执行的 S1 R3/R4/R5/R8/R9、S2 R36/R37、S3 R61\
+          \ 规则结果。\r\n\r\n### 11.2 一期不生成（待字段补齐后恢复为独立屏）\r\n\r\n- 三级渠道到渠道类型的版本化映射（恢复后可在第一屏内做渠道类型结构分解）。\r\
+          \n- 月 × 品类 × 渠道的交叉聚合表（恢复后可补齐「品类 × 渠道依赖度」屏）。\r\n- 内部流转的源品类—目标品类路径、去重客户数、流转率（恢复后可补齐「内部渠道」屏）。\r\
+          \n- 转介绍人数、推荐关系、转介绍转化率（恢复后可补齐「转介绍」屏）。\r\n\r\n以上字段缺失期间，不生成对应内容，也不由 LLM 猜测补全。\r\
+          \n\r\n## 完整紧凑规则上下文\r\n{\"context_version\":\"2.0-compact\",\"source\":{\"\
+          schema_version\":\"1.0\",\"result_count\":260,\"hit_count\":83},\"usage\"\
+          :{\"purpose\":\"S3五屏共用的完整紧凑规则事实包\",\"instructions\":[\"rules中的module、rule_id、rule_name和threshold适用于其全部evaluations。\"\
+          ,\"每条evaluation保留原始hit、dimension、period、metrics和evidence，不重新计算。\",\"只使用当前屏允许的事实；其他模块事实不得混入当前屏结论。\"\
+          ,\"缺少渠道类型映射或客户级数据时输出数据缺口，不得猜测。\"]},\"module_catalog\":[{\"id\":\"S1\",\"\
+          name\":\"产品结构\"},{\"id\":\"S2\",\"name\":\"客户结构\"},{\"id\":\"S3\",\"name\"\
+          :\"渠道结构\"}],\"dimension_type_catalog\":[{\"id\":\"all_categories\",\"name\"\
+          :\"全品类\"},{\"id\":\"all_channels\",\"name\":\"全渠道\"},{\"id\":\"category\"\
+          ,\"name\":\"品类\"},{\"id\":\"channel\",\"name\":\"渠道\"}],\"rules\":[{\"module\"\
+          :\"S1\",\"module_name\":\"产品结构\",\"rule_id\":\"R3\",\"rule_name\":\"营收集中度\"\
+          ,\"display_name\":\"R3｜营收集中度\",\"threshold\":\"Top1品类首单营收占比 > 0.50\",\"\
+          evaluation_count\":3,\"hit_count\":0,\"evaluations\":[{\"hit\":false,\"\
+          dimension\":{\"type\":\"all_categories\",\"name\":\"__ALL__\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-08\"},\"metrics\":{\"top1_revenue\"\
+          :25426600.79,\"total_revenue\":79966073.25999999,\"top1_share\":0.3179673548221943},\"\
+          evidence\":[\"Top1品类 太极\",\"Top1营收 25426600.79\",\"全品类营收 79966073.26\",\"\
+          Top1占比 0.317967\"]},{\"hit\":false,\"dimension\":{\"type\":\"all_categories\"\
+          ,\"name\":\"__ALL__\"},\"period\":{\"start\":\"2025-09\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"top1_revenue\":19994095.94,\"total_revenue\":70307798.7,\"\
+          top1_share\":0.2843794900379949},\"evidence\":[\"Top1品类 太极\",\"Top1营收 19994095.94\"\
+          ,\"全品类营收 70307798.70\",\"Top1占比 0.284379\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"all_categories\",\"name\":\"__ALL__\"},\"period\":{\"start\"\
+          :\"2025-10\",\"end\":\"2025-10\"},\"metrics\":{\"top1_revenue\":21605221.74,\"\
+          total_revenue\":70761909.57,\"top1_share\":0.3053227629283719},\"evidence\"\
+          :[\"Top1品类 太极\",\"Top1营收 21605221.74\",\"全品类营收 70761909.57\",\"Top1占比 0.305323\"\
+          ]}]},{\"module\":\"S1\",\"module_name\":\"产品结构\",\"rule_id\":\"R4\",\"rule_name\"\
+          :\"营收过于分散\",\"display_name\":\"R4｜营收过于分散\",\"threshold\":\"Top3品类首单营收占比\
+          \ < 0.50\",\"evaluation_count\":3,\"hit_count\":0,\"evaluations\":[{\"hit\"\
+          :false,\"dimension\":{\"type\":\"all_categories\",\"name\":\"__ALL__\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-08\"},\"metrics\":{\"top3_revenue\"\
+          :53327412.64,\"total_revenue\":79966073.25999999,\"top3_share\":0.6668754693832769},\"\
+          evidence\":[\"Top3营收 53327412.64\",\"全品类营收 79966073.26\",\"Top3占比 0.666875\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"all_categories\",\"name\":\"\
+          __ALL__\"},\"period\":{\"start\":\"2025-09\",\"end\":\"2025-09\"},\"metrics\"\
+          :{\"top3_revenue\":44482168.150000006,\"total_revenue\":70307798.7,\"top3_share\"\
+          :0.6326775830346115},\"evidence\":[\"Top3营收 44482168.15\",\"全品类营收 70307798.70\"\
+          ,\"Top3占比 0.632678\"]},{\"hit\":false,\"dimension\":{\"type\":\"all_categories\"\
+          ,\"name\":\"__ALL__\"},\"period\":{\"start\":\"2025-10\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"top3_revenue\":42048709.739999995,\"total_revenue\":70761909.57,\"\
+          top3_share\":0.5942280245900379},\"evidence\":[\"Top3营收 42048709.74\",\"\
+          全品类营收 70761909.57\",\"Top3占比 0.594228\"]}]},{\"module\":\"S1\",\"module_name\"\
+          :\"产品结构\",\"rule_id\":\"R5\",\"rule_name\":\"核心品类下行趋势\",\"display_name\"\
+          :\"R5｜核心品类下行趋势\",\"threshold\":\"连续3个完整月下降\",\"evaluation_count\":26,\"\
+          hit_count\":10,\"evaluations\":[{\"hit\":true,\"dimension\":{\"type\":\"\
+          category\",\"name\":\"东方养正瑜伽\"},\"period\":{\"start\":\"2025-08\",\"end\"\
+          :\"2025-10\"},\"metrics\":{\"start_revenue\":829025.98,\"previous_revenue\"\
+          :684072.33,\"current_revenue\":679751.19},\"evidence\":[\"2025-08 首单营收 829025.98\"\
+          ,\"2025-09 首单营收 684072.33\",\"2025-10 首单营收 679751.19\"]},{\"hit\":false,\"\
+          dimension\":{\"type\":\"category\",\"name\":\"中医变美\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":824498.3,\"\
+          previous_revenue\":1467461.03,\"current_revenue\":2572659.52},\"evidence\"\
+          :[\"2025-08 首单营收 824498.30\",\"2025-09 首单营收 1467461.03\",\"2025-10 首单营收\
+          \ 2572659.52\"]},{\"hit\":true,\"dimension\":{\"type\":\"category\",\"name\"\
+          :\"云帆太极\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\"\
+          :{\"start_revenue\":89802.5,\"previous_revenue\":53075.0,\"current_revenue\"\
+          :14963.6},\"evidence\":[\"2025-08 首单营收 89802.50\",\"2025-09 首单营收 53075.00\"\
+          ,\"2025-10 首单营收 14963.60\"]},{\"hit\":true,\"dimension\":{\"type\":\"category\"\
+          ,\"name\":\"五禽戏\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_revenue\":78271.4,\"previous_revenue\":10344.6,\"\
+          current_revenue\":8122.56},\"evidence\":[\"2025-08 首单营收 78271.40\",\"2025-09\
+          \ 首单营收 10344.60\",\"2025-10 首单营收 8122.56\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"category\",\"name\":\"产研测试\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":0.21,\"previous_revenue\"\
+          :14001.81,\"current_revenue\":12.8},\"evidence\":[\"2025-08 首单营收 0.21\"\
+          ,\"2025-09 首单营收 14001.81\",\"2025-10 首单营收 12.80\"]},{\"hit\":true,\"dimension\"\
+          :{\"type\":\"category\",\"name\":\"体态\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":12800.6,\"previous_revenue\"\
+          :6905.5,\"current_revenue\":5068.0},\"evidence\":[\"2025-08 首单营收 12800.60\"\
+          ,\"2025-09 首单营收 6905.50\",\"2025-10 首单营收 5068.00\"]},{\"hit\":true,\"dimension\"\
+          :{\"type\":\"category\",\"name\":\"健康营养\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":2094601.37,\"previous_revenue\"\
+          :1766619.7,\"current_revenue\":1733990.3},\"evidence\":[\"2025-08 首单营收 2094601.37\"\
+          ,\"2025-09 首单营收 1766619.70\",\"2025-10 首单营收 1733990.30\"]},{\"hit\":false,\"\
+          dimension\":{\"type\":\"category\",\"name\":\"健康食养\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":491859.47,\"\
+          previous_revenue\":1140783.06,\"current_revenue\":2493965.55},\"evidence\"\
+          :[\"2025-08 首单营收 491859.47\",\"2025-09 首单营收 1140783.06\",\"2025-10 首单营收\
+          \ 2493965.55\"]},{\"hit\":false,\"dimension\":{\"type\":\"category\",\"\
+          name\":\"古法居家养生\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_revenue\":9059.2,\"previous_revenue\":10297.15,\"\
+          current_revenue\":2210.0},\"evidence\":[\"2025-08 首单营收 9059.20\",\"2025-09\
+          \ 首单营收 10297.15\",\"2025-10 首单营收 2210.00\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"category\",\"name\":\"君合太极\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":0.0,\"previous_revenue\"\
+          :39937.0,\"current_revenue\":168016.01},\"evidence\":[\"2025-08 首单营收 0.00\"\
+          ,\"2025-09 首单营收 39937.00\",\"2025-10 首单营收 168016.01\"]},{\"hit\":true,\"\
+          dimension\":{\"type\":\"category\",\"name\":\"唱歌\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":15709396.16,\"\
+          previous_revenue\":14888610.23,\"current_revenue\":13606608.91},\"evidence\"\
+          :[\"2025-08 首单营收 15709396.16\",\"2025-09 首单营收 14888610.23\",\"2025-10 首单营收\
+          \ 13606608.91\"]},{\"hit\":false,\"dimension\":{\"type\":\"category\",\"\
+          name\":\"太极\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_revenue\":25426600.79,\"previous_revenue\":19994095.94,\"\
+          current_revenue\":21605221.74},\"evidence\":[\"2025-08 首单营收 25426600.79\"\
+          ,\"2025-09 首单营收 19994095.94\",\"2025-10 首单营收 21605221.74\"]},{\"hit\":false,\"\
+          dimension\":{\"type\":\"category\",\"name\":\"影像乐园\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":14581.0,\"\
+          previous_revenue\":16292.0,\"current_revenue\":18875.0},\"evidence\":[\"\
+          2025-08 首单营收 14581.00\",\"2025-09 首单营收 16292.00\",\"2025-10 首单营收 18875.00\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"category\",\"name\":\"手机摄影\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_revenue\":3905422.15,\"previous_revenue\":3249366.05,\"current_revenue\"\
+          :3895853.75},\"evidence\":[\"2025-08 首单营收 3905422.15\",\"2025-09 首单营收 3249366.05\"\
+          ,\"2025-10 首单营收 3895853.75\"]},{\"hit\":false,\"dimension\":{\"type\":\"\
+          category\",\"name\":\"普拉提\"},\"period\":{\"start\":\"2025-08\",\"end\":\"\
+          2025-10\"},\"metrics\":{\"start_revenue\":7199957.12,\"previous_revenue\"\
+          :5347537.8,\"current_revenue\":6651951.57},\"evidence\":[\"2025-08 首单营收\
+          \ 7199957.12\",\"2025-09 首单营收 5347537.80\",\"2025-10 首单营收 6651951.57\"]},{\"\
+          hit\":true,\"dimension\":{\"type\":\"category\",\"name\":\"气血调理\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\"\
+          :2734224.97,\"previous_revenue\":2543994.77,\"current_revenue\":2348690.0},\"\
+          evidence\":[\"2025-08 首单营收 2734224.97\",\"2025-09 首单营收 2543994.77\",\"2025-10\
+          \ 首单营收 2348690.00\"]},{\"hit\":true,\"dimension\":{\"type\":\"category\"\
+          ,\"name\":\"瑜伽\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_revenue\":12191415.69,\"previous_revenue\":9599461.98,\"\
+          current_revenue\":6836879.09},\"evidence\":[\"2025-08 首单营收 12191415.69\"\
+          ,\"2025-09 首单营收 9599461.98\",\"2025-10 首单营收 6836879.09\"]},{\"hit\":false,\"\
+          dimension\":{\"type\":\"category\",\"name\":\"相机摄影\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":950868.74,\"\
+          previous_revenue\":711355.8,\"current_revenue\":855878.46},\"evidence\"\
+          :[\"2025-08 首单营收 950868.74\",\"2025-09 首单营收 711355.80\",\"2025-10 首单营收 855878.46\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"category\",\"name\":\"睡眠调理\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_revenue\":2397012.46,\"previous_revenue\":2737407.83,\"current_revenue\"\
+          :2396362.97},\"evidence\":[\"2025-08 首单营收 2397012.46\",\"2025-09 首单营收 2737407.83\"\
+          ,\"2025-10 首单营收 2396362.97\"]},{\"hit\":false,\"dimension\":{\"type\":\"\
+          category\",\"name\":\"短视频\"},\"period\":{\"start\":\"2025-08\",\"end\":\"\
+          2025-10\"},\"metrics\":{\"start_revenue\":4731849.65,\"previous_revenue\"\
+          :5638805.02,\"current_revenue\":4374878.94},\"evidence\":[\"2025-08 首单营收\
+          \ 4731849.65\",\"2025-09 首单营收 5638805.02\",\"2025-10 首单营收 4374878.94\"]},{\"\
+          hit\":false,\"dimension\":{\"type\":\"category\",\"name\":\"私域\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\"\
+          :0.0,\"previous_revenue\":0.0,\"current_revenue\":0.0},\"evidence\":[\"\
+          2025-08 首单营收 0.00\",\"2025-09 首单营收 0.00\",\"2025-10 首单营收 0.00\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"category\",\"name\":\"舞蹈\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\"\
+          :44121.5,\"previous_revenue\":56908.3,\"current_revenue\":44751.7},\"evidence\"\
+          :[\"2025-08 首单营收 44121.50\",\"2025-09 首单营收 56908.30\",\"2025-10 首单营收 44751.70\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"category\",\"name\":\"茶道\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\"\
+          :30214.0,\"previous_revenue\":55096.6,\"current_revenue\":12504.0},\"evidence\"\
+          :[\"2025-08 首单营收 30214.00\",\"2025-09 首单营收 55096.60\",\"2025-10 首单营收 12504.00\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"category\",\"name\":\"逆龄女神瑜伽\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_revenue\":96989.6,\"previous_revenue\":63342.0,\"current_revenue\"\
+          :61294.3},\"evidence\":[\"2025-08 首单营收 96989.60\",\"2025-09 首单营收 63342.00\"\
+          ,\"2025-10 首单营收 61294.30\"]},{\"hit\":false,\"dimension\":{\"type\":\"category\"\
+          ,\"name\":\"面部瑜伽驻颜\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_revenue\":91093.9,\"previous_revenue\":204889.5,\"\
+          current_revenue\":252359.1},\"evidence\":[\"2025-08 首单营收 91093.90\",\"2025-09\
+          \ 首单营收 204889.50\",\"2025-10 首单营收 252359.10\"]},{\"hit\":true,\"dimension\"\
+          :{\"type\":\"category\",\"name\":\"风光摄影\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_revenue\":8902.5,\"previous_revenue\"\
+          :887.3,\"current_revenue\":1.9},\"evidence\":[\"2025-08 首单营收 8902.50\",\"\
+          2025-09 首单营收 887.30\",\"2025-10 首单营收 1.90\"]}]},{\"module\":\"S1\",\"module_name\"\
+          :\"产品结构\",\"rule_id\":\"R8\",\"rule_name\":\"涨跌两极分化\",\"display_name\":\"\
+          R8｜涨跌两极分化\",\"threshold\":\"同时存在环比 >30% 与 <-30%\",\"evaluation_count\":2,\"\
+          hit_count\":2,\"evaluations\":[{\"hit\":true,\"dimension\":{\"type\":\"\
+          all_categories\",\"name\":\"__ALL__\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"max_growth_rate\":66674.28571428572,\"\
+          min_growth_rate\":-0.9999562363238512,\"growth_spread\":66675.28567052205},\"\
+          evidence\":[\"最大环比品类 产研测试，增速 66674.285714\",\"最小环比品类 体质食养，增速 -0.999956\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"all_categories\",\"name\":\"\
+          __ALL__\"},\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\"\
+          :{\"max_growth_rate\":70.41345427059713,\"min_growth_rate\":-1.0,\"growth_spread\"\
+          :71.41345427059713},\"evidence\":[\"最大环比品类 摄影美学，增速 70.413454\",\"最小环比品类\
+          \ 钩针编织美学，增速 -1.000000\"]}]},{\"module\":\"S1\",\"module_name\":\"产品结构\"\
+          ,\"rule_id\":\"R9\",\"rule_name\":\"系统性下跌\",\"display_name\":\"R9｜系统性下跌\"\
+          ,\"threshold\":\"> 3个品类连续3个完整月下降\",\"evaluation_count\":1,\"hit_count\"\
+          :1,\"evaluations\":[{\"hit\":true,\"dimension\":{\"type\":\"all_categories\"\
+          ,\"name\":\"__ALL__\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"declining_category_count\":10},\"evidence\":[\"满足R5连续下降条件的品类数\
+          \ 10\"]}]},{\"module\":\"S2\",\"module_name\":\"客户结构\",\"rule_id\":\"R37\"\
+          ,\"rule_name\":\"CAC环比跳升\",\"display_name\":\"R37｜CAC环比跳升\",\"threshold\"\
+          :\"> 0.05（5个百分点）\",\"evaluation_count\":154,\"hit_count\":62,\"evaluations\"\
+          :[{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"360\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.44130965,\"previous_cac_rate\":2.13147656,\"change_percentage_points\"\
+          :-0.6901669099999999},\"evidence\":[\"2025-08 CAC率 2.131477\",\"2025-09\
+          \ CAC率 1.441310\",\"环比变化 -0.690167\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"360\"},\"period\":{\"start\":\"2025-09\",\"end\"\
+          :\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.64607518,\"previous_cac_rate\"\
+          :1.44130965,\"change_percentage_points\":0.20476552999999997},\"evidence\"\
+          :[\"2025-09 CAC率 1.441310\",\"2025-10 CAC率 1.646075\",\"环比变化 0.204766\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"CX老师-SY-其他异业\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":0.0,\"previous_cac_rate\":0.0,\"change_percentage_points\"\
+          :0.0},\"evidence\":[\"2025-08 CAC率 0.000000\",\"2025-09 CAC率 0.000000\"\
+          ,\"环比变化 0.000000\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"Facebook\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":24.82998958,\"previous_cac_rate\":3.65414611,\"\
+          change_percentage_points\":21.17584347},\"evidence\":[\"2025-08 CAC率 3.654146\"\
+          ,\"2025-09 CAC率 24.829990\",\"环比变化 21.175843\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"GDT\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.58973529,\"previous_cac_rate\"\
+          :1.71694497,\"change_percentage_points\":-0.12720968},\"evidence\":[\"2025-08\
+          \ CAC率 1.716945\",\"2025-09 CAC率 1.589735\",\"环比变化 -0.127210\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"GDT\"},\"period\":{\"\
+          start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.72526651,\"previous_cac_rate\":1.58973529,\"change_percentage_points\"\
+          :0.13553122000000006},\"evidence\":[\"2025-09 CAC率 1.589735\",\"2025-10\
+          \ CAC率 1.725267\",\"环比变化 0.135531\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"HW-聚力\"},\"period\":{\"start\":\"2025-08\",\"end\"\
+          :\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.14766489,\"previous_cac_rate\"\
+          :0.94985227,\"change_percentage_points\":-0.8021873800000001},\"evidence\"\
+          :[\"2025-08 CAC率 0.949852\",\"2025-09 CAC率 0.147665\",\"环比变化 -0.802187\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"HW-聚力\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.90195455,\"previous_cac_rate\":0.14766489,\"change_percentage_points\"\
+          :1.75428966},\"evidence\":[\"2025-09 CAC率 0.147665\",\"2025-10 CAC率 1.901955\"\
+          ,\"环比变化 1.754290\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"LZF老师-SY-其他异业\"},\"period\":{\"start\":\"2025-08\",\"end\":\"\
+          2025-09\"},\"metrics\":{\"current_cac_rate\":0.36587367,\"previous_cac_rate\"\
+          :0.4840724,\"change_percentage_points\":-0.11819873000000003},\"evidence\"\
+          :[\"2025-08 CAC率 0.484072\",\"2025-09 CAC率 0.365874\",\"环比变化 -0.118199\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"LZF老师-SY-其他异业\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.67182983,\"previous_cac_rate\":0.36587367,\"change_percentage_points\"\
+          :0.30595616},\"evidence\":[\"2025-09 CAC率 0.365874\",\"2025-10 CAC率 0.671830\"\
+          ,\"环比变化 0.305956\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"NG快鸟-XCX-垂直应用\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":1.93546192,\"previous_cac_rate\":1.55913951,\"\
+          change_percentage_points\":0.37632241},\"evidence\":[\"2025-08 CAC率 1.559140\"\
+          ,\"2025-09 CAC率 1.935462\",\"环比变化 0.376322\"]},{\"hit\":true,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"PQ-P-垂直应用\"},\"period\":{\"start\":\"\
+          2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.23061757,\"\
+          previous_cac_rate\":1.10425974,\"change_percentage_points\":0.1263578299999999},\"\
+          evidence\":[\"2025-08 CAC率 1.104260\",\"2025-09 CAC率 1.230618\",\"环比变化 0.126358\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"PQ-P-垂直应用\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.09286976,\"previous_cac_rate\":1.23061757,\"change_percentage_points\"\
+          :-0.13774781000000003},\"evidence\":[\"2025-09 CAC率 1.230618\",\"2025-10\
+          \ CAC率 1.092870\",\"环比变化 -0.137748\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"PQ卡锐-P-垂直应用\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":2.0783197,\"previous_cac_rate\"\
+          :1.379701,\"change_percentage_points\":0.6986187000000001},\"evidence\"\
+          :[\"2025-08 CAC率 1.379701\",\"2025-09 CAC率 2.078320\",\"环比变化 0.698619\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"PQ卡锐-P-垂直应用\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.48972098,\"previous_cac_rate\":2.0783197,\"change_percentage_points\"\
+          :-0.5885987200000002},\"evidence\":[\"2025-09 CAC率 2.078320\",\"2025-10\
+          \ CAC率 1.489721\",\"环比变化 -0.588599\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"PQ龙特星-P-垂直应用\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.31520062,\"previous_cac_rate\"\
+          :1.03051239,\"change_percentage_points\":0.28468823},\"evidence\":[\"2025-08\
+          \ CAC率 1.030512\",\"2025-09 CAC率 1.315201\",\"环比变化 0.284688\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"PQ龙特星-P-垂直应用\"},\"\
+          period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.16259234,\"previous_cac_rate\":1.31520062,\"change_percentage_points\"\
+          :-0.15260827999999993},\"evidence\":[\"2025-09 CAC率 1.315201\",\"2025-10\
+          \ CAC率 1.162592\",\"环比变化 -0.152608\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"PQ龙特星辰-P-垂直应用\"},\"period\":{\"start\":\"\
+          2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":2.17384529,\"\
+          previous_cac_rate\":2.825,\"change_percentage_points\":-0.6511547100000001},\"\
+          evidence\":[\"2025-08 CAC率 2.825000\",\"2025-09 CAC率 2.173845\",\"环比变化 -0.651155\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"WB-武汉优嘉\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":1.36120313,\"previous_cac_rate\":4.35137872,\"change_percentage_points\"\
+          :-2.9901755899999998},\"evidence\":[\"2025-08 CAC率 4.351379\",\"2025-09\
+          \ CAC率 1.361203\",\"环比变化 -2.990176\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"WB-武汉优嘉\"},\"period\":{\"start\":\"2025-09\",\"\
+          end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":2.12682927,\"previous_cac_rate\"\
+          :1.36120313,\"change_percentage_points\":0.76562614},\"evidence\":[\"2025-09\
+          \ CAC率 1.361203\",\"2025-10 CAC率 2.126829\",\"环比变化 0.765626\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"XM-亚德\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.33379293,\"previous_cac_rate\":2.41047504,\"change_percentage_points\"\
+          :-1.0766821100000001},\"evidence\":[\"2025-08 CAC率 2.410475\",\"2025-09\
+          \ CAC率 1.333793\",\"环比变化 -1.076682\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"XM-亚德\"},\"period\":{\"start\":\"2025-09\",\"end\"\
+          :\"2025-10\"},\"metrics\":{\"current_cac_rate\":2.24656023,\"previous_cac_rate\"\
+          :1.33379293,\"change_percentage_points\":0.9127673000000001},\"evidence\"\
+          :[\"2025-09 CAC率 1.333793\",\"2025-10 CAC率 2.246560\",\"环比变化 0.912767\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"vivo\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":1.80837338,\"previous_cac_rate\":2.85378828,\"change_percentage_points\"\
+          :-1.0454149},\"evidence\":[\"2025-08 CAC率 2.853788\",\"2025-09 CAC率 1.808373\"\
+          ,\"环比变化 -1.045415\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"vivo\"},\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"current_cac_rate\":4.11143779,\"previous_cac_rate\":1.80837338,\"\
+          change_percentage_points\":2.30306441},\"evidence\":[\"2025-09 CAC率 1.808373\"\
+          ,\"2025-10 CAC率 4.111438\",\"环比变化 2.303064\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"三金手机摄影教学-sp-短直视频\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.83938495,\"\
+          previous_cac_rate\":0.80443064,\"change_percentage_points\":0.034954310000000044},\"\
+          evidence\":[\"2025-08 CAC率 0.804431\",\"2025-09 CAC率 0.839385\",\"环比变化 0.034954\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"三金手机摄影教学-sp-短直视频\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.8582183,\"previous_cac_rate\":0.83938495,\"change_percentage_points\"\
+          :0.01883334999999997},\"evidence\":[\"2025-09 CAC率 0.839385\",\"2025-10\
+          \ CAC率 0.858218\",\"环比变化 0.018833\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"东升-摄影粉-DY-直播\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.1428672,\"previous_cac_rate\"\
+          :0.99990434,\"change_percentage_points\":0.14296286000000002},\"evidence\"\
+          :[\"2025-08 CAC率 0.999904\",\"2025-09 CAC率 1.142867\",\"环比变化 0.142963\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"东升-摄影粉-DY-直播\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.97535685,\"previous_cac_rate\":1.1428672,\"change_percentage_points\"\
+          :-0.16751034999999992},\"evidence\":[\"2025-09 CAC率 1.142867\",\"2025-10\
+          \ CAC率 0.975357\",\"环比变化 -0.167510\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"东莞聚力-APP-垂直应用\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.78287105,\"previous_cac_rate\"\
+          :1.6701022,\"change_percentage_points\":0.11276884999999992},\"evidence\"\
+          :[\"2025-08 CAC率 1.670102\",\"2025-09 CAC率 1.782871\",\"环比变化 0.112769\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"东莞聚力-APP-垂直应用\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.98552635,\"previous_cac_rate\":1.78287105,\"change_percentage_points\"\
+          :0.20265529999999998},\"evidence\":[\"2025-09 CAC率 1.782871\",\"2025-10\
+          \ CAC率 1.985526\",\"环比变化 0.202655\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"乐推YK-APP-垂直应用\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.54471216,\"previous_cac_rate\"\
+          :0.62724057,\"change_percentage_points\":0.91747159},\"evidence\":[\"2025-08\
+          \ CAC率 0.627241\",\"2025-09 CAC率 1.544712\",\"环比变化 0.917472\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"乐推YK-APP-垂直应用\"},\"\
+          period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :2.53263761,\"previous_cac_rate\":1.54471216,\"change_percentage_points\"\
+          :0.9879254500000001},\"evidence\":[\"2025-09 CAC率 1.544712\",\"2025-10 CAC率\
+          \ 2.532638\",\"环比变化 0.987925\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"互动吧-G-公众号\"},\"period\":{\"start\":\"2025-08\",\"\
+          end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.45748967,\"previous_cac_rate\"\
+          :0.50108922,\"change_percentage_points\":-0.04359954999999999},\"evidence\"\
+          :[\"2025-08 CAC率 0.501089\",\"2025-09 CAC率 0.457490\",\"环比变化 -0.043600\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"互动吧-G-公众号\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.48017598,\"previous_cac_rate\":0.45748967,\"change_percentage_points\"\
+          :0.022686309999999987},\"evidence\":[\"2025-09 CAC率 0.457490\",\"2025-10\
+          \ CAC率 0.480176\",\"环比变化 0.022686\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"互选平台-G-公众号\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":0.43099254,\"previous_cac_rate\"\
+          :0.0,\"change_percentage_points\":0.43099254},\"evidence\":[\"2025-09 CAC率\
+          \ 0.000000\",\"2025-10 CAC率 0.430993\",\"环比变化 0.430993\"]},{\"hit\":false,\"\
+          dimension\":{\"type\":\"channel\",\"name\":\"今日头条\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.41220807,\"\
+          previous_cac_rate\":1.55483712,\"change_percentage_points\":-0.14262905000000003},\"\
+          evidence\":[\"2025-08 CAC率 1.554837\",\"2025-09 CAC率 1.412208\",\"环比变化 -0.142629\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"今日头条\"},\"\
+          period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.53004097,\"previous_cac_rate\":1.41220807,\"change_percentage_points\"\
+          :0.11783290000000002},\"evidence\":[\"2025-09 CAC率 1.412208\",\"2025-10\
+          \ CAC率 1.530041\",\"环比变化 0.117833\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"优量汇\"},\"period\":{\"start\":\"2025-08\",\"end\"\
+          :\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.88285964,\"previous_cac_rate\"\
+          :1.78319137,\"change_percentage_points\":0.09966827},\"evidence\":[\"2025-08\
+          \ CAC率 1.783191\",\"2025-09 CAC率 1.882860\",\"环比变化 0.099668\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"优量汇\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.75539901,\"previous_cac_rate\":1.88285964,\"change_percentage_points\"\
+          :-0.12746062999999985},\"evidence\":[\"2025-09 CAC率 1.882860\",\"2025-10\
+          \ CAC率 1.755399\",\"环比变化 -0.127461\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"公众号\"},\"period\":{\"start\":\"2025-08\",\"end\"\
+          :\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.55033939,\"previous_cac_rate\"\
+          :1.45445579,\"change_percentage_points\":0.09588360000000007},\"evidence\"\
+          :[\"2025-08 CAC率 1.454456\",\"2025-09 CAC率 1.550339\",\"环比变化 0.095884\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"公众号\"},\"\
+          period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.45700903,\"previous_cac_rate\":1.55033939,\"change_percentage_points\"\
+          :-0.09333035999999995},\"evidence\":[\"2025-09 CAC率 1.550339\",\"2025-10\
+          \ CAC率 1.457009\",\"环比变化 -0.093330\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"北海-摄影粉-DY-直播\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.15353224,\"previous_cac_rate\"\
+          :1.13130043,\"change_percentage_points\":0.022231810000000074},\"evidence\"\
+          :[\"2025-08 CAC率 1.131300\",\"2025-09 CAC率 1.153532\",\"环比变化 0.022232\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"北海-摄影粉-DY-直播\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.10847418,\"previous_cac_rate\":1.15353224,\"change_percentage_points\"\
+          :-0.04505806000000012},\"evidence\":[\"2025-09 CAC率 1.153532\",\"2025-10\
+          \ CAC率 1.108474\",\"环比变化 -0.045058\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"千川直播\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":3.79370994,\"previous_cac_rate\"\
+          :4.8211271,\"change_percentage_points\":-1.0274171600000002},\"evidence\"\
+          :[\"2025-08 CAC率 4.821127\",\"2025-09 CAC率 3.793710\",\"环比变化 -1.027417\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"千川直播\"},\"\
+          period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :4.00696755,\"previous_cac_rate\":3.79370994,\"change_percentage_points\"\
+          :0.21325760999999988},\"evidence\":[\"2025-09 CAC率 3.793710\",\"2025-10\
+          \ CAC率 4.006968\",\"环比变化 0.213258\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"华为-东莞聚力\"},\"period\":{\"start\":\"2025-08\",\"\
+          end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.96901738,\"previous_cac_rate\"\
+          :1.9842549,\"change_percentage_points\":-1.01523752},\"evidence\":[\"2025-08\
+          \ CAC率 1.984255\",\"2025-09 CAC率 0.969017\",\"环比变化 -1.015238\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"华为-东莞聚力\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :0.63945915,\"previous_cac_rate\":0.96901738,\"change_percentage_points\"\
+          :-0.32955823000000006},\"evidence\":[\"2025-09 CAC率 0.969017\",\"2025-10\
+          \ CAC率 0.639459\",\"环比变化 -0.329558\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"华为亚德\"},\"period\":{\"start\":\"2025-08\",\"end\"\
+          :\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.33426585,\"previous_cac_rate\"\
+          :1.06252348,\"change_percentage_points\":0.2717423699999999},\"evidence\"\
+          :[\"2025-08 CAC率 1.062523\",\"2025-09 CAC率 1.334266\",\"环比变化 0.271742\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"华为亚德\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.31672707,\"previous_cac_rate\":1.33426585,\"change_percentage_points\"\
+          :-0.017538779999999976},\"evidence\":[\"2025-09 CAC率 1.334266\",\"2025-10\
+          \ CAC率 1.316727\",\"环比变化 -0.017539\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"南昌微动-G-公众号\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.44959755,\"previous_cac_rate\"\
+          :1.22009419,\"change_percentage_points\":0.22950336000000005},\"evidence\"\
+          :[\"2025-08 CAC率 1.220094\",\"2025-09 CAC率 1.449598\",\"环比变化 0.229503\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"南昌微动-G-公众号\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.25371855,\"previous_cac_rate\":1.44959755,\"change_percentage_points\"\
+          :-0.19587899999999991},\"evidence\":[\"2025-09 CAC率 1.449598\",\"2025-10\
+          \ CAC率 1.253719\",\"环比变化 -0.195879\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"南昌高森-G-公众号\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.58587424,\"previous_cac_rate\"\
+          :2.21145395,\"change_percentage_points\":-0.62557971},\"evidence\":[\"2025-08\
+          \ CAC率 2.211454\",\"2025-09 CAC率 1.585874\",\"环比变化 -0.625580\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"南昌高森-G-公众号\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.68777441,\"previous_cac_rate\":1.58587424,\"change_percentage_points\"\
+          :0.10190016999999996},\"evidence\":[\"2025-09 CAC率 1.585874\",\"2025-10\
+          \ CAC率 1.687774\",\"环比变化 0.101900\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"南昌高森-G-视频号\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":2.26335909,\"previous_cac_rate\"\
+          :1.62166508,\"change_percentage_points\":0.6416940099999997},\"evidence\"\
+          :[\"2025-08 CAC率 1.621665\",\"2025-09 CAC率 2.263359\",\"环比变化 0.641694\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"南昌高森-G-视频号\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":3.15739003,\"previous_cac_rate\":2.26335909,\"change_percentage_points\"\
+          :0.8940309400000004},\"evidence\":[\"2025-09 CAC率 2.263359\",\"2025-10 CAC率\
+          \ 3.157390\",\"环比变化 0.894031\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"合肥哲礼-G-公众号\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.02750918,\"previous_cac_rate\"\
+          :1.47071429,\"change_percentage_points\":-0.44320511000000007},\"evidence\"\
+          :[\"2025-08 CAC率 1.470714\",\"2025-09 CAC率 1.027509\",\"环比变化 -0.443205\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"合肥哲礼-G-公众号\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.05944703,\"previous_cac_rate\":1.02750918,\"change_percentage_points\"\
+          :0.031937850000000045},\"evidence\":[\"2025-09 CAC率 1.027509\",\"2025-10\
+          \ CAC率 1.059447\",\"环比变化 0.031938\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"合肥哲礼-G-视频号\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.27760637,\"previous_cac_rate\"\
+          :3.26758685,\"change_percentage_points\":-1.9899804799999998},\"evidence\"\
+          :[\"2025-09 CAC率 3.267587\",\"2025-10 CAC率 1.277606\",\"环比变化 -1.989980\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"喜马拉雅\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.29426493,\"previous_cac_rate\":0.99979727,\"change_percentage_points\"\
+          :0.29446766},\"evidence\":[\"2025-08 CAC率 0.999797\",\"2025-09 CAC率 1.294265\"\
+          ,\"环比变化 0.294468\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"喜马拉雅\"},\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"current_cac_rate\":0.99691914,\"previous_cac_rate\":1.29426493,\"\
+          change_percentage_points\":-0.29734578999999994},\"evidence\":[\"2025-09\
+          \ CAC率 1.294265\",\"2025-10 CAC率 0.996919\",\"环比变化 -0.297346\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"喜鹊-XCX-垂直应用\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.48006588,\"previous_cac_rate\":1.18794091,\"change_percentage_points\"\
+          :0.29212496999999993},\"evidence\":[\"2025-08 CAC率 1.187941\",\"2025-09\
+          \ CAC率 1.480066\",\"环比变化 0.292125\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"喜鹊-XCX-垂直应用\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.67779238,\"previous_cac_rate\"\
+          :1.48006588,\"change_percentage_points\":0.19772650000000014},\"evidence\"\
+          :[\"2025-09 CAC率 1.480066\",\"2025-10 CAC率 1.677792\",\"环比变化 0.197727\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"存量MVP\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":0.02558511,\"previous_cac_rate\":0.3304894,\"change_percentage_points\"\
+          :-0.30490428999999997},\"evidence\":[\"2025-08 CAC率 0.330489\",\"2025-09\
+          \ CAC率 0.025585\",\"环比变化 -0.304904\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"安徽煜旻-G-公众号\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":2.36205788,\"previous_cac_rate\"\
+          :1.52829349,\"change_percentage_points\":0.83376439},\"evidence\":[\"2025-08\
+          \ CAC率 1.528293\",\"2025-09 CAC率 2.362058\",\"环比变化 0.833764\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"安徽煜旻-G-公众号\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.44563696,\"previous_cac_rate\":2.36205788,\"change_percentage_points\"\
+          :-0.91642092},\"evidence\":[\"2025-09 CAC率 2.362058\",\"2025-10 CAC率 1.445637\"\
+          ,\"环比变化 -0.916421\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"安徽煜旻-G-视频号\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":0.89251449,\"previous_cac_rate\":0.63167611,\"\
+          change_percentage_points\":0.26083838000000004},\"evidence\":[\"2025-08\
+          \ CAC率 0.631676\",\"2025-09 CAC率 0.892514\",\"环比变化 0.260838\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"安徽煜旻-G-视频号\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :0.62572494,\"previous_cac_rate\":0.89251449,\"change_percentage_points\"\
+          :-0.26678955000000004},\"evidence\":[\"2025-09 CAC率 0.892514\",\"2025-10\
+          \ CAC率 0.625725\",\"环比变化 -0.266790\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"小徐老师手机摄影-摄影粉-DY-直播\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.9575959,\"\
+          previous_cac_rate\":0.90934663,\"change_percentage_points\":0.04824927000000001},\"\
+          evidence\":[\"2025-08 CAC率 0.909347\",\"2025-09 CAC率 0.957596\",\"环比变化 0.048249\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"小徐老师手机摄影-摄影粉-DY-直播\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.99263775,\"previous_cac_rate\":0.9575959,\"change_percentage_points\"\
+          :0.03504184999999993},\"evidence\":[\"2025-09 CAC率 0.957596\",\"2025-10\
+          \ CAC率 0.992638\",\"环比变化 0.035042\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"小程序\"},\"period\":{\"start\":\"2025-08\",\"end\"\
+          :\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.89211759,\"previous_cac_rate\"\
+          :1.79237821,\"change_percentage_points\":0.09973937999999993},\"evidence\"\
+          :[\"2025-08 CAC率 1.792378\",\"2025-09 CAC率 1.892118\",\"环比变化 0.099739\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"小程序\"},\"\
+          period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.58414158,\"previous_cac_rate\":1.89211759,\"change_percentage_points\"\
+          :-0.30797600999999997},\"evidence\":[\"2025-09 CAC率 1.892118\",\"2025-10\
+          \ CAC率 1.584142\",\"环比变化 -0.307976\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"小红书\"},\"period\":{\"start\":\"2025-08\",\"end\"\
+          :\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.64844721,\"previous_cac_rate\"\
+          :1.5934583,\"change_percentage_points\":0.05498891000000006},\"evidence\"\
+          :[\"2025-08 CAC率 1.593458\",\"2025-09 CAC率 1.648447\",\"环比变化 0.054989\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"小红书\"},\"\
+          period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.58518563,\"previous_cac_rate\":1.64844721,\"change_percentage_points\"\
+          :-0.06326158000000004},\"evidence\":[\"2025-09 CAC率 1.648447\",\"2025-10\
+          \ CAC率 1.585186\",\"环比变化 -0.063262\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"广州开域-G-视频号\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":6.08588235,\"previous_cac_rate\"\
+          :1.81819141,\"change_percentage_points\":4.2676909400000005},\"evidence\"\
+          :[\"2025-08 CAC率 1.818191\",\"2025-09 CAC率 6.085882\",\"环比变化 4.267691\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"微信\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.57165751,\"previous_cac_rate\":1.71258317,\"change_percentage_points\"\
+          :-0.14092565999999995},\"evidence\":[\"2025-08 CAC率 1.712583\",\"2025-09\
+          \ CAC率 1.571658\",\"环比变化 -0.140926\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"微信\"},\"period\":{\"start\":\"2025-09\",\"\
+          end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.46828764,\"previous_cac_rate\"\
+          :1.57165751,\"change_percentage_points\":-0.10336987000000009},\"evidence\"\
+          :[\"2025-09 CAC率 1.571658\",\"2025-10 CAC率 1.468288\",\"环比变化 -0.103370\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"微博\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :2.08734688,\"previous_cac_rate\":1.79114703,\"change_percentage_points\"\
+          :0.29619985000000004},\"evidence\":[\"2025-08 CAC率 1.791147\",\"2025-09\
+          \ CAC率 2.087347\",\"环比变化 0.296200\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"微博\"},\"period\":{\"start\":\"2025-09\",\"end\"\
+          :\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.81360839,\"previous_cac_rate\"\
+          :2.08734688,\"change_percentage_points\":-0.27373849000000017},\"evidence\"\
+          :[\"2025-09 CAC率 2.087347\",\"2025-10 CAC率 1.813608\",\"环比变化 -0.273738\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"快手\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.96905292,\"previous_cac_rate\":1.80724033,\"change_percentage_points\"\
+          :0.16181259000000003},\"evidence\":[\"2025-08 CAC率 1.807240\",\"2025-09\
+          \ CAC率 1.969053\",\"环比变化 0.161813\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"快手\"},\"period\":{\"start\":\"2025-09\",\"end\"\
+          :\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.42106074,\"previous_cac_rate\"\
+          :1.96905292,\"change_percentage_points\":-0.54799218},\"evidence\":[\"2025-09\
+          \ CAC率 1.969053\",\"2025-10 CAC率 1.421061\",\"环比变化 -0.547992\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"快手直播\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :4.25567233,\"previous_cac_rate\":1.2756435,\"change_percentage_points\"\
+          :2.98002883},\"evidence\":[\"2025-09 CAC率 1.275643\",\"2025-10 CAC率 4.255672\"\
+          ,\"环比变化 2.980029\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"快手私信\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":1.92467554,\"previous_cac_rate\":2.86453243,\"\
+          change_percentage_points\":-0.9398568900000002},\"evidence\":[\"2025-08\
+          \ CAC率 2.864532\",\"2025-09 CAC率 1.924676\",\"环比变化 -0.939857\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"快手私信\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :5.44591258,\"previous_cac_rate\":1.92467554,\"change_percentage_points\"\
+          :3.52123704},\"evidence\":[\"2025-09 CAC率 1.924676\",\"2025-10 CAC率 5.445913\"\
+          ,\"环比变化 3.521237\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"抖音\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":1.58588269,\"previous_cac_rate\":1.71244224,\"\
+          change_percentage_points\":-0.12655954999999985},\"evidence\":[\"2025-08\
+          \ CAC率 1.712442\",\"2025-09 CAC率 1.585883\",\"环比变化 -0.126560\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"抖音\"},\"period\":{\"\
+          start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.42049149,\"previous_cac_rate\":1.58588269,\"change_percentage_points\"\
+          :-0.16539119999999996},\"evidence\":[\"2025-09 CAC率 1.585883\",\"2025-10\
+          \ CAC率 1.420491\",\"环比变化 -0.165391\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"抖音-免费\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.0,\"previous_cac_rate\"\
+          :0.0,\"change_percentage_points\":0.0},\"evidence\":[\"2025-08 CAC率 0.000000\"\
+          ,\"2025-09 CAC率 0.000000\",\"环比变化 0.000000\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"抖音品专\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":0.0,\"previous_cac_rate\"\
+          :0.0,\"change_percentage_points\":0.0},\"evidence\":[\"2025-09 CAC率 0.000000\"\
+          ,\"2025-10 CAC率 0.000000\",\"环比变化 0.000000\"]},{\"hit\":true,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"抖音品牌\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":3.11140353,\"previous_cac_rate\"\
+          :2.39300273,\"change_percentage_points\":0.7184008},\"evidence\":[\"2025-08\
+          \ CAC率 2.393003\",\"2025-09 CAC率 3.111404\",\"环比变化 0.718401\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"抖音品牌\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.57966558,\"previous_cac_rate\":3.11140353,\"change_percentage_points\"\
+          :-1.5317379500000001},\"evidence\":[\"2025-09 CAC率 3.111404\",\"2025-10\
+          \ CAC率 1.579666\",\"环比变化 -1.531738\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"抖音星图轻运动-DY-短直视频\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.73316991,\"previous_cac_rate\"\
+          :1.04655626,\"change_percentage_points\":0.68661365},\"evidence\":[\"2025-08\
+          \ CAC率 1.046556\",\"2025-09 CAC率 1.733170\",\"环比变化 0.686614\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"抖音星图轻运动-DY-短直视频\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.51539091,\"previous_cac_rate\":1.73316991,\"change_percentage_points\"\
+          :-0.21777899999999994},\"evidence\":[\"2025-09 CAC率 1.733170\",\"2025-10\
+          \ CAC率 1.515391\",\"环比变化 -0.217779\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"抖音直播\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":2.40527992,\"previous_cac_rate\"\
+          :2.93536998,\"change_percentage_points\":-0.53009006},\"evidence\":[\"2025-08\
+          \ CAC率 2.935370\",\"2025-09 CAC率 2.405280\",\"环比变化 -0.530090\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"抖音直播\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :4.86032942,\"previous_cac_rate\":2.40527992,\"change_percentage_points\"\
+          :2.4550495000000003},\"evidence\":[\"2025-09 CAC率 2.405280\",\"2025-10 CAC率\
+          \ 4.860329\",\"环比变化 2.455050\"]},{\"hit\":true,\"dimension\":{\"type\":\"\
+          channel\",\"name\":\"抖音购物车\"},\"period\":{\"start\":\"2025-08\",\"end\"\
+          :\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.44444315,\"previous_cac_rate\"\
+          :1.36173489,\"change_percentage_points\":0.08270825999999998},\"evidence\"\
+          :[\"2025-08 CAC率 1.361735\",\"2025-09 CAC率 1.444443\",\"环比变化 0.082708\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"抖音购物车\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.34767962,\"previous_cac_rate\":1.44444315,\"change_percentage_points\"\
+          :-0.09676352999999982},\"evidence\":[\"2025-09 CAC率 1.444443\",\"2025-10\
+          \ CAC率 1.347680\",\"环比变化 -0.096764\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"摄影存量\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.97009786,\"previous_cac_rate\"\
+          :1.0481793,\"change_percentage_points\":-0.07808143999999995},\"evidence\"\
+          :[\"2025-08 CAC率 1.048179\",\"2025-09 CAC率 0.970098\",\"环比变化 -0.078081\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"摄影存量\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.23435234,\"previous_cac_rate\":0.97009786,\"change_percentage_points\"\
+          :-0.73574552},\"evidence\":[\"2025-09 CAC率 0.970098\",\"2025-10 CAC率 0.234352\"\
+          ,\"环比变化 -0.735746\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"摄影师路白-DY-短直视频\"},\"period\":{\"start\":\"2025-08\",\"end\":\"\
+          2025-09\"},\"metrics\":{\"current_cac_rate\":0.36205662,\"previous_cac_rate\"\
+          :0.69767958,\"change_percentage_points\":-0.33562295999999997},\"evidence\"\
+          :[\"2025-08 CAC率 0.697680\",\"2025-09 CAC率 0.362057\",\"环比变化 -0.335623\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"摄影师路白-DY-短直视频\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.73363116,\"previous_cac_rate\":0.36205662,\"change_percentage_points\"\
+          :0.37157453999999995},\"evidence\":[\"2025-09 CAC率 0.362057\",\"2025-10\
+          \ CAC率 0.733631\",\"环比变化 0.371575\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"敬泽摄影师-DY-短直视频\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.75329777,\"previous_cac_rate\"\
+          :0.99994681,\"change_percentage_points\":-0.24664903999999999},\"evidence\"\
+          :[\"2025-08 CAC率 0.999947\",\"2025-09 CAC率 0.753298\",\"环比变化 -0.246649\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"敬泽摄影师-DY-短直视频\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.81750843,\"previous_cac_rate\":0.75329777,\"change_percentage_points\"\
+          :0.06421065999999997},\"evidence\":[\"2025-09 CAC率 0.753298\",\"2025-10\
+          \ CAC率 0.817508\",\"环比变化 0.064211\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"晓峰老师教音乐-sp-短直视频\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.0,\"previous_cac_rate\"\
+          :1.97934954,\"change_percentage_points\":-1.97934954},\"evidence\":[\"2025-08\
+          \ CAC率 1.979350\",\"2025-09 CAC率 0.000000\",\"环比变化 -1.979350\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"晖正浩原-G-公众号\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :0.92476719,\"previous_cac_rate\":1.19361709,\"change_percentage_points\"\
+          :-0.2688499000000001},\"evidence\":[\"2025-08 CAC率 1.193617\",\"2025-09\
+          \ CAC率 0.924767\",\"环比变化 -0.268850\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"晖正浩原-G-公众号\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":0.79466612,\"previous_cac_rate\"\
+          :0.92476719,\"change_percentage_points\":-0.13010106999999993},\"evidence\"\
+          :[\"2025-09 CAC率 0.924767\",\"2025-10 CAC率 0.794666\",\"环比变化 -0.130101\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"未来时代-G-公众号\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":0.8938333,\"previous_cac_rate\":1.34857889,\"change_percentage_points\"\
+          :-0.4547455899999999},\"evidence\":[\"2025-08 CAC率 1.348579\",\"2025-09\
+          \ CAC率 0.893833\",\"环比变化 -0.454746\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"未来时代-G-公众号\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.57110483,\"previous_cac_rate\"\
+          :0.8938333,\"change_percentage_points\":0.6772715299999998},\"evidence\"\
+          :[\"2025-09 CAC率 0.893833\",\"2025-10 CAC率 1.571105\",\"环比变化 0.677272\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"杭州乐潼-G-公众号\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":0.98480679,\"previous_cac_rate\":0.66258377,\"change_percentage_points\"\
+          :0.32222302},\"evidence\":[\"2025-08 CAC率 0.662584\",\"2025-09 CAC率 0.984807\"\
+          ,\"环比变化 0.322223\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"杭州真量-APP-垂直应用\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":3.76092557,\"previous_cac_rate\":1.6582883,\"\
+          change_percentage_points\":2.10263727},\"evidence\":[\"2025-08 CAC率 1.658288\"\
+          ,\"2025-09 CAC率 3.760926\",\"环比变化 2.102637\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"杭州真量-APP-垂直应用\"},\"period\":{\"start\"\
+          :\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.17671484,\"\
+          previous_cac_rate\":3.76092557,\"change_percentage_points\":-2.5842107299999997},\"\
+          evidence\":[\"2025-09 CAC率 3.760926\",\"2025-10 CAC率 1.176715\",\"环比变化 -2.584211\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"欣姐食养记-SY-小绿书\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":0.0,\"previous_cac_rate\":0.0,\"change_percentage_points\"\
+          :0.0},\"evidence\":[\"2025-08 CAC率 0.000000\",\"2025-09 CAC率 0.000000\"\
+          ,\"环比变化 0.000000\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"江西乐达-G-公众号\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":1.55014085,\"previous_cac_rate\":1.55454199,\"\
+          change_percentage_points\":-0.0044011399999999146},\"evidence\":[\"2025-08\
+          \ CAC率 1.554542\",\"2025-09 CAC率 1.550141\",\"环比变化 -0.004401\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"江西乐达-G-公众号\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :1.71778659,\"previous_cac_rate\":1.55014085,\"change_percentage_points\"\
+          :0.16764574},\"evidence\":[\"2025-09 CAC率 1.550141\",\"2025-10 CAC率 1.717787\"\
+          ,\"环比变化 0.167646\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"河北灵创-G-公众号\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":1.92741423,\"previous_cac_rate\":1.87216129,\"\
+          change_percentage_points\":0.05525293999999992},\"evidence\":[\"2025-08\
+          \ CAC率 1.872161\",\"2025-09 CAC率 1.927414\",\"环比变化 0.055253\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"河北灵创-G-公众号\"},\"period\"\
+          :{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :2.07252255,\"previous_cac_rate\":1.92741423,\"change_percentage_points\"\
+          :0.14510832000000007},\"evidence\":[\"2025-09 CAC率 1.927414\",\"2025-10\
+          \ CAC率 2.072523\",\"环比变化 0.145108\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"河北灵创-G-视频号\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.47255443,\"previous_cac_rate\"\
+          :2.16447011,\"change_percentage_points\":-0.6919156799999999},\"evidence\"\
+          :[\"2025-08 CAC率 2.164470\",\"2025-09 CAC率 1.472554\",\"环比变化 -0.691916\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"河北灵创-G-视频号\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.5599882,\"previous_cac_rate\":1.47255443,\"change_percentage_points\"\
+          :0.08743377000000008},\"evidence\":[\"2025-09 CAC率 1.472554\",\"2025-10\
+          \ CAC率 1.559988\",\"环比变化 0.087434\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"海学吉米-G-公众号\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":0.52171327,\"previous_cac_rate\"\
+          :0.4558035,\"change_percentage_points\":0.06590977000000003},\"evidence\"\
+          :[\"2025-08 CAC率 0.455803\",\"2025-09 CAC率 0.521713\",\"环比变化 0.065910\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"海学吉米-G-公众号\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.3762659,\"previous_cac_rate\":0.52171327,\"change_percentage_points\"\
+          :-0.14544737000000002},\"evidence\":[\"2025-09 CAC率 0.521713\",\"2025-10\
+          \ CAC率 0.376266\",\"环比变化 -0.145447\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"海波-SP-短直视频\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.11220893,\"previous_cac_rate\"\
+          :1.151018,\"change_percentage_points\":-0.03880907000000011},\"evidence\"\
+          :[\"2025-08 CAC率 1.151018\",\"2025-09 CAC率 1.112209\",\"环比变化 -0.038809\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"海波-SP-短直视频\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":1.20619647,\"previous_cac_rate\":1.11220893,\"change_percentage_points\"\
+          :0.09398754000000009},\"evidence\":[\"2025-09 CAC率 1.112209\",\"2025-10\
+          \ CAC率 1.206196\",\"环比变化 0.093988\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"湖南易满-TS-其他异业\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":0.83909534,\"previous_cac_rate\"\
+          :0.0,\"change_percentage_points\":0.83909534},\"evidence\":[\"2025-09 CAC率\
+          \ 0.000000\",\"2025-10 CAC率 0.839095\",\"环比变化 0.839095\"]},{\"hit\":false,\"\
+          dimension\":{\"type\":\"channel\",\"name\":\"湖南浩娱-DY-短直视频\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.28694352,\"previous_cac_rate\":1.40991569,\"change_percentage_points\"\
+          :-0.12297217000000016},\"evidence\":[\"2025-08 CAC率 1.409916\",\"2025-09\
+          \ CAC率 1.286944\",\"环比变化 -0.122972\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"湖南浩娱-DY-短直视频\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":2.81786475,\"previous_cac_rate\"\
+          :1.28694352,\"change_percentage_points\":1.5309212300000001},\"evidence\"\
+          :[\"2025-09 CAC率 1.286944\",\"2025-10 CAC率 2.817865\",\"环比变化 1.530921\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"热门好课\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":0.0,\"previous_cac_rate\":0.0,\"change_percentage_points\"\
+          :0.0},\"evidence\":[\"2025-08 CAC率 0.000000\",\"2025-09 CAC率 0.000000\"\
+          ,\"环比变化 0.000000\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"热门好课\"},\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"current_cac_rate\":0.0,\"previous_cac_rate\":0.0,\"change_percentage_points\"\
+          :0.0},\"evidence\":[\"2025-09 CAC率 0.000000\",\"2025-10 CAC率 0.000000\"\
+          ,\"环比变化 0.000000\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"爱奇艺\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":1.06494668,\"previous_cac_rate\":1.74267367,\"\
+          change_percentage_points\":-0.67772699},\"evidence\":[\"2025-08 CAC率 1.742674\"\
+          ,\"2025-09 CAC率 1.064947\",\"环比变化 -0.677727\"]},{\"hit\":true,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"爱奇艺\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":2.13378242,\"previous_cac_rate\"\
+          :1.06494668,\"change_percentage_points\":1.0688357400000001},\"evidence\"\
+          :[\"2025-09 CAC率 1.064947\",\"2025-10 CAC率 2.133782\",\"环比变化 1.068836\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"电商品6\"},\"\
+          period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\"\
+          :2.40562213,\"previous_cac_rate\":1.02010551,\"change_percentage_points\"\
+          :1.3855166199999998},\"evidence\":[\"2025-09 CAC率 1.020106\",\"2025-10 CAC率\
+          \ 2.405622\",\"环比变化 1.385517\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"电商瑜伽1-包裹卡\"},\"period\":{\"start\":\"2025-08\",\"\
+          end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":1.54486412,\"previous_cac_rate\"\
+          :3.48958663,\"change_percentage_points\":-1.9447225099999998},\"evidence\"\
+          :[\"2025-08 CAC率 3.489587\",\"2025-09 CAC率 1.544864\",\"环比变化 -1.944723\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"电商瑜伽1-包裹卡\"\
+          },\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          current_cac_rate\":0.1563365,\"previous_cac_rate\":1.54486412,\"change_percentage_points\"\
+          :-1.38852762},\"evidence\":[\"2025-09 CAC率 1.544864\",\"2025-10 CAC率 0.156336\"\
+          ,\"环比变化 -1.388528\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"电商瑜伽1-直播\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"current_cac_rate\":1.7428003,\"previous_cac_rate\":2.81139315,\"\
+          change_percentage_points\":-1.0685928499999997},\"evidence\":[\"2025-08\
+          \ CAC率 2.811393\",\"2025-09 CAC率 1.742800\",\"环比变化 -1.068593\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"百度\"},\"period\":{\"\
+          start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.55492206,\"previous_cac_rate\":1.52499428,\"change_percentage_points\"\
+          :0.02992777999999996},\"evidence\":[\"2025-08 CAC率 1.524994\",\"2025-09\
+          \ CAC率 1.554922\",\"环比变化 0.029928\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"百度\"},\"period\":{\"start\":\"2025-09\",\"end\"\
+          :\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.37789588,\"previous_cac_rate\"\
+          :1.55492206,\"change_percentage_points\":-0.17702617999999992},\"evidence\"\
+          :[\"2025-09 CAC率 1.554922\",\"2025-10 CAC率 1.377896\",\"环比变化 -0.177026\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"百度直播\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":2.41387066,\"previous_cac_rate\":4.07895645,\"change_percentage_points\"\
+          :-1.6650857899999996},\"evidence\":[\"2025-08 CAC率 4.078956\",\"2025-09\
+          \ CAC率 2.413871\",\"环比变化 -1.665086\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"百度直播\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.51245681,\"previous_cac_rate\"\
+          :2.41387066,\"change_percentage_points\":-0.9014138500000002},\"evidence\"\
+          :[\"2025-09 CAC率 2.413871\",\"2025-10 CAC率 1.512457\",\"环比变化 -0.901414\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"真祺-sp-短直视频\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":0.85440536,\"previous_cac_rate\":0.89982138,\"change_percentage_points\"\
+          :-0.04541602},\"evidence\":[\"2025-08 CAC率 0.899821\",\"2025-09 CAC率 0.854405\"\
+          ,\"环比变化 -0.045416\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"真祺-sp-短直视频\"},\"period\":{\"start\":\"2025-09\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"current_cac_rate\":0.78664299,\"previous_cac_rate\":0.85440536,\"\
+          change_percentage_points\":-0.06776236999999996},\"evidence\":[\"2025-09\
+          \ CAC率 0.854405\",\"2025-10 CAC率 0.786643\",\"环比变化 -0.067762\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"穿山甲\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :2.15752519,\"previous_cac_rate\":2.20487485,\"change_percentage_points\"\
+          :-0.04734966000000007},\"evidence\":[\"2025-08 CAC率 2.204875\",\"2025-09\
+          \ CAC率 2.157525\",\"环比变化 -0.047350\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"穿山甲\"},\"period\":{\"start\":\"2025-09\",\"\
+          end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.29800664,\"previous_cac_rate\"\
+          :2.15752519,\"change_percentage_points\":-0.8595185499999998},\"evidence\"\
+          :[\"2025-09 CAC率 2.157525\",\"2025-10 CAC率 1.298007\",\"环比变化 -0.859519\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"联合百度\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":1.86391657,\"previous_cac_rate\":1.9970527,\"change_percentage_points\"\
+          :-0.13313613000000002},\"evidence\":[\"2025-08 CAC率 1.997053\",\"2025-09\
+          \ CAC率 1.863917\",\"环比变化 -0.133136\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"联合百度\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.72960757,\"previous_cac_rate\"\
+          :1.86391657,\"change_percentage_points\":-0.134309},\"evidence\":[\"2025-09\
+          \ CAC率 1.863917\",\"2025-10 CAC率 1.729608\",\"环比变化 -0.134309\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"联合视频号\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :3.30608375,\"previous_cac_rate\":3.51131053,\"change_percentage_points\"\
+          :-0.20522677999999983},\"evidence\":[\"2025-08 CAC率 3.511311\",\"2025-09\
+          \ CAC率 3.306084\",\"环比变化 -0.205227\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"联合视频号\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":0.96011874,\"previous_cac_rate\"\
+          :3.30608375,\"change_percentage_points\":-2.34596501},\"evidence\":[\"2025-09\
+          \ CAC率 3.306084\",\"2025-10 CAC率 0.960119\",\"环比变化 -2.345965\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"董文立老师-DY-短直视频\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.01352269,\"previous_cac_rate\":0.92632704,\"change_percentage_points\"\
+          :0.08719565000000007},\"evidence\":[\"2025-08 CAC率 0.926327\",\"2025-09\
+          \ CAC率 1.013523\",\"环比变化 0.087196\"]},{\"hit\":true,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"董文立老师-DY-短直视频\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.6779427,\"previous_cac_rate\"\
+          :1.01352269,\"change_percentage_points\":0.66442001},\"evidence\":[\"2025-09\
+          \ CAC率 1.013523\",\"2025-10 CAC率 1.677943\",\"环比变化 0.664420\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"视频号\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\"\
+          :1.66815004,\"previous_cac_rate\":1.72717536,\"change_percentage_points\"\
+          :-0.05902531999999994},\"evidence\":[\"2025-08 CAC率 1.727175\",\"2025-09\
+          \ CAC率 1.668150\",\"环比变化 -0.059025\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"视频号\"},\"period\":{\"start\":\"2025-09\",\"\
+          end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.57050342,\"previous_cac_rate\"\
+          :1.66815004,\"change_percentage_points\":-0.0976466199999999},\"evidence\"\
+          :[\"2025-09 CAC率 1.668150\",\"2025-10 CAC率 1.570503\",\"环比变化 -0.097647\"\
+          ]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"name\":\"视频号直播\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":2.10567763,\"previous_cac_rate\":1.62853027,\"change_percentage_points\"\
+          :0.47714736000000024},\"evidence\":[\"2025-08 CAC率 1.628530\",\"2025-09\
+          \ CAC率 2.105678\",\"环比变化 0.477147\"]},{\"hit\":false,\"dimension\":{\"type\"\
+          :\"channel\",\"name\":\"视频号直播\"},\"period\":{\"start\":\"2025-09\",\"end\"\
+          :\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.8206861,\"previous_cac_rate\"\
+          :2.10567763,\"change_percentage_points\":-0.2849915300000001},\"evidence\"\
+          :[\"2025-09 CAC率 2.105678\",\"2025-10 CAC率 1.820686\",\"环比变化 -0.284992\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"重庆唱歌直播机构达人-DY-短直视频\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":0.0,\"previous_cac_rate\":1.62542526,\"change_percentage_points\"\
+          :-1.62542526},\"evidence\":[\"2025-08 CAC率 1.625425\",\"2025-09 CAC率 0.000000\"\
+          ,\"环比变化 -1.625425\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"重庆唱歌直播机构达人-DY-短直视频\"},\"period\":{\"start\":\"2025-09\",\"end\"\
+          :\"2025-10\"},\"metrics\":{\"current_cac_rate\":0.0,\"previous_cac_rate\"\
+          :0.0,\"change_percentage_points\":0.0},\"evidence\":[\"2025-09 CAC率 0.000000\"\
+          ,\"2025-10 CAC率 0.000000\",\"环比变化 0.000000\"]},{\"hit\":true,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"长沙昕娱-DY-短直视频\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"current_cac_rate\":3.64114039,\"\
+          previous_cac_rate\":0.9023513,\"change_percentage_points\":2.73878909},\"\
+          evidence\":[\"2025-08 CAC率 0.902351\",\"2025-09 CAC率 3.641140\",\"环比变化 2.738789\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"鹿邑-摄影粉-DY-直播\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-09\"},\"metrics\":{\"\
+          current_cac_rate\":1.11810736,\"previous_cac_rate\":1.13700325,\"change_percentage_points\"\
+          :-0.018895890000000026},\"evidence\":[\"2025-08 CAC率 1.137003\",\"2025-09\
+          \ CAC率 1.118107\",\"环比变化 -0.018896\"]},{\"hit\":false,\"dimension\":{\"\
+          type\":\"channel\",\"name\":\"鹿邑-摄影粉-DY-直播\"},\"period\":{\"start\":\"2025-09\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"current_cac_rate\":1.07911909,\"previous_cac_rate\"\
+          :1.11810736,\"change_percentage_points\":-0.038988269999999936},\"evidence\"\
+          :[\"2025-09 CAC率 1.118107\",\"2025-10 CAC率 1.079119\",\"环比变化 -0.038988\"\
+          ]}]},{\"module\":\"S2\",\"module_name\":\"客户结构\",\"rule_id\":\"R36\",\"\
+          rule_name\":\"CAC连续上升\",\"display_name\":\"R36｜CAC连续上升\",\"threshold\":\"\
+          连续3个完整月上升\",\"evaluation_count\":68,\"hit_count\":8,\"evaluations\":[{\"\
+          hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"360\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :2.13147656,\"previous_cac_rate\":1.44130965,\"current_cac_rate\":1.64607518},\"\
+          evidence\":[\"2025-08 CAC率 2.131477\",\"2025-09 CAC率 1.441310\",\"2025-10\
+          \ CAC率 1.646075\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"GDT\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_cac_rate\":1.71694497,\"previous_cac_rate\":1.58973529,\"\
+          current_cac_rate\":1.72526651},\"evidence\":[\"2025-08 CAC率 1.716945\",\"\
+          2025-09 CAC率 1.589735\",\"2025-10 CAC率 1.725267\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"HW-聚力\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":0.94985227,\"previous_cac_rate\"\
+          :0.14766489,\"current_cac_rate\":1.90195455},\"evidence\":[\"2025-08 CAC率\
+          \ 0.949852\",\"2025-09 CAC率 0.147665\",\"2025-10 CAC率 1.901955\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"LZF老师-SY-其他异业\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :0.4840724,\"previous_cac_rate\":0.36587367,\"current_cac_rate\":0.67182983},\"\
+          evidence\":[\"2025-08 CAC率 0.484072\",\"2025-09 CAC率 0.365874\",\"2025-10\
+          \ CAC率 0.671830\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"PQ-P-垂直应用\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":1.10425974,\"previous_cac_rate\":1.23061757,\"\
+          current_cac_rate\":1.09286976},\"evidence\":[\"2025-08 CAC率 1.104260\",\"\
+          2025-09 CAC率 1.230618\",\"2025-10 CAC率 1.092870\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"PQ卡锐-P-垂直应用\"},\"period\":{\"start\":\"\
+          2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.379701,\"\
+          previous_cac_rate\":2.0783197,\"current_cac_rate\":1.48972098},\"evidence\"\
+          :[\"2025-08 CAC率 1.379701\",\"2025-09 CAC率 2.078320\",\"2025-10 CAC率 1.489721\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"PQ龙特星-P-垂直应用\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_cac_rate\":1.03051239,\"previous_cac_rate\":1.31520062,\"current_cac_rate\"\
+          :1.16259234},\"evidence\":[\"2025-08 CAC率 1.030512\",\"2025-09 CAC率 1.315201\"\
+          ,\"2025-10 CAC率 1.162592\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"WB-武汉优嘉\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":4.35137872,\"previous_cac_rate\":1.36120313,\"\
+          current_cac_rate\":2.12682927},\"evidence\":[\"2025-08 CAC率 4.351379\",\"\
+          2025-09 CAC率 1.361203\",\"2025-10 CAC率 2.126829\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"XM-亚德\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":2.41047504,\"previous_cac_rate\"\
+          :1.33379293,\"current_cac_rate\":2.24656023},\"evidence\":[\"2025-08 CAC率\
+          \ 2.410475\",\"2025-09 CAC率 1.333793\",\"2025-10 CAC率 2.246560\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"vivo\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :2.85378828,\"previous_cac_rate\":1.80837338,\"current_cac_rate\":4.11143779},\"\
+          evidence\":[\"2025-08 CAC率 2.853788\",\"2025-09 CAC率 1.808373\",\"2025-10\
+          \ CAC率 4.111438\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"三金手机摄影教学-sp-短直视频\"},\"period\":{\"start\":\"2025-08\",\"end\":\"\
+          2025-10\"},\"metrics\":{\"start_cac_rate\":0.80443064,\"previous_cac_rate\"\
+          :0.83938495,\"current_cac_rate\":0.8582183},\"evidence\":[\"2025-08 CAC率\
+          \ 0.804431\",\"2025-09 CAC率 0.839385\",\"2025-10 CAC率 0.858218\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"东升-摄影粉-DY-直播\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :0.99990434,\"previous_cac_rate\":1.1428672,\"current_cac_rate\":0.97535685},\"\
+          evidence\":[\"2025-08 CAC率 0.999904\",\"2025-09 CAC率 1.142867\",\"2025-10\
+          \ CAC率 0.975357\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"东莞聚力-APP-垂直应用\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":1.6701022,\"previous_cac_rate\":1.78287105,\"\
+          current_cac_rate\":1.98552635},\"evidence\":[\"2025-08 CAC率 1.670102\",\"\
+          2025-09 CAC率 1.782871\",\"2025-10 CAC率 1.985526\"]},{\"hit\":true,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"乐推YK-APP-垂直应用\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":0.62724057,\"\
+          previous_cac_rate\":1.54471216,\"current_cac_rate\":2.53263761},\"evidence\"\
+          :[\"2025-08 CAC率 0.627241\",\"2025-09 CAC率 1.544712\",\"2025-10 CAC率 2.532638\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"互动吧-G-公众号\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_cac_rate\":0.50108922,\"previous_cac_rate\":0.45748967,\"current_cac_rate\"\
+          :0.48017598},\"evidence\":[\"2025-08 CAC率 0.501089\",\"2025-09 CAC率 0.457490\"\
+          ,\"2025-10 CAC率 0.480176\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"今日头条\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":1.55483712,\"previous_cac_rate\":1.41220807,\"\
+          current_cac_rate\":1.53004097},\"evidence\":[\"2025-08 CAC率 1.554837\",\"\
+          2025-09 CAC率 1.412208\",\"2025-10 CAC率 1.530041\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"优量汇\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.78319137,\"previous_cac_rate\"\
+          :1.88285964,\"current_cac_rate\":1.75539901},\"evidence\":[\"2025-08 CAC率\
+          \ 1.783191\",\"2025-09 CAC率 1.882860\",\"2025-10 CAC率 1.755399\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"公众号\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :1.45445579,\"previous_cac_rate\":1.55033939,\"current_cac_rate\":1.45700903},\"\
+          evidence\":[\"2025-08 CAC率 1.454456\",\"2025-09 CAC率 1.550339\",\"2025-10\
+          \ CAC率 1.457009\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"北海-摄影粉-DY-直播\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":1.13130043,\"previous_cac_rate\":1.15353224,\"\
+          current_cac_rate\":1.10847418},\"evidence\":[\"2025-08 CAC率 1.131300\",\"\
+          2025-09 CAC率 1.153532\",\"2025-10 CAC率 1.108474\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"千川直播\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":4.8211271,\"previous_cac_rate\"\
+          :3.79370994,\"current_cac_rate\":4.00696755},\"evidence\":[\"2025-08 CAC率\
+          \ 4.821127\",\"2025-09 CAC率 3.793710\",\"2025-10 CAC率 4.006968\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"华为-东莞聚力\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :1.9842549,\"previous_cac_rate\":0.96901738,\"current_cac_rate\":0.63945915},\"\
+          evidence\":[\"2025-08 CAC率 1.984255\",\"2025-09 CAC率 0.969017\",\"2025-10\
+          \ CAC率 0.639459\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"华为亚德\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_cac_rate\":1.06252348,\"previous_cac_rate\":1.33426585,\"\
+          current_cac_rate\":1.31672707},\"evidence\":[\"2025-08 CAC率 1.062523\",\"\
+          2025-09 CAC率 1.334266\",\"2025-10 CAC率 1.316727\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"南昌微动-G-公众号\"},\"period\":{\"start\":\"\
+          2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.22009419,\"\
+          previous_cac_rate\":1.44959755,\"current_cac_rate\":1.25371855},\"evidence\"\
+          :[\"2025-08 CAC率 1.220094\",\"2025-09 CAC率 1.449598\",\"2025-10 CAC率 1.253719\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"南昌高森-G-公众号\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_cac_rate\":2.21145395,\"previous_cac_rate\":1.58587424,\"current_cac_rate\"\
+          :1.68777441},\"evidence\":[\"2025-08 CAC率 2.211454\",\"2025-09 CAC率 1.585874\"\
+          ,\"2025-10 CAC率 1.687774\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"南昌高森-G-视频号\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":1.62166508,\"previous_cac_rate\":2.26335909,\"\
+          current_cac_rate\":3.15739003},\"evidence\":[\"2025-08 CAC率 1.621665\",\"\
+          2025-09 CAC率 2.263359\",\"2025-10 CAC率 3.157390\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"合肥哲礼-G-公众号\"},\"period\":{\"start\":\"\
+          2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.47071429,\"\
+          previous_cac_rate\":1.02750918,\"current_cac_rate\":1.05944703},\"evidence\"\
+          :[\"2025-08 CAC率 1.470714\",\"2025-09 CAC率 1.027509\",\"2025-10 CAC率 1.059447\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"喜马拉雅\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_cac_rate\":0.99979727,\"previous_cac_rate\":1.29426493,\"current_cac_rate\"\
+          :0.99691914},\"evidence\":[\"2025-08 CAC率 0.999797\",\"2025-09 CAC率 1.294265\"\
+          ,\"2025-10 CAC率 0.996919\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"喜鹊-XCX-垂直应用\"},\"period\":{\"start\":\"2025-08\",\"end\":\"\
+          2025-10\"},\"metrics\":{\"start_cac_rate\":1.18794091,\"previous_cac_rate\"\
+          :1.48006588,\"current_cac_rate\":1.67779238},\"evidence\":[\"2025-08 CAC率\
+          \ 1.187941\",\"2025-09 CAC率 1.480066\",\"2025-10 CAC率 1.677792\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"安徽煜旻-G-公众号\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :1.52829349,\"previous_cac_rate\":2.36205788,\"current_cac_rate\":1.44563696},\"\
+          evidence\":[\"2025-08 CAC率 1.528293\",\"2025-09 CAC率 2.362058\",\"2025-10\
+          \ CAC率 1.445637\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"安徽煜旻-G-视频号\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":0.63167611,\"previous_cac_rate\":0.89251449,\"\
+          current_cac_rate\":0.62572494},\"evidence\":[\"2025-08 CAC率 0.631676\",\"\
+          2025-09 CAC率 0.892514\",\"2025-10 CAC率 0.625725\"]},{\"hit\":true,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"小徐老师手机摄影-摄影粉-DY-直播\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":0.90934663,\"\
+          previous_cac_rate\":0.9575959,\"current_cac_rate\":0.99263775},\"evidence\"\
+          :[\"2025-08 CAC率 0.909347\",\"2025-09 CAC率 0.957596\",\"2025-10 CAC率 0.992638\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"小程序\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :1.79237821,\"previous_cac_rate\":1.89211759,\"current_cac_rate\":1.58414158},\"\
+          evidence\":[\"2025-08 CAC率 1.792378\",\"2025-09 CAC率 1.892118\",\"2025-10\
+          \ CAC率 1.584142\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"小红书\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_cac_rate\":1.5934583,\"previous_cac_rate\":1.64844721,\"\
+          current_cac_rate\":1.58518563},\"evidence\":[\"2025-08 CAC率 1.593458\",\"\
+          2025-09 CAC率 1.648447\",\"2025-10 CAC率 1.585186\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"微信\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.71258317,\"previous_cac_rate\"\
+          :1.57165751,\"current_cac_rate\":1.46828764},\"evidence\":[\"2025-08 CAC率\
+          \ 1.712583\",\"2025-09 CAC率 1.571658\",\"2025-10 CAC率 1.468288\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"微博\"},\"period\":{\"\
+          start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :1.79114703,\"previous_cac_rate\":2.08734688,\"current_cac_rate\":1.81360839},\"\
+          evidence\":[\"2025-08 CAC率 1.791147\",\"2025-09 CAC率 2.087347\",\"2025-10\
+          \ CAC率 1.813608\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"快手\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_cac_rate\":1.80724033,\"previous_cac_rate\":1.96905292,\"\
+          current_cac_rate\":1.42106074},\"evidence\":[\"2025-08 CAC率 1.807240\",\"\
+          2025-09 CAC率 1.969053\",\"2025-10 CAC率 1.421061\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"快手私信\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":2.86453243,\"previous_cac_rate\"\
+          :1.92467554,\"current_cac_rate\":5.44591258},\"evidence\":[\"2025-08 CAC率\
+          \ 2.864532\",\"2025-09 CAC率 1.924676\",\"2025-10 CAC率 5.445913\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"抖音\"},\"period\":{\"\
+          start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :1.71244224,\"previous_cac_rate\":1.58588269,\"current_cac_rate\":1.42049149},\"\
+          evidence\":[\"2025-08 CAC率 1.712442\",\"2025-09 CAC率 1.585883\",\"2025-10\
+          \ CAC率 1.420491\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"抖音品牌\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_cac_rate\":2.39300273,\"previous_cac_rate\":3.11140353,\"\
+          current_cac_rate\":1.57966558},\"evidence\":[\"2025-08 CAC率 2.393003\",\"\
+          2025-09 CAC率 3.111404\",\"2025-10 CAC率 1.579666\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"抖音星图轻运动-DY-短直视频\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.04655626,\"\
+          previous_cac_rate\":1.73316991,\"current_cac_rate\":1.51539091},\"evidence\"\
+          :[\"2025-08 CAC率 1.046556\",\"2025-09 CAC率 1.733170\",\"2025-10 CAC率 1.515391\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"抖音直播\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_cac_rate\":2.93536998,\"previous_cac_rate\":2.40527992,\"current_cac_rate\"\
+          :4.86032942},\"evidence\":[\"2025-08 CAC率 2.935370\",\"2025-09 CAC率 2.405280\"\
+          ,\"2025-10 CAC率 4.860329\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"抖音购物车\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":1.36173489,\"previous_cac_rate\":1.44444315,\"\
+          current_cac_rate\":1.34767962},\"evidence\":[\"2025-08 CAC率 1.361735\",\"\
+          2025-09 CAC率 1.444443\",\"2025-10 CAC率 1.347680\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"摄影存量\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.0481793,\"previous_cac_rate\"\
+          :0.97009786,\"current_cac_rate\":0.23435234},\"evidence\":[\"2025-08 CAC率\
+          \ 1.048179\",\"2025-09 CAC率 0.970098\",\"2025-10 CAC率 0.234352\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"摄影师路白-DY-短直视频\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :0.69767958,\"previous_cac_rate\":0.36205662,\"current_cac_rate\":0.73363116},\"\
+          evidence\":[\"2025-08 CAC率 0.697680\",\"2025-09 CAC率 0.362057\",\"2025-10\
+          \ CAC率 0.733631\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"敬泽摄影师-DY-短直视频\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":0.99994681,\"previous_cac_rate\":0.75329777,\"\
+          current_cac_rate\":0.81750843},\"evidence\":[\"2025-08 CAC率 0.999947\",\"\
+          2025-09 CAC率 0.753298\",\"2025-10 CAC率 0.817508\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"晖正浩原-G-公众号\"},\"period\":{\"start\":\"\
+          2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.19361709,\"\
+          previous_cac_rate\":0.92476719,\"current_cac_rate\":0.79466612},\"evidence\"\
+          :[\"2025-08 CAC率 1.193617\",\"2025-09 CAC率 0.924767\",\"2025-10 CAC率 0.794666\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"未来时代-G-公众号\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_cac_rate\":1.34857889,\"previous_cac_rate\":0.8938333,\"current_cac_rate\"\
+          :1.57110483},\"evidence\":[\"2025-08 CAC率 1.348579\",\"2025-09 CAC率 0.893833\"\
+          ,\"2025-10 CAC率 1.571105\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"杭州真量-APP-垂直应用\"},\"period\":{\"start\":\"2025-08\",\"end\":\"\
+          2025-10\"},\"metrics\":{\"start_cac_rate\":1.6582883,\"previous_cac_rate\"\
+          :3.76092557,\"current_cac_rate\":1.17671484},\"evidence\":[\"2025-08 CAC率\
+          \ 1.658288\",\"2025-09 CAC率 3.760926\",\"2025-10 CAC率 1.176715\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"江西乐达-G-公众号\"},\"period\"\
+          :{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :1.55454199,\"previous_cac_rate\":1.55014085,\"current_cac_rate\":1.71778659},\"\
+          evidence\":[\"2025-08 CAC率 1.554542\",\"2025-09 CAC率 1.550141\",\"2025-10\
+          \ CAC率 1.717787\"]},{\"hit\":true,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"河北灵创-G-公众号\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":1.87216129,\"previous_cac_rate\":1.92741423,\"\
+          current_cac_rate\":2.07252255},\"evidence\":[\"2025-08 CAC率 1.872161\",\"\
+          2025-09 CAC率 1.927414\",\"2025-10 CAC率 2.072523\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"河北灵创-G-视频号\"},\"period\":{\"start\":\"\
+          2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":2.16447011,\"\
+          previous_cac_rate\":1.47255443,\"current_cac_rate\":1.5599882},\"evidence\"\
+          :[\"2025-08 CAC率 2.164470\",\"2025-09 CAC率 1.472554\",\"2025-10 CAC率 1.559988\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"海学吉米-G-公众号\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_cac_rate\":0.4558035,\"previous_cac_rate\":0.52171327,\"current_cac_rate\"\
+          :0.3762659},\"evidence\":[\"2025-08 CAC率 0.455803\",\"2025-09 CAC率 0.521713\"\
+          ,\"2025-10 CAC率 0.376266\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"海波-SP-短直视频\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"\
+          },\"metrics\":{\"start_cac_rate\":1.151018,\"previous_cac_rate\":1.11220893,\"\
+          current_cac_rate\":1.20619647},\"evidence\":[\"2025-08 CAC率 1.151018\",\"\
+          2025-09 CAC率 1.112209\",\"2025-10 CAC率 1.206196\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"湖南浩娱-DY-短直视频\"},\"period\":{\"start\"\
+          :\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.40991569,\"\
+          previous_cac_rate\":1.28694352,\"current_cac_rate\":2.81786475},\"evidence\"\
+          :[\"2025-08 CAC率 1.409916\",\"2025-09 CAC率 1.286944\",\"2025-10 CAC率 2.817865\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"热门好课\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_cac_rate\":0.0,\"previous_cac_rate\":0.0,\"current_cac_rate\":0.0},\"\
+          evidence\":[\"2025-08 CAC率 0.000000\",\"2025-09 CAC率 0.000000\",\"2025-10\
+          \ CAC率 0.000000\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"爱奇艺\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_cac_rate\":1.74267367,\"previous_cac_rate\":1.06494668,\"\
+          current_cac_rate\":2.13378242},\"evidence\":[\"2025-08 CAC率 1.742674\",\"\
+          2025-09 CAC率 1.064947\",\"2025-10 CAC率 2.133782\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"电商瑜伽1-包裹卡\"},\"period\":{\"start\":\"\
+          2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":3.48958663,\"\
+          previous_cac_rate\":1.54486412,\"current_cac_rate\":0.1563365},\"evidence\"\
+          :[\"2025-08 CAC率 3.489587\",\"2025-09 CAC率 1.544864\",\"2025-10 CAC率 0.156336\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"百度\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :1.52499428,\"previous_cac_rate\":1.55492206,\"current_cac_rate\":1.37789588},\"\
+          evidence\":[\"2025-08 CAC率 1.524994\",\"2025-09 CAC率 1.554922\",\"2025-10\
+          \ CAC率 1.377896\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"百度直播\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_cac_rate\":4.07895645,\"previous_cac_rate\":2.41387066,\"\
+          current_cac_rate\":1.51245681},\"evidence\":[\"2025-08 CAC率 4.078956\",\"\
+          2025-09 CAC率 2.413871\",\"2025-10 CAC率 1.512457\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"真祺-sp-短直视频\"},\"period\":{\"start\":\"\
+          2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":0.89982138,\"\
+          previous_cac_rate\":0.85440536,\"current_cac_rate\":0.78664299},\"evidence\"\
+          :[\"2025-08 CAC率 0.899821\",\"2025-09 CAC率 0.854405\",\"2025-10 CAC率 0.786643\"\
+          ]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"name\":\"穿山甲\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :2.20487485,\"previous_cac_rate\":2.15752519,\"current_cac_rate\":1.29800664},\"\
+          evidence\":[\"2025-08 CAC率 2.204875\",\"2025-09 CAC率 2.157525\",\"2025-10\
+          \ CAC率 1.298007\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"联合百度\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_cac_rate\":1.9970527,\"previous_cac_rate\":1.86391657,\"\
+          current_cac_rate\":1.72960757},\"evidence\":[\"2025-08 CAC率 1.997053\",\"\
+          2025-09 CAC率 1.863917\",\"2025-10 CAC率 1.729608\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"联合视频号\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":3.51131053,\"previous_cac_rate\"\
+          :3.30608375,\"current_cac_rate\":0.96011874},\"evidence\":[\"2025-08 CAC率\
+          \ 3.511311\",\"2025-09 CAC率 3.306084\",\"2025-10 CAC率 0.960119\"]},{\"hit\"\
+          :true,\"dimension\":{\"type\":\"channel\",\"name\":\"董文立老师-DY-短直视频\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\"\
+          :0.92632704,\"previous_cac_rate\":1.01352269,\"current_cac_rate\":1.6779427},\"\
+          evidence\":[\"2025-08 CAC率 0.926327\",\"2025-09 CAC率 1.013523\",\"2025-10\
+          \ CAC率 1.677943\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\",\"\
+          name\":\"视频号\"},\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"\
+          metrics\":{\"start_cac_rate\":1.72717536,\"previous_cac_rate\":1.66815004,\"\
+          current_cac_rate\":1.57050342},\"evidence\":[\"2025-08 CAC率 1.727175\",\"\
+          2025-09 CAC率 1.668150\",\"2025-10 CAC率 1.570503\"]},{\"hit\":false,\"dimension\"\
+          :{\"type\":\"channel\",\"name\":\"视频号直播\"},\"period\":{\"start\":\"2025-08\"\
+          ,\"end\":\"2025-10\"},\"metrics\":{\"start_cac_rate\":1.62853027,\"previous_cac_rate\"\
+          :2.10567763,\"current_cac_rate\":1.8206861},\"evidence\":[\"2025-08 CAC率\
+          \ 1.628530\",\"2025-09 CAC率 2.105678\",\"2025-10 CAC率 1.820686\"]},{\"hit\"\
+          :false,\"dimension\":{\"type\":\"channel\",\"name\":\"重庆唱歌直播机构达人-DY-短直视频\"\
+          },\"period\":{\"start\":\"2025-08\",\"end\":\"2025-10\"},\"metrics\":{\"\
+          start_cac_rate\":1.62542526,\"previous_cac_rate\":0.0,\"current_cac_rate\"\
+          :0.0},\"evidence\":[\"2025-08 CAC率 1.625425\",\"2025-09 CAC率 0.000000\"\
+          ,\"2025-10 CAC率 0.000000\"]},{\"hit\":false,\"dimension\":{\"type\":\"channel\"\
+          ,\"name\":\"鹿邑-摄影粉-DY-直播\"},\"period\":{\"start\":\"2025-08\",\"end\":\"\
+          2025-10\"},\"metrics\":{\"start_cac_rate\":1.13700325,\"previous_cac_rate\"\
+          :1.11810736,\"current_cac_rate\":1.07911909},\"evidence\":[\"2025-08 CAC率\
+          \ 1.137003\",\"2025-09 CAC率 1.118107\",\"2025-10 CAC率 1.079119\"]}]},{\"\
+          module\":\"S3\",\"module_name\":\"渠道结构\",\"rule_id\":\"R61\",\"rule_name\"\
+          :\"无效投放(P0)\",\"display_name\":\"R61｜无效投放(P0)\",\"threshold\":\"ROI<0.5渠道消耗占比\
+          \ > 0.20\",\"evaluation_count\":3,\"hit_count\":0,\"evaluations\":[{\"hit\"\
+          :false,\"dimension\":{\"type\":\"all_channels\",\"name\":\"__ALL__\"},\"\
+          period\":{\"start\":\"2025-08\",\"end\":\"2025-08\"},\"metrics\":{\"ineffective_cost\"\
+          :4882584.12,\"total_cost\":128599190.71000001,\"ineffective_cost_share\"\
+          :0.03796745603952176},\"evidence\":[\"ROI<0.5渠道成本 4882584.12\",\"全渠道成本 128599190.71\"\
+          ,\"无效投放占比 0.037967\"]},{\"hit\":false,\"dimension\":{\"type\":\"all_channels\"\
+          ,\"name\":\"__ALL__\"},\"period\":{\"start\":\"2025-09\",\"end\":\"2025-09\"\
+          },\"metrics\":{\"ineffective_cost\":3153279.6999999993,\"total_cost\":109144933.94999999,\"\
+          ineffective_cost_share\":0.028890756408763207},\"evidence\":[\"ROI<0.5渠道成本\
+          \ 3153279.70\",\"全渠道成本 109144933.95\",\"无效投放占比 0.028891\"]},{\"hit\":false,\"\
+          dimension\":{\"type\":\"all_channels\",\"name\":\"__ALL__\"},\"period\"\
+          :{\"start\":\"2025-10\",\"end\":\"2025-10\"},\"metrics\":{\"ineffective_cost\"\
+          :1054003.16,\"total_cost\":102884249.36,\"ineffective_cost_share\":0.010244553141579142},\"\
+          evidence\":[\"ROI<0.5渠道成本 1054003.16\",\"全渠道成本 102884249.36\",\"无效投放占比 0.010245\"\
+          ]}]}]}\r\n{% endraw %}"
+        title: Template
+        type: template-transform
+        variables: []
+      height: 52
+      id: '1787555272356'
+      position:
+        x: 12.159795007225597
+        y: 112.00000000000006
+      positionAbsolute:
+        x: 12.159795007225597
+        y: 112.00000000000006
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: fb3f6215-1204-413c-9a5d-e1f0b9211ef3
+          role: system
+          text: '# 输出安全规则
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+            禁止输出任何内部推理过程。
+
+
+            包括但不限于：
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+            只输出最终报告。
+
+
+
+            如果需要进行复杂分析：
+
+
+            请在内部完成，不得展示。
+
+
+
+            最终输出只能包含：
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+            禁止出现：
+
+
+            <think>
+
+            </think>
+
+
+            或者任何类似：
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+            等内部工作语言。
+
+
+            # 第一屏 · 渠道全景
+
+
+            开始。
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+            你的任务：
+
+
+            把渠道数据转化成管理层能够快速理解的经营判断。
+
+
+            你不是数据整理工具。
+
+
+            你需要像咨询顾问一样：
+
+            - 发现结构变化；
+
+            - 提炼经营矛盾；
+
+            - 提醒潜在风险。
+
+
+
+            # 输出范围
+
+
+            只生成：
+
+
+            # 第一屏 · 渠道全景
+
+
+
+            禁止讨论：
+
+
+            - 产品
+
+            - 用户画像
+
+            - 复购
+
+            - 运营策略
+
+
+
+            # 分析原则
+
+
+            所有结论必须来自输入。
+
+
+            但是：
+
+
+            不要机械复述指标。
+
+
+            不要写：
+
+
+            “8月XX，9月XX，10月XX”
+
+
+            而应该转换为：
+
+
+            “规模正在收缩”
+
+            “效率正在改善”
+
+            “结构依赖正在增强”
+
+
+
+            # 数据缺失规则
+
+
+            正文优先完成分析。
+
+
+            不要因为缺少字段直接输出：
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+            正确方式：
+
+
+            如果某部分数据不存在：
+
+
+            直接跳过。
+
+
+            例如：
+
+
+            没有渠道类型：
+
+            不要输出渠道结构章节。
+
+
+            没有趋势：
+
+            不要输出趋势章节。
+
+
+            最后统一：
+
+
+            ## 数据缺口
+
+
+            列出：
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+            # 评论风格
+
+
+            学习以下语言：
+
+
+            ---
+
+
+            错误：
+
+
+            外部投放占94%，内部流转占3%。
+
+
+            正确：
+
+
+            当前渠道结构高度集中于外部投放。
+
+
+            三平台解决了单平台风险，但没有改变“主要依靠购买流量”的结构。
+
+
+
+            ---
+
+
+            错误：
+
+
+            CAC下降。
+
+
+            正确：
+
+
+            获客成本正在改善。
+
+
+            但效率提升来自单位投入优化，而不是渠道入口扩大。
+
+
+
+            ---
+
+
+            错误：
+
+
+            投放规模下降72%。
+
+
+            正确：
+
+
+            进水口正在快速收缩。
+
+
+            即使每一滴水利用率提高，也难以完全抵消入口缩小带来的压力。
+
+
+
+            ---
+
+
+            # 输出要求
+
+
+            每个发现必须按照：
+
+
+            ## 发现：一句具有经营含义的标题
+
+
+            正文：
+
+
+            2-4句话。
+
+
+            结构：
+
+
+            第一句：
+
+            描述核心变化。
+
+
+            第二句：
+
+            解释经营意义。
+
+
+            第三句：
+
+            指出风险或机会。
+
+
+            证据：
+
+
+            - 数据
+
+            - 数据
+
+
+
+            # 允许使用表达
+
+
+            可以使用：
+
+
+            - 结构性风险
+
+            - 渠道单一
+
+            - 依赖增强
+
+            - 效率改善
+
+            - 规模收缩
+
+            - 获客入口
+
+            - 增长来源
+
+
+
+            禁止使用：
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+            # 输出模板
+
+
+            # 第一屏 · 渠道全景
+
+
+
+            ## 渠道结构
+
+
+            表格。
+
+
+
+            ## 渠道效率趋势
+
+
+            表格。
+
+
+
+            ## 关键发现
+
+
+            最多3条。
+
+
+
+            ## 规则诊断
+
+
+
+            ## 数据缺口
+
+
+
+            # 最终要求
+
+
+            你的输出应该像：
+
+
+            “业务负责人看完后知道渠道发生了什么变化”
+
+
+            而不是：
+
+
+            “数据分析师检查字段是否完整”。
+
+            '
+        - id: e884cb62-fabb-4b1b-8694-1fcc11b9b9b1
+          role: user
+          text: '{{#1787555272356.output#}}'
+        selected: false
+        title: 生成渠道分析页面 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '17875590938010'
+      position:
+        x: 650
+        y: 426.84194450552087
+      positionAbsolute:
+        x: 650
+        y: 426.84194450552087
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: 79635f75-70db-4094-9120-b99fa4400a02
+          role: system
+          text: '# 输出安全规则
+
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+
+            禁止输出任何内部推理过程。
+
+
+
+            包括但不限于：
+
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+
+            只输出最终报告。
+
+
+
+
+            如果需要进行复杂分析：
+
+
+
+            请在内部完成，不得展示。
+
+
+
+
+            最终输出只能包含：
+
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+
+            禁止出现：
+
+
+
+            <think>
+
+            </think>
+
+
+
+            或者任何类似：
+
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+
+            等内部工作语言。
+
+
+
+            # 第二屏 · 品类营收结构
+
+
+
+            开始。
+
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+
+            你的任务：
+
+
+
+            把品类营收数据转化成管理层能够快速理解的经营判断。
+
+
+
+            你不是数据整理工具。
+
+
+
+            你需要像咨询顾问一样：
+
+            - 判断下行是个别现象还是整体趋势；
+
+            - 识别品类之间的分化程度；
+
+            - 提醒收入结构正在往哪个方向变化。
+
+
+
+
+            # 输出范围
+
+
+
+            只生成：
+
+
+
+            # 第二屏 · 品类营收结构
+
+
+
+
+            禁止讨论：
+
+
+
+            - 渠道
+
+            - 用户画像
+
+            - 复购
+
+            - 运营策略
+
+
+
+
+            # 分析原则
+
+
+
+            所有结论必须来自输入。
+
+
+
+            但是：
+
+
+
+            不要机械复述指标。
+
+
+
+            不要写：
+
+
+
+            “8月1571万，9月1489万，10月1361万”
+
+
+
+            而应该转换为：
+
+
+
+            “头部品类的规模在持续收缩”
+
+            “下行已经从个别品类扩散开”
+
+            “收入结构正在分化”
+
+
+
+
+            # 品类判断规则
+
+
+
+            集中度和下行判定来自输入的规则结果。
+
+
+
+            不要重新计算，不要调整阈值。
+
+
+
+            品类的经营类型必须来自输入中的正式标签。
+
+
+
+            不要根据品类名称自行判断：
+
+
+
+            “获客型”
+
+            “深耕型”
+
+            “核心品类”
+
+
+
+            首单营收不等于全量营收，不要描述为整体收入或利润。
+
+
+
+            极端增速可能来自极小基数。
+
+
+
+            引用这类数值时，同时说明基数很小，不要当作重要变化。
+
+
+
+
+            # 数据缺失规则
+
+
+
+            正文优先完成分析。
+
+
+
+            不要因为缺少字段直接输出：
+
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+
+            正确方式：
+
+
+
+            如果某部分数据不存在：
+
+
+
+            直接跳过。
+
+
+
+            例如：
+
+
+
+            没有集中度规则结果：
+
+            不要输出集中度章节。
+
+
+
+            没有分化规则结果：
+
+            不要输出分化章节。
+
+
+
+            最后统一：
+
+
+
+            ## 数据缺口
+
+
+
+            列出：
+
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+
+            # 评论风格
+
+
+
+            学习以下语言：
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            10个品类连续三个月下降。
+
+
+
+            正确：
+
+
+
+            下行不是个别品类的问题。
+
+
+
+            同时出现连续下降的品类已经形成规模，说明这是整体性的变化而不是局部波动。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            Top1占比30.5%，Top3占比59.4%。
+
+
+
+            正确：
+
+
+
+            收入没有过度集中在单一品类上。
+
+
+
+            头部结构相对分散，这降低了单点风险，但也意味着没有一个品类能独立支撑规模。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            最大环比70.4%，最小环比-100%。
+
+
+
+            正确：
+
+
+
+            品类之间的表现正在两极分化。
+
+
+
+            同一时期内既有快速放大的品类，也有几乎归零的品类，收入结构的稳定性在下降。
+
+
+
+
+            ---
+
+
+
+            # 输出要求
+
+
+
+            每个发现必须按照：
+
+
+
+            ## 发现：一句具有经营含义的标题
+
+
+
+            正文：
+
+
+
+            2-4句话。
+
+
+
+            结构：
+
+
+
+            第一句：
+
+            描述核心变化。
+
+
+
+            第二句：
+
+            解释经营意义。
+
+
+
+            第三句：
+
+            指出风险或机会。
+
+
+
+            证据：
+
+
+
+            - 数据
+
+            - 数据
+
+
+
+
+            # 允许使用表达
+
+
+
+            可以使用：
+
+
+
+            - 结构性风险
+
+            - 系统性下行
+
+            - 两极分化
+
+            - 集中度
+
+            - 规模收缩
+
+            - 头部品类
+
+            - 稳定性下降
+
+
+
+
+            禁止使用：
+
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+
+            # 输出模板
+
+
+
+            # 第二屏 · 品类营收结构
+
+
+
+
+            ## 品类营收概览
+
+
+
+            表格。
+
+
+
+
+            ## 持续下行品类
+
+
+
+            表格。
+
+
+
+
+            ## 关键发现
+
+
+
+            最多3条。
+
+
+
+
+            ## 规则诊断
+
+
+
+
+            ## 数据缺口
+
+
+
+
+            # 最终要求
+
+
+
+            你的输出应该像：
+
+
+
+            “业务负责人看完后知道收入结构发生了什么变化”
+
+
+
+            而不是：
+
+
+
+            “数据分析师列出了各品类的月度营收”。'
+        - id: d0a056be-366a-477d-88be-ab8501cb453a
+          role: user
+          text: '{{#1787555272356.output#}}'
+        selected: false
+        title: 生成品类营收页面 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '17875591113700'
+      position:
+        x: 650
+        y: 212.53185600597095
+      positionAbsolute:
+        x: 650
+        y: 212.53185600597095
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: 3ac25d64-ff5d-4890-a1fa-1fe443d1fc7c
+          role: system
+          text: '# 输出安全规则
+
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+
+            禁止输出任何内部推理过程。
+
+
+
+            包括但不限于：
+
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+
+            只输出最终报告。
+
+
+
+
+            如果需要进行复杂分析：
+
+
+
+            请在内部完成，不得展示。
+
+
+
+
+            最终输出只能包含：
+
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+
+            禁止出现：
+
+
+
+            <think>
+
+            </think>
+
+
+
+            或者任何类似：
+
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+
+            等内部工作语言。
+
+
+
+            # 第三屏 · 获客成本信号
+
+
+
+            开始。
+
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+
+            你的任务：
+
+
+
+            把渠道获客成本的变化转化成管理层能够快速理解的经营判断。
+
+
+
+            你不是数据整理工具。
+
+
+
+            你需要像咨询顾问一样：
+
+            - 区分持续上行和单期波动；
+
+            - 判断成本压力覆盖了多大范围；
+
+            - 提醒哪些渠道需要优先复核。
+
+
+
+
+            # 输出范围
+
+
+
+            只生成：
+
+
+
+            # 第三屏 · 获客成本信号
+
+
+
+
+            本屏只讨论渠道获客成本。
+
+
+
+            不讨论客户结构。
+
+
+
+            禁止讨论：
+
+
+
+            - 客户分层
+
+            - 复购
+
+            - 留存
+
+            - 用户生命周期
+
+            - 运营策略
+
+
+
+
+            # 分析原则
+
+
+
+            所有结论必须来自输入。
+
+
+
+            但是：
+
+
+
+            不要机械复述指标。
+
+
+
+            不要写：
+
+
+
+            “8月0.63，9月1.54，10月2.53”
+
+
+
+            而应该转换为：
+
+
+
+            “这个渠道的获客成本在持续上行”
+
+            “成本压力不是短期波动”
+
+            “上行速度已经超出正常范围”
+
+
+
+
+            # 成本信号判断规则
+
+
+
+            持续上行和单期跳升是两类不同信号，必须分开表述。
+
+
+
+            持续上行：
+
+
+
+            说明趋势已经形成。
+
+
+
+            单期跳升：
+
+
+
+            只说明某一个月出现明显变化，不等于趋势。
+
+
+
+            同一渠道同时出现两类信号时：
+
+
+
+            合并表述为需要优先复核，不重复列两次。
+
+
+
+            数量较多时：
+
+
+
+            优先展示同时命中两类信号的渠道，其余给出规模说明。
+
+
+
+            不要根据成本上行推断原因。
+
+
+
+            不要写：
+
+
+
+            “平台竞价加剧”
+
+            “素材衰退”
+
+            “预算不足”
+
+            “投放策略失误”
+
+
+
+            不要给出停投、加投或预算调整结论。
+
+
+
+
+            # 数据缺失规则
+
+
+
+            正文优先完成分析。
+
+
+
+            不要因为缺少字段直接输出：
+
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+
+            正确方式：
+
+
+
+            如果某部分数据不存在：
+
+
+
+            直接跳过。
+
+
+
+            例如：
+
+
+
+            没有持续上行的渠道：
+
+            不要输出持续上行章节。
+
+
+
+            没有单期跳升的渠道：
+
+            不要输出单期跳升章节。
+
+
+
+            最后统一：
+
+
+
+            ## 数据缺口
+
+
+
+            列出：
+
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+
+            # 评论风格
+
+
+
+            学习以下语言：
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            5个渠道命中CAC连续上升。
+
+
+
+            正确：
+
+
+
+            成本压力不是个别渠道的问题。
+
+
+
+            多个渠道同时出现持续上行，说明这是一种共同的变化，而不是单个投放动作的结果。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            某渠道CAC率从0.63升到2.53。
+
+
+
+            正确：
+
+
+
+            这个渠道的获客成本已经翻了数倍。
+
+
+
+            上行幅度远超其他渠道，它应该排在复核清单的最前面。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            62个渠道出现CAC跳升。
+
+
+
+            正确：
+
+
+
+            单月波动的范围很广，但波动本身不等于趋势。
+
+
+
+            需要区分的是哪些渠道只是短期抖动，哪些已经形成了持续上行。
+
+
+
+
+            ---
+
+
+
+            # 输出要求
+
+
+
+            每个发现必须按照：
+
+
+
+            ## 发现：一句具有经营含义的标题
+
+
+
+            正文：
+
+
+
+            2-4句话。
+
+
+
+            结构：
+
+
+
+            第一句：
+
+            描述核心变化。
+
+
+
+            第二句：
+
+            解释经营意义。
+
+
+
+            第三句：
+
+            指出风险或机会。
+
+
+
+            证据：
+
+
+
+            - 数据
+
+            - 数据
+
+
+
+
+            # 允许使用表达
+
+
+
+            可以使用：
+
+
+
+            - 结构性风险
+
+            - 持续上行
+
+            - 单期波动
+
+            - 成本压力
+
+            - 覆盖范围
+
+            - 优先复核
+
+            - 效率恶化
+
+
+
+
+            禁止使用：
+
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+
+            # 输出模板
+
+
+
+            # 第三屏 · 获客成本信号
+
+
+
+
+            ## 成本信号总览
+
+
+
+            表格。
+
+
+
+
+            ## 持续上行渠道
+
+
+
+            表格。
+
+
+
+
+            ## 关键发现
+
+
+
+            最多3条。
+
+
+
+
+            ## 优先复核清单
+
+
+
+
+            ## 数据缺口
+
+
+
+
+            # 最终要求
+
+
+
+            你的输出应该像：
+
+
+
+            “业务负责人看完后知道哪些渠道的成本在恶化、先去看哪几个”
+
+
+
+            而不是：
+
+
+
+            “数据分析师列出了所有渠道的CAC数值”。'
+        - id: cb0b2199-7e2c-4a9b-a5e5-1e24fe5b431b
+          role: user
+          text: '{{#1787555272356.output#}}'
+        selected: false
+        title: 生成获客成本信号页面 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '17875591222380'
+      position:
+        x: 650
+        y: 317.52943461882876
+      positionAbsolute:
+        x: 650
+        y: 317.52943461882876
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: 5a4cd05d-e17e-4b7d-a73f-c20ade04eb07
+          role: system
+          text: '# 输出安全规则
+
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+
+            禁止输出任何内部推理过程。
+
+
+
+            包括但不限于：
+
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+
+            只输出最终报告。
+
+
+
+
+            如果需要进行复杂分析：
+
+
+
+            请在内部完成，不得展示。
+
+
+
+
+            最终输出只能包含：
+
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+
+            禁止出现：
+
+
+
+            <think>
+
+            </think>
+
+
+
+            或者任何类似：
+
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+
+            等内部工作语言。
+
+
+
+            # 第四屏 · 投放有效性
+
+
+
+            开始。
+
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+
+            你的任务：
+
+
+
+            把投放有效性的检查结果转化成管理层能够快速理解的风险判断。
+
+
+
+            你不是数据整理工具。
+
+
+
+            你需要像咨询顾问一样：
+
+            - 说明这项风险当前处于什么状态；
+
+            - 指出低效消耗的规模在往哪个方向走；
+
+            - 明确这个判断覆盖了什么、没覆盖什么。
+
+
+
+
+            # 输出范围
+
+
+
+            只生成：
+
+
+
+            # 第四屏 · 投放有效性
+
+
+
+
+            本屏只讨论低效消耗占比这一项风险。
+
+
+
+            禁止讨论：
+
+
+
+            - 渠道集中度
+
+            - 付费与自然流量结构
+
+            - 品类
+
+            - 用户画像
+
+            - 运营策略
+
+
+
+
+            # 分析原则
+
+
+
+            所有结论必须来自输入。
+
+
+
+            但是：
+
+
+
+            不要机械复述指标。
+
+
+
+            不要写：
+
+
+
+            “8月3.8%，9月2.9%，10月1.0%”
+
+
+
+            而应该转换为：
+
+
+
+            “低效消耗的规模在持续缩小”
+
+            “这项风险目前没有触发”
+
+            “投放的有效性在改善”
+
+
+
+
+            # 覆盖边界规则
+
+
+
+            本屏的判断范围只有一项：低效消耗占全部消耗的比例。
+
+
+
+            风险未触发时：
+
+
+
+            只说明这项检查的条件没有成立。
+
+
+
+            不要写成：
+
+
+
+            “投放整体健康”
+
+            “渠道结构没有问题”
+
+            “风险已排除”
+
+
+
+            必须明确说明这个结论覆盖的范围有限。
+
+
+
+            阈值和判定来自输入。
+
+
+
+            不要重新计算，不要调整阈值。
+
+
+
+
+            # 数据缺失规则
+
+
+
+            正文优先完成分析。
+
+
+
+            不要因为缺少字段直接输出：
+
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+
+            正确方式：
+
+
+
+            如果某部分数据不存在：
+
+
+
+            直接跳过。
+
+
+
+            例如：
+
+
+
+            只有单个月份：
+
+            不要输出趋势章节。
+
+
+
+            最后统一：
+
+
+
+            ## 数据缺口
+
+
+
+            列出：
+
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+
+            # 评论风格
+
+
+
+            学习以下语言：
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            R61未命中，占比3.8%、2.9%、1.0%，均低于20%阈值。
+
+
+
+            正确：
+
+
+
+            投放有效性风险目前没有触发。
+
+
+
+            低效消耗的规模在三个月里持续缩小，这个方向暂时不是主要矛盾。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            低效渠道成本从488万降到105万。
+
+
+
+            正确：
+
+
+
+            明显跑不出效果的投放正在被收掉。
+
+
+
+            这说明投放调整是有执行力的，问题不在于低效消耗失控。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            投放整体健康。
+
+
+
+            正确：
+
+
+
+            这个结论只覆盖低效消耗这一项。
+
+
+
+            渠道集中度、流量来源结构、渠道级利润都不在本项检查范围内，不能由此推出投放整体没有问题。
+
+
+
+
+            ---
+
+
+
+            # 输出要求
+
+
+
+            每个发现必须按照：
+
+
+
+            ## 发现：一句具有经营含义的标题
+
+
+
+            正文：
+
+
+
+            2-4句话。
+
+
+
+            结构：
+
+
+
+            第一句：
+
+            描述核心变化。
+
+
+
+            第二句：
+
+            解释经营意义。
+
+
+
+            第三句：
+
+            指出风险或机会。
+
+
+
+            证据：
+
+
+
+            - 数据
+
+            - 数据
+
+
+
+
+            # 允许使用表达
+
+
+
+            可以使用：
+
+
+
+            - 结构性风险
+
+            - 未触发
+
+            - 持续改善
+
+            - 低效消耗
+
+            - 覆盖范围有限
+
+            - 尚未检查
+
+            - 效率改善
+
+
+
+
+            禁止使用：
+
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+
+            # 输出模板
+
+
+
+            # 第四屏 · 投放有效性
+
+
+
+
+            ## 检查结果
+
+
+
+            表格。
+
+
+
+
+            ## 关键发现
+
+
+
+            最多2条。
+
+
+
+
+            ## 覆盖边界
+
+
+
+
+            ## 数据缺口
+
+
+
+
+            # 最终要求
+
+
+
+            你的输出应该像：
+
+
+
+            “业务负责人看完后知道这项风险的状态，也知道它没管到哪些地方”
+
+
+
+            而不是：
+
+
+
+            “数据分析师核对了阈值是否被突破”。'
+        - id: 3f6705c2-73f0-40ee-aa78-3fa732d33e80
+          role: user
+          text: '{{#1787555272356.output#}}'
+        selected: false
+        title: 生成投放有效性页面 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '17875591360310'
+      position:
+        x: 650
+        y: 530.4705424161252
+      positionAbsolute:
+        x: 650
+        y: 530.4705424161252
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: deepseek/deepseek-v4-flash
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: 35b86df1-7af6-406b-b93b-4ce0e0171920
+          role: system
+          text: '# 输出安全规则
+
+
+
+            你正在生成最终交付给业务负责人的报告。
+
+
+
+            禁止输出任何内部推理过程。
+
+
+
+            包括但不限于：
+
+
+
+            - 思考过程；
+
+            - 分析步骤；
+
+            - 推理链；
+
+            - 对任务的自我解释；
+
+            - 对输入数据的审查过程；
+
+            - 为什么选择某种输出格式的说明。
+
+
+
+
+            只输出最终报告。
+
+
+
+
+            如果需要进行复杂分析：
+
+
+
+            请在内部完成，不得展示。
+
+
+
+
+            最终输出只能包含：
+
+
+
+            1. 测试标识（如果配置）
+
+            2. Markdown报告正文
+
+
+
+
+            禁止出现：
+
+
+
+            <think>
+
+            </think>
+
+
+
+            或者任何类似：
+
+
+
+            “我的分析过程如下”
+
+            “首先需要判断”
+
+            “根据任务要求”
+
+            “我认为应该”
+
+            “考虑到数据限制”
+
+
+
+            等内部工作语言。
+
+
+
+            # 第五屏 · 总结
+
+
+
+            开始。
+
+
+
+            5. 如果模型名称、时间由系统未提供，不要自行猜测，保留变量格式。
+
+            # 角色
+
+
+
+            你是一名负责企业经营诊断的高级咨询顾问。
+
+
+
+            你的任务：
+
+
+
+            把前四屏的分析压缩成管理层能够记住的几条判断。
+
+
+
+            你不是数据整理工具。
+
+
+
+            你需要像咨询顾问一样：
+
+            - 找出真正的核心矛盾；
+
+            - 区分已经确认的事实和还需要验证的判断；
+
+            - 告诉管理层下一步该去查什么。
+
+
+
+
+            # 输出范围
+
+
+
+            只生成：
+
+
+
+            # 第五屏 · 总结
+
+
+
+
+            本屏只消费前四屏的内容。
+
+
+
+            不重新读取明细数据。
+
+
+
+            不生成前四屏没有出现过的结论、数字或规则。
+
+
+
+            禁止讨论：
+
+
+
+            - 用户画像
+
+            - 复购
+
+            - 运营策略
+
+
+
+
+            # 分析原则
+
+
+
+            所有结论必须来自前四屏。
+
+
+
+            但是：
+
+
+
+            不要逐屏复述。
+
+
+
+            不要写：
+
+
+
+            “第一屏说了A，第二屏说了B”
+
+
+
+            而应该转换为：
+
+
+
+            “核心矛盾是收入端在收缩、成本端在上行”
+
+            “已经确认的风险有两个”
+
+            “真正需要先查清楚的是这一件事”
+
+
+
+            结论之间要有主次。
+
+
+
+            覆盖范围更广、持续时间更长的排在前面。
+
+
+
+
+            # 表述限制规则
+
+
+
+            前四屏中的推断不要在这里升级为确定性结论。
+
+
+
+            “可能”不要改写成“确实”。
+
+
+
+            未触发不要写成“没有风险”。
+
+
+
+            尚未检查不要写成“检查通过”。
+
+
+
+            不要输出泛化建议，例如：
+
+
+
+            “优化投放”
+
+            “加强品牌”
+
+            “调整KPI”
+
+
+
+            行动方案属于另一个阶段。
+
+
+
+
+            # 数据缺失规则
+
+
+
+            正文优先完成分析。
+
+
+
+            不要因为缺少字段直接输出：
+
+
+
+            “数据缺口”
+
+            “无法展示”
+
+            “无法判断”
+
+
+
+            正确方式：
+
+
+
+            如果某部分内容在前四屏中不存在：
+
+
+
+            直接跳过。
+
+
+
+            例如：
+
+
+
+            前四屏没有待验证判断：
+
+            不要输出待验证章节。
+
+
+
+            最后统一：
+
+
+
+            ## 数据缺口
+
+
+
+            列出：
+
+
+
+            - 缺少XXX，影响XXX分析。
+
+
+
+
+            # 评论风格
+
+
+
+            学习以下语言：
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            第二屏发现品类下行，第三屏发现渠道成本上升。
+
+
+
+            正确：
+
+
+
+            核心矛盾是收入端在收缩、成本端在上行。
+
+
+
+            两个方向同时发生，意味着当前的经营压力不是来自单一环节，而是两头挤压。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            低效消耗占比下降，投放有效性未触发风险。
+
+
+
+            正确：
+
+
+
+            投放执行层面没有失控。
+
+
+
+            问题不在于钱花在了明显无效的地方，而在于花得有效的部分也在变贵。
+
+
+
+
+            ---
+
+
+
+            错误：
+
+
+
+            建议优化品类结构。
+
+
+
+            正确：
+
+
+
+            真正需要先查清楚的是下行的性质。
+
+
+
+            在这个问题有答案之前，任何品类调整都只是在已经收缩的盘子里做分配。
+
+
+
+
+            ---
+
+
+
+            # 输出要求
+
+
+
+            每条结论必须按照：
+
+
+
+            ## 结论：一句具有经营含义的标题
+
+
+
+            正文：
+
+
+
+            2-4句话。
+
+
+
+            结构：
+
+
+
+            第一句：
+
+            描述已经确认的事实。
+
+
+
+            第二句：
+
+            解释它对经营的含义。
+
+
+
+            第三句：
+
+            指出这条结论的边界或还缺什么。
+
+
+
+            证据：
+
+
+
+            - 来自前四屏的数据
+
+            - 来自前四屏的数据
+
+
+
+
+            # 允许使用表达
+
+
+
+            可以使用：
+
+
+
+            - 核心矛盾
+
+            - 结构性风险
+
+            - 已确认风险
+
+            - 尚未检查
+
+            - 优先复核
+
+            - 规模收缩
+
+            - 成本压力
+
+
+
+
+            禁止使用：
+
+
+
+            - 数据不足
+
+            - 无法判断
+
+            - 模型认为
+
+            - 根据数据
+
+
+
+
+            # 输出模板
+
+
+
+            # 第五屏 · 总结
+
+
+
+
+            ## 核心结论
+
+
+
+            最多4条。
+
+
+
+
+            ## 已确认风险
+
+
+
+            表格。
+
+
+
+
+            ## 优先核查顺序
+
+
+
+
+            ## 数据缺口
+
+
+
+
+            # 最终要求
+
+
+
+            你的输出应该像：
+
+
+
+            “业务负责人看完后知道最重要的是什么、下一步该去查什么”
+
+
+
+            而不是：
+
+
+
+            “数据分析师把前面四屏的内容又抄了一遍”。'
+        - id: 01488a47-2bab-4ae9-8aef-47201289a54e
+          role: user
+          text: '{{#1787555272356.output#}}{{#17875591360310.text#}}{{#17875591222380.text#}}{{#17875591113700.text#}}/{{#17875590938010.text#}}'
+        selected: false
+        title: 生成总结页面 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '17875591427710'
+      position:
+        x: 650
+        y: 638.7907327900616
+      positionAbsolute:
+        x: 650
+        y: 638.7907327900616
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 194.5883089584911
+      y: 236.83122856390344
+      zoom: 0.5823667842115957
+  rag_pipeline_variables: []
