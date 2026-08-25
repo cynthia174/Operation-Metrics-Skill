@@ -82,7 +82,7 @@ formatter只增加展示和分组元数据，不修改`fact`中的`hit`、`metri
 
 ## 现行计算口径
 
-- `channel` 固定取 `三级渠道`；`渠道名称`视为更细的投放计划，不参与主键。
+- `channel` 固定取 `渠道名称`（见 `src/field_mapping.py`）。
 - 所有金额和计数先按 `month + channel` 求和，率类指标再用聚合后的分子、分母重算。
 - `first_order_users_proxy = 首单订单数`，仅作首购用户代理；源表没有去重用户 ID。
 - `cac = 获客总成本 / 首单订单数`，用于指标展示。
