@@ -1,0 +1,2067 @@
+{
+  "module": "growth_quality",
+  "observation": {
+    "start": "2024-07-03",
+    "end": "2024-12-29"
+  },
+  "capabilities": [
+    {
+      "capability_id": "channel_roi",
+      "required_dimensions": [
+        "channel"
+      ],
+      "required_metrics": [
+        "cost",
+        "first_order_revenue"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "period_over_period_change",
+      "required_dimensions": [
+        "time"
+      ],
+      "required_metrics": [],
+      "required_time_condition": "at_least_two_complete_periods",
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "continuous_trend",
+      "required_dimensions": [
+        "time"
+      ],
+      "required_metrics": [],
+      "required_time_condition": "at_least_three_complete_periods",
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "19b84144e061739d",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "有为传媒-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          168
+        ]
+      }
+    },
+    {
+      "fact_id": "9850d66bb8c1fd95",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "有搜网络-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 115.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          170
+        ]
+      }
+    },
+    {
+      "fact_id": "da70011d91861f86",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "晓锋摄影教学-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 2180.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          165
+        ]
+      }
+    },
+    {
+      "fact_id": "dc6cf9cc8434e9f7",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "杰信总老年-sy-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          181
+        ]
+      }
+    },
+    {
+      "fact_id": "8b0d2de7166414d2",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "河北树人-G-公众号",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          185
+        ]
+      }
+    },
+    {
+      "fact_id": "7c3a10c176de15c9",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "星橘-sy-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          163
+        ]
+      }
+    },
+    {
+      "fact_id": "4468f3add161abe8",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "微信咨询",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          135
+        ]
+      }
+    },
+    {
+      "fact_id": "2bfe73533710d539",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "星座智慧6-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          161
+        ]
+      }
+    },
+    {
+      "fact_id": "cbe737a6d1eb7446",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "深圳柚众-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          194
+        ]
+      }
+    },
+    {
+      "fact_id": "4d74703a14887e1f",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "深圳鑫德-XCX-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 1.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          195
+        ]
+      }
+    },
+    {
+      "fact_id": "1da8ae26b6cc7a45",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "退休俱乐部-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          239
+        ]
+      }
+    },
+    {
+      "fact_id": "0fcc6f78faab9aa3",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "逸扬-T-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          240
+        ]
+      }
+    },
+    {
+      "fact_id": "66129deeb1e9d6bb",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "蒲思-广点通-中医",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          231
+        ]
+      }
+    },
+    {
+      "fact_id": "76c72c63d72e8f27",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "鑫顺S-T-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          245
+        ]
+      }
+    },
+    {
+      "fact_id": "62f92fc2b7ec46e1",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "陈养生-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          252
+        ]
+      }
+    },
+    {
+      "fact_id": "208ddf5ec62c588d",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "青瓜my-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 6.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          253
+        ]
+      }
+    },
+    {
+      "fact_id": "f36238bd35c8657f",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "颜S-T-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          255
+        ]
+      }
+    },
+    {
+      "fact_id": "90988a2dbdf85e08",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "湖北RJ-SJ-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          198
+        ]
+      }
+    },
+    {
+      "fact_id": "b261b3a976e49822",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "牵牛娃-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          204
+        ]
+      }
+    },
+    {
+      "fact_id": "6758a1b34f633ff4",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "珍爱-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 0.6,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          205
+        ]
+      }
+    },
+    {
+      "fact_id": "0af0aa15368adb8c",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "百应-WH-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          211
+        ]
+      }
+    },
+    {
+      "fact_id": "5ce724a21f57b452",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "花间果语-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          225
+        ]
+      }
+    },
+    {
+      "fact_id": "9e2c8c41f2d9a0a9",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "深蓝宇-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          196
+        ]
+      }
+    },
+    {
+      "fact_id": "4968786f338584f9",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "上海得人-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          38
+        ]
+      }
+    },
+    {
+      "fact_id": "d160484162ad581e",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "乐校科技-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 1880.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          43
+        ]
+      }
+    },
+    {
+      "fact_id": "68852f78e5d0acf9",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "佳佳-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          53
+        ]
+      }
+    },
+    {
+      "fact_id": "64619516d90f9c5e",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "兮兮-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 1680.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          56
+        ]
+      }
+    },
+    {
+      "fact_id": "aa903296ab0177b1",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "一点-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 2.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          33
+        ]
+      }
+    },
+    {
+      "fact_id": "ae66b8bd668944c1",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "HBBL-T-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 1.1,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          8
+        ]
+      }
+    },
+    {
+      "fact_id": "53c55e5318a4861a",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "JTZZ",
+      "metric": "first_order_revenue",
+      "value": 1.1,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          9
+        ]
+      }
+    },
+    {
+      "fact_id": "3ccdc70874e12b8c",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "MHSHN-XX-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          13
+        ]
+      }
+    },
+    {
+      "fact_id": "a8a377eaa1ec091c",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "N波博Y-G-公众号",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          16
+        ]
+      }
+    },
+    {
+      "fact_id": "2a2ea928f8d92e39",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "存量组",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          102
+        ]
+      }
+    },
+    {
+      "fact_id": "d764d73d8964d2c7",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "安徽尼澳-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 5640.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          105
+        ]
+      }
+    },
+    {
+      "fact_id": "f7bf8096dc58d9fc",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "富鑫-T-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          114
+        ]
+      }
+    },
+    {
+      "fact_id": "5f489c11152d4458",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "北京立达4-XCX-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          71
+        ]
+      }
+    },
+    {
+      "fact_id": "ac115b122777cac9",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "南昌-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 5020.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          75
+        ]
+      }
+    },
+    {
+      "fact_id": "642afaa744e9120f",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "喵H",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          92
+        ]
+      }
+    },
+    {
+      "fact_id": "6a7fc01693278ad9",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "杭州亦立-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 2.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          452
+        ]
+      }
+    },
+    {
+      "fact_id": "bebd69013c6b0214",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "星座智慧-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          442
+        ]
+      }
+    },
+    {
+      "fact_id": "9fe2fd01396535c2",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "易ST-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          441
+        ]
+      }
+    },
+    {
+      "fact_id": "323ae9e5f27bedf0",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "曾炜康-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 5640.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          446
+        ]
+      }
+    },
+    {
+      "fact_id": "388d1c4a2fc0e3a0",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "深圳优普HW-SJ-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 2181.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          470
+        ]
+      }
+    },
+    {
+      "fact_id": "b954b2b4931f3224",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "浙江绿箭-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          467
+        ]
+      }
+    },
+    {
+      "fact_id": "28e70b2d062e2e27",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "浙江太极-sp-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          466
+        ]
+      }
+    },
+    {
+      "fact_id": "e6c21faee8f05d8d",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "江西二号-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          460
+        ]
+      }
+    },
+    {
+      "fact_id": "39c01ddec44a67ef",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "快手-湖北万航-APP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          414
+        ]
+      }
+    },
+    {
+      "fact_id": "99f21d148166d215",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "新超-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          438
+        ]
+      }
+    },
+    {
+      "fact_id": "0965da4d1bbe7861",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "抖音-众生话-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          420
+        ]
+      }
+    },
+    {
+      "fact_id": "9d64ad0af7c83f4e",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "摄影师夏凡-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          430
+        ]
+      }
+    },
+    {
+      "fact_id": "d8c8c6b579a71e85",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "青瓜传媒-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 5.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          538
+        ]
+      }
+    },
+    {
+      "fact_id": "dce4b14a70750434",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "赵老师轻运动直播-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          525
+        ]
+      }
+    },
+    {
+      "fact_id": "f83175101261f45c",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "观观观星-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          517
+        ]
+      }
+    },
+    {
+      "fact_id": "f5be4c03baf27753",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "西安悦木OP-SJ-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          516
+        ]
+      }
+    },
+    {
+      "fact_id": "82ad897683273585",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "董文立老师-H-小红书",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          512
+        ]
+      }
+    },
+    {
+      "fact_id": "f9a0485e711f90da",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "广州以明-G-公众号",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          404
+        ]
+      }
+    },
+    {
+      "fact_id": "c3fc29f1fde44ad2",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "龙在飞-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          544
+        ]
+      }
+    },
+    {
+      "fact_id": "c229a76e56d02618",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "麦穗-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          543
+        ]
+      }
+    },
+    {
+      "fact_id": "20a26771ba27dbec",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "邑扬-WB-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 3787.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          529
+        ]
+      }
+    },
+    {
+      "fact_id": "22e394d63c6f93ef",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "锐拾广告-H-小红书",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          534
+        ]
+      }
+    },
+    {
+      "fact_id": "2d153c94ba8df324",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "针不戳-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 8578.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          532
+        ]
+      }
+    },
+    {
+      "fact_id": "755f6299b325219c",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "金鸿-T-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          531
+        ]
+      }
+    },
+    {
+      "fact_id": "e240d8b2b7afa3e8",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "瑞得-KS-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          485
+        ]
+      }
+    },
+    {
+      "fact_id": "d18733e68aa57f8e",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "瑜伽项目直播间-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          484
+        ]
+      }
+    },
+    {
+      "fact_id": "38e6cfa90f5d59b0",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "爱尚教育-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          482
+        ]
+      }
+    },
+    {
+      "fact_id": "58f1ddacef04e0c1",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "聚众互动-APP-垂直应用-领课",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          505
+        ]
+      }
+    },
+    {
+      "fact_id": "1ec232550d046757",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "聚众-APP-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          504
+        ]
+      }
+    },
+    {
+      "fact_id": "87e120465bc8fa6b",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "美星-T-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          502
+        ]
+      }
+    },
+    {
+      "fact_id": "50ddb52ab4557eeb",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "二姐谈生活-DSP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          300
+        ]
+      }
+    },
+    {
+      "fact_id": "a97ddcfb71ba60a7",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "乐乐花-T-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          297
+        ]
+      }
+    },
+    {
+      "fact_id": "f4e1ba41609ca4d2",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "北京泰德通-H-小红书",
+      "metric": "first_order_revenue",
+      "value": 2.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          326
+        ]
+      }
+    },
+    {
+      "fact_id": "b553de7bfaf60eca",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "利众友客-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 880.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          316
+        ]
+      }
+    },
+    {
+      "fact_id": "82b65de745dbd45e",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "北京立达-XCX-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          328
+        ]
+      }
+    },
+    {
+      "fact_id": "76b8182439ed4447",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "OP-SJ-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 21397.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          272
+        ]
+      }
+    },
+    {
+      "fact_id": "396ecef640890adc",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "B乐-G-公众号",
+      "metric": "first_order_revenue",
+      "value": 1.1,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          262
+        ]
+      }
+    },
+    {
+      "fact_id": "ede3bf70f319186a",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "BJ大妈",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          261
+        ]
+      }
+    },
+    {
+      "fact_id": "616f2c998f3f4977",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "三云-DX-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          289
+        ]
+      }
+    },
+    {
+      "fact_id": "3c0c2c44d9f7d4f4",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "ip孵化",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          280
+        ]
+      }
+    },
+    {
+      "fact_id": "3909b37e23e0a8b6",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "WZ-G-公众号",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          278
+        ]
+      }
+    },
+    {
+      "fact_id": "f9c3b3f23951762e",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "ip抖音预约-普拉提",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          284
+        ]
+      }
+    },
+    {
+      "fact_id": "77f1ed0d5e390418",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "北京立达2-XCX-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          329
+        ]
+      }
+    },
+    {
+      "fact_id": "79ac281bcc6bc112",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "宁波溢达OP-SJ-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 1428.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          373
+        ]
+      }
+    },
+    {
+      "fact_id": "3c2979fc779478db",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "孙能能-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 13696.8,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          372
+        ]
+      }
+    },
+    {
+      "fact_id": "501f1d4aae925c44",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "如金-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 21500.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          371
+        ]
+      }
+    },
+    {
+      "fact_id": "6c2038ccf7976bbc",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "奔宵-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          368
+        ]
+      }
+    },
+    {
+      "fact_id": "12d31082d01b0be5",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "小宇护肤-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          386
+        ]
+      }
+    },
+    {
+      "fact_id": "338495103ad4f2fe",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "平台私域功法书",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          398
+        ]
+      }
+    },
+    {
+      "fact_id": "7259150551dba376",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "小打卡-G-公众号",
+      "metric": "first_order_revenue",
+      "value": 5264.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          389
+        ]
+      }
+    },
+    {
+      "fact_id": "7479cc2f17ed03b9",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "北海-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          332
+        ]
+      }
+    },
+    {
+      "fact_id": "e8b4d674a6558d9b",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "南昌先行-G-公众号",
+      "metric": "first_order_revenue",
+      "value": 25.3,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          337
+        ]
+      }
+    },
+    {
+      "fact_id": "895f0dd1bc30e15c",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "厦门HL-app-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 2679.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          343
+        ]
+      }
+    },
+    {
+      "fact_id": "76c3abcf09a2cd72",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "及锋-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          346
+        ]
+      }
+    },
+    {
+      "fact_id": "1ef6c12c5859112c",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "同道-G-公众号",
+      "metric": "first_order_revenue",
+      "value": 3771.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          350
+        ]
+      }
+    },
+    {
+      "fact_id": "70c7dfa965d4d01c",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "太极付费视频号直播间-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          364
+        ]
+      }
+    },
+    {
+      "fact_id": "fcc4c35aa4ea4f97",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "够W-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          359
+        ]
+      }
+    },
+    {
+      "fact_id": "6d4d95bdab7c1266",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "吕飞-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          352
+        ]
+      }
+    },
+    {
+      "fact_id": "5245e98328de0394",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "周口穗安-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          353
+        ]
+      }
+    },
+    {
+      "fact_id": "290d9044f4cc9e20",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "品动-ZF-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 8400.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          354
+        ]
+      }
+    },
+    {
+      "fact_id": "ac6fa7379b081851",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "春云-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          707
+        ]
+      }
+    },
+    {
+      "fact_id": "f1005a8920f1da23",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "浙江WCOP-SJ-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 20919.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          730
+        ]
+      }
+    },
+    {
+      "fact_id": "4dea53823b4e7e1a",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "杭州慕溪-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          718
+        ]
+      }
+    },
+    {
+      "fact_id": "2857416ade692dcd",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "武汉礼易-SY-其他异业",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          722
+        ]
+      }
+    },
+    {
+      "fact_id": "5e1bc5bb2f80eb56",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "沈阳快马-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          724
+        ]
+      }
+    },
+    {
+      "fact_id": "d007c2e48c97759d",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "河南微驰OP-SJ-垂直应用",
+      "metric": "first_order_revenue",
+      "value": 20196.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          726
+        ]
+      }
+    },
+    {
+      "fact_id": "9c6cbc46a01ccec5",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "济南嘉估-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 1880.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          729
+        ]
+      }
+    },
+    {
+      "fact_id": "dac73cc16a94acbb",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "海南久邦-DX-短信TMK",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          731
+        ]
+      }
+    },
+    {
+      "fact_id": "9eaa9bd7ec60796a",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "方德教育-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          701
+        ]
+      }
+    },
+    {
+      "fact_id": "2b86087c744ec0e0",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "快手号",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          678
+        ]
+      }
+    },
+    {
+      "fact_id": "a9729ce4f8956145",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "扬帆-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 3760.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          681
+        ]
+      }
+    },
+    {
+      "fact_id": "bbd9264ade3f6b90",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "支付宝",
+      "metric": "first_order_revenue",
+      "value": 28200.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          695
+        ]
+      }
+    },
+    {
+      "fact_id": "f5001e1ef6c44625",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "数赢云",
+      "metric": "first_order_revenue",
+      "value": 1.1,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          697
+        ]
+      }
+    },
+    {
+      "fact_id": "480ec405c9c2059f",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "文轩-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          698
+        ]
+      }
+    },
+    {
+      "fact_id": "813b65385f14b937",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "抖音品牌",
+      "metric": "first_order_revenue",
+      "value": 4.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          686
+        ]
+      }
+    },
+    {
+      "fact_id": "40973fe32b49eca7",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "芝麻开播-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          769
+        ]
+      }
+    },
+    {
+      "fact_id": "55345bac7344ac69",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "董文立老师-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 1380.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          774
+        ]
+      }
+    },
+    {
+      "fact_id": "f0a3d779553ef9f2",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "西安妙言-H-小红书",
+      "metric": "first_order_revenue",
+      "value": 1882.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          776
+        ]
+      }
+    },
+    {
+      "fact_id": "231b7bc5bf4a01af",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "视频号翊鸣-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 0.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          780
+        ]
+      }
+    },
+    {
+      "fact_id": "eff2129c754abd24",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "赵老师项目直播间-SP-短直视频",
+      "metric": "first_order_revenue",
+      "value": 880.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          783
+        ]
+      }
+    },
+    {
+      "fact_id": "da87816752fab0e4",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "道哥-DY-短直视频",
+      "metric": "first_order_revenue",
+      "value": 6874.77,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          785
+        ]
+      }
+    },
+    {
+      "fact_id": "2c24a2e954179e1d",
+      "capability_id": "channel_roi",
+      "dimension": "channel",
+      "entity": "针不戳-H-小红书",
+      "metric": "first_order_revenue",
+      "value": 6.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\channel_metrics.csv",
+        "rows": [
+          788
+        ]
+      }
+    }
+  ],
+  "rule_results": [
+    {
+      "module": "S3",
+      "rule_id": "R61",
+      "rule_name": "无效投放(P0)",
+      "hit": false,
+      "dimension": {
+        "type": "all_channels",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-08"
+      },
+      "metrics": {
+        "ineffective_cost": 2237906.0799999996,
+        "total_cost": 141187059.29000002,
+        "ineffective_cost_share": 0.015850645882518964
+      },
+      "threshold": "ROI<0.5渠道消耗占比 > 0.20",
+      "evidence": [
+        "ROI<0.5渠道成本 2237906.08",
+        "全渠道成本 141187059.29",
+        "无效投放占比 0.015851"
+      ]
+    },
+    {
+      "module": "S3",
+      "rule_id": "R61",
+      "rule_name": "无效投放(P0)",
+      "hit": false,
+      "dimension": {
+        "type": "all_channels",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-09"
+      },
+      "metrics": {
+        "ineffective_cost": 3327542.9600000004,
+        "total_cost": 138555024.48000002,
+        "ineffective_cost_share": 0.02401603963831944
+      },
+      "threshold": "ROI<0.5渠道消耗占比 > 0.20",
+      "evidence": [
+        "ROI<0.5渠道成本 3327542.96",
+        "全渠道成本 138555024.48",
+        "无效投放占比 0.024016"
+      ]
+    },
+    {
+      "module": "S3",
+      "rule_id": "R61",
+      "rule_name": "无效投放(P0)",
+      "hit": false,
+      "dimension": {
+        "type": "all_channels",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-10",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "ineffective_cost": 3711611.6500000004,
+        "total_cost": 152297515.71,
+        "ineffective_cost_share": 0.02437079575918711
+      },
+      "threshold": "ROI<0.5渠道消耗占比 > 0.20",
+      "evidence": [
+        "ROI<0.5渠道成本 3711611.65",
+        "全渠道成本 152297515.71",
+        "无效投放占比 0.024371"
+      ]
+    },
+    {
+      "module": "S3",
+      "rule_id": "R61",
+      "rule_name": "无效投放(P0)",
+      "hit": false,
+      "dimension": {
+        "type": "all_channels",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-11",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "ineffective_cost": 15332515.39,
+        "total_cost": 145360219.64999998,
+        "ineffective_cost_share": 0.10547944566207873
+      },
+      "threshold": "ROI<0.5渠道消耗占比 > 0.20",
+      "evidence": [
+        "ROI<0.5渠道成本 15332515.39",
+        "全渠道成本 145360219.65",
+        "无效投放占比 0.105479"
+      ]
+    }
+  ],
+  "limitations": []
+}
