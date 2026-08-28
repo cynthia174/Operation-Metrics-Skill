@@ -1,0 +1,136 @@
+{
+  "capabilities": [
+    {
+      "capability_id": "channel_revenue_summary",
+      "required_dimensions": [
+        "channel"
+      ],
+      "required_metrics": [
+        "first_order_revenue"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "channel_revenue_rank",
+      "required_dimensions": [
+        "channel"
+      ],
+      "required_metrics": [
+        "first_order_revenue"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "channel_cost_summary",
+      "required_dimensions": [
+        "channel"
+      ],
+      "required_metrics": [
+        "cost"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "channel_cac",
+      "required_dimensions": [
+        "channel"
+      ],
+      "required_metrics": [
+        "cost",
+        "first_order_orders"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "channel_cac_rate",
+      "required_dimensions": [
+        "channel"
+      ],
+      "required_metrics": [
+        "cost",
+        "first_order_net_revenue"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "channel_roi",
+      "required_dimensions": [
+        "channel"
+      ],
+      "required_metrics": [
+        "cost",
+        "first_order_revenue"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "category_revenue_summary",
+      "required_dimensions": [
+        "category"
+      ],
+      "required_metrics": [
+        "category_revenue"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "category_revenue_rank",
+      "required_dimensions": [
+        "category"
+      ],
+      "required_metrics": [
+        "category_revenue"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "category_revenue_share",
+      "required_dimensions": [
+        "category"
+      ],
+      "required_metrics": [
+        "category_revenue",
+        "revenue_share"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "period_over_period_change",
+      "required_dimensions": [
+        "time"
+      ],
+      "required_metrics": [],
+      "required_time_condition": "at_least_two_complete_periods",
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "continuous_trend",
+      "required_dimensions": [
+        "time"
+      ],
+      "required_metrics": [],
+      "required_time_condition": "at_least_three_complete_periods",
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    }
+  ]
+}

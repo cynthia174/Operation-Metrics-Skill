@@ -1,0 +1,2978 @@
+{
+  "module": "product",
+  "observation": {
+    "start": "2024-07-03",
+    "end": "2024-12-29"
+  },
+  "capabilities": [
+    {
+      "capability_id": "category_revenue_summary",
+      "required_dimensions": [
+        "category"
+      ],
+      "required_metrics": [
+        "category_revenue"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "category_revenue_rank",
+      "required_dimensions": [
+        "category"
+      ],
+      "required_metrics": [
+        "category_revenue"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    },
+    {
+      "capability_id": "category_revenue_share",
+      "required_dimensions": [
+        "category"
+      ],
+      "required_metrics": [
+        "category_revenue",
+        "revenue_share"
+      ],
+      "required_time_condition": null,
+      "status": "AVAILABLE",
+      "unavailable_reason": null
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "69da803e0b73d49c",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "太极",
+      "metric": "category_revenue",
+      "value": 25274385.98,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          2
+        ]
+      }
+    },
+    {
+      "fact_id": "4a0ebbbe206ded07",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "瑜伽",
+      "metric": "category_revenue",
+      "value": 13161797.89,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          3
+        ]
+      }
+    },
+    {
+      "fact_id": "e82b49f68f565104",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "唱歌",
+      "metric": "category_revenue",
+      "value": 11313434.25,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          4
+        ]
+      }
+    },
+    {
+      "fact_id": "53834a8f991f90f4",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "普拉提",
+      "metric": "category_revenue",
+      "value": 6445516.27,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          5
+        ]
+      }
+    },
+    {
+      "fact_id": "95e43cb97beaff90",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "手机摄影",
+      "metric": "category_revenue",
+      "value": 5134121.25,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          6
+        ]
+      }
+    },
+    {
+      "fact_id": "d5ef39bc8ffd9a71",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "气血调理",
+      "metric": "category_revenue",
+      "value": 5045018.87,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          7
+        ]
+      }
+    },
+    {
+      "fact_id": "e57d05b7d29a50a7",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "中医变美",
+      "metric": "category_revenue",
+      "value": 4918292.08,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          8
+        ]
+      }
+    },
+    {
+      "fact_id": "2388cb8f74280e96",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "短视频",
+      "metric": "category_revenue",
+      "value": 4047651.89,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          9
+        ]
+      }
+    },
+    {
+      "fact_id": "14771293d43cb1f7",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "固气活血",
+      "metric": "category_revenue",
+      "value": 1760867.27,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          10
+        ]
+      }
+    },
+    {
+      "fact_id": "0b4f0b6113768bb6",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "相机摄影",
+      "metric": "category_revenue",
+      "value": 1314179.23,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          11
+        ]
+      }
+    },
+    {
+      "fact_id": "955b9ff5bad72146",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "睡眠调理",
+      "metric": "category_revenue",
+      "value": 1048587.34,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          12
+        ]
+      }
+    },
+    {
+      "fact_id": "7a8f2586227d5370",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "东方养正瑜伽",
+      "metric": "category_revenue",
+      "value": 771462.96,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          13
+        ]
+      }
+    },
+    {
+      "fact_id": "c7eb60caea69035e",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "健康营养",
+      "metric": "category_revenue",
+      "value": 572149.41,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          14
+        ]
+      }
+    },
+    {
+      "fact_id": "de09dbf030bdb7ac",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "穿搭",
+      "metric": "category_revenue",
+      "value": 384826.03,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          15
+        ]
+      }
+    },
+    {
+      "fact_id": "1c0b951a76b04bb9",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "五禽戏",
+      "metric": "category_revenue",
+      "value": 308718.72,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          16
+        ]
+      }
+    },
+    {
+      "fact_id": "6b323ee9add43a95",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "儿童健康",
+      "metric": "category_revenue",
+      "value": 253409.09,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          17
+        ]
+      }
+    },
+    {
+      "fact_id": "1cd098be0533cc43",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "食养助长",
+      "metric": "category_revenue",
+      "value": 217251.76,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          18
+        ]
+      }
+    },
+    {
+      "fact_id": "dcd4e0b5f0507b23",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "中医",
+      "metric": "category_revenue",
+      "value": 192175.62,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          19
+        ]
+      }
+    },
+    {
+      "fact_id": "503808c37d71000d",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "舞蹈",
+      "metric": "category_revenue",
+      "value": 119768.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          20
+        ]
+      }
+    },
+    {
+      "fact_id": "5e910477f0f9181d",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "逆龄女神瑜伽",
+      "metric": "category_revenue",
+      "value": 79002.5,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          21
+        ]
+      }
+    },
+    {
+      "fact_id": "b7116ab5830e710a",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "懒人吃瘦",
+      "metric": "category_revenue",
+      "value": 25276.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          22
+        ]
+      }
+    },
+    {
+      "fact_id": "400e1caf09f78f05",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "风光摄影",
+      "metric": "category_revenue",
+      "value": 15293.1,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          23
+        ]
+      }
+    },
+    {
+      "fact_id": "15a9d0acb172eb9b",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "塑形流瑜伽",
+      "metric": "category_revenue",
+      "value": 14426.1,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          24
+        ]
+      }
+    },
+    {
+      "fact_id": "c9a1c8233049f620",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "古法健身功",
+      "metric": "category_revenue",
+      "value": 9831.5,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          25
+        ]
+      }
+    },
+    {
+      "fact_id": "23492f0010ad86cd",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "占星Ada",
+      "metric": "category_revenue",
+      "value": 1898.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          26
+        ]
+      }
+    },
+    {
+      "fact_id": "87effdace86391a3",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "产研测试",
+      "metric": "category_revenue",
+      "value": 1210.13,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          27
+        ]
+      }
+    },
+    {
+      "fact_id": "af4761503db65342",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "茶道",
+      "metric": "category_revenue",
+      "value": 6.0,
+      "period": "2024-10",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          28
+        ]
+      }
+    },
+    {
+      "fact_id": "a35750d2d8c7744e",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "易筋经",
+      "metric": "category_revenue",
+      "value": 1.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          29
+        ]
+      }
+    },
+    {
+      "fact_id": "1c551c02a18b64d0",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "易经",
+      "metric": "category_revenue",
+      "value": 0.98,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          30
+        ]
+      }
+    },
+    {
+      "fact_id": "869c032ed9222e20",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "私域",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          31
+        ]
+      }
+    },
+    {
+      "fact_id": "2a55b996778dc7a4",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "瑜伽会员",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          32
+        ]
+      }
+    },
+    {
+      "fact_id": "e280ac354d826850",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "占星",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          33
+        ]
+      }
+    },
+    {
+      "fact_id": "59e4c38c7e54aef4",
+      "capability_id": "category_revenue_rank",
+      "dimension": "category",
+      "entity": "塔罗变现",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          34
+        ]
+      }
+    },
+    {
+      "fact_id": "6c72fce0c64e125d",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "易经",
+      "metric": "category_revenue",
+      "value": 0.98,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          17
+        ]
+      }
+    },
+    {
+      "fact_id": "821085ec8d444158",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "塔罗变现",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          13
+        ]
+      }
+    },
+    {
+      "fact_id": "b2964d2341482638",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "占星Ada",
+      "metric": "category_revenue",
+      "value": 1898.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          10
+        ]
+      }
+    },
+    {
+      "fact_id": "5e7eed9807b32397",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "占星",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          35
+        ]
+      }
+    },
+    {
+      "fact_id": "f2bbdb4e00a9181c",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "易筋经",
+      "metric": "category_revenue",
+      "value": 1.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          63
+        ]
+      }
+    },
+    {
+      "fact_id": "71065942c83e4814",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "中医",
+      "metric": "category_revenue",
+      "value": 192175.62,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          52
+        ]
+      }
+    },
+    {
+      "fact_id": "90493ce0bcd8a0c0",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "茶道",
+      "metric": "category_revenue",
+      "value": 6.0,
+      "period": "2024-10",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          93
+        ]
+      }
+    },
+    {
+      "fact_id": "dfd9153bddda3e08",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "气血调理",
+      "metric": "category_revenue",
+      "value": 5045018.87,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          134
+        ]
+      }
+    },
+    {
+      "fact_id": "2f7f345bf61d6ade",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "瑜伽",
+      "metric": "category_revenue",
+      "value": 13161797.89,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          135
+        ]
+      }
+    },
+    {
+      "fact_id": "20af93e0894bb636",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "瑜伽会员",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          136
+        ]
+      }
+    },
+    {
+      "fact_id": "1ed2b32dda48fd78",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "相机摄影",
+      "metric": "category_revenue",
+      "value": 1314179.23,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          137
+        ]
+      }
+    },
+    {
+      "fact_id": "2f94e90bc29bc7b5",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "舞蹈",
+      "metric": "category_revenue",
+      "value": 119768.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          142
+        ]
+      }
+    },
+    {
+      "fact_id": "1c2acec945d82b37",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "短视频",
+      "metric": "category_revenue",
+      "value": 4047651.89,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          139
+        ]
+      }
+    },
+    {
+      "fact_id": "e03ff3918d05e464",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "私域",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          140
+        ]
+      }
+    },
+    {
+      "fact_id": "686a90962e287862",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "穿搭",
+      "metric": "category_revenue",
+      "value": 384826.03,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          141
+        ]
+      }
+    },
+    {
+      "fact_id": "5eb0f586de899c9d",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "普拉提",
+      "metric": "category_revenue",
+      "value": 6445516.27,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          133
+        ]
+      }
+    },
+    {
+      "fact_id": "2256d98b65a6db69",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "逆龄女神瑜伽",
+      "metric": "category_revenue",
+      "value": 79002.5,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          143
+        ]
+      }
+    },
+    {
+      "fact_id": "110aeef69955e6de",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "睡眠调理",
+      "metric": "category_revenue",
+      "value": 1048587.34,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          138
+        ]
+      }
+    },
+    {
+      "fact_id": "5bac43b1a565a1e1",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "手机摄影",
+      "metric": "category_revenue",
+      "value": 5134121.25,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          132
+        ]
+      }
+    },
+    {
+      "fact_id": "335d9ee62cb51f2c",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "唱歌",
+      "metric": "category_revenue",
+      "value": 11313434.25,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          127
+        ]
+      }
+    },
+    {
+      "fact_id": "b7cd6fab549b3013",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "太极",
+      "metric": "category_revenue",
+      "value": 25274385.98,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          130
+        ]
+      }
+    },
+    {
+      "fact_id": "122624d26b92dce0",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "塑形流瑜伽",
+      "metric": "category_revenue",
+      "value": 14426.1,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          129
+        ]
+      }
+    },
+    {
+      "fact_id": "a222e0523f5c44b7",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "固气活血",
+      "metric": "category_revenue",
+      "value": 1760867.27,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          128
+        ]
+      }
+    },
+    {
+      "fact_id": "a1460f6c367afa2a",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "古法健身功",
+      "metric": "category_revenue",
+      "value": 9831.5,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          126
+        ]
+      }
+    },
+    {
+      "fact_id": "db43ef6247ee00eb",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "儿童健康",
+      "metric": "category_revenue",
+      "value": 253409.09,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          125
+        ]
+      }
+    },
+    {
+      "fact_id": "770ca04a5e8a9800",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "健康营养",
+      "metric": "category_revenue",
+      "value": 572149.41,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          124
+        ]
+      }
+    },
+    {
+      "fact_id": "b22c46d956d78d9b",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "产研测试",
+      "metric": "category_revenue",
+      "value": 1210.13,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          123
+        ]
+      }
+    },
+    {
+      "fact_id": "233be12386c12b7c",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "五禽戏",
+      "metric": "category_revenue",
+      "value": 308718.72,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          122
+        ]
+      }
+    },
+    {
+      "fact_id": "ca3cbdcfdfa8223b",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "中医变美",
+      "metric": "category_revenue",
+      "value": 4918292.08,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          121
+        ]
+      }
+    },
+    {
+      "fact_id": "7870fcd9cef14417",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "东方养正瑜伽",
+      "metric": "category_revenue",
+      "value": 771462.96,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          120
+        ]
+      }
+    },
+    {
+      "fact_id": "9d39cc72d11c3469",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "风光摄影",
+      "metric": "category_revenue",
+      "value": 15293.1,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          144
+        ]
+      }
+    },
+    {
+      "fact_id": "51a179ee01b77702",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "懒人吃瘦",
+      "metric": "category_revenue",
+      "value": 25276.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          131
+        ]
+      }
+    },
+    {
+      "fact_id": "907718224c73d086",
+      "capability_id": "category_revenue_summary",
+      "dimension": "category",
+      "entity": "食养助长",
+      "metric": "category_revenue",
+      "value": 217251.76,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          145
+        ]
+      }
+    },
+    {
+      "fact_id": "2325ea51a509c5a1",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "易经",
+      "metric": "category_revenue",
+      "value": 0.98,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          17
+        ]
+      }
+    },
+    {
+      "fact_id": "8026603116a469ad",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "塔罗变现",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          13
+        ]
+      }
+    },
+    {
+      "fact_id": "38edf35aac294034",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "占星Ada",
+      "metric": "category_revenue",
+      "value": 1898.0,
+      "period": "2024-07",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          10
+        ]
+      }
+    },
+    {
+      "fact_id": "242ce930debf5249",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "占星",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-08",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          35
+        ]
+      }
+    },
+    {
+      "fact_id": "78ede4b4de2bf8cf",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "易筋经",
+      "metric": "category_revenue",
+      "value": 1.0,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          63
+        ]
+      }
+    },
+    {
+      "fact_id": "0dbef0848faa7d5f",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "中医",
+      "metric": "category_revenue",
+      "value": 192175.62,
+      "period": "2024-09",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          52
+        ]
+      }
+    },
+    {
+      "fact_id": "1b4e84a4f5eae721",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "茶道",
+      "metric": "category_revenue",
+      "value": 6.0,
+      "period": "2024-10",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          93
+        ]
+      }
+    },
+    {
+      "fact_id": "fb193d465bfed2aa",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "气血调理",
+      "metric": "category_revenue",
+      "value": 5045018.87,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          134
+        ]
+      }
+    },
+    {
+      "fact_id": "0741d06b41e5986a",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "瑜伽",
+      "metric": "category_revenue",
+      "value": 13161797.89,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          135
+        ]
+      }
+    },
+    {
+      "fact_id": "cfe1732f3aee1b93",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "瑜伽会员",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          136
+        ]
+      }
+    },
+    {
+      "fact_id": "9d6d7d9403b6e7ff",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "相机摄影",
+      "metric": "category_revenue",
+      "value": 1314179.23,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          137
+        ]
+      }
+    },
+    {
+      "fact_id": "3ca5c95d7dcad6b0",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "舞蹈",
+      "metric": "category_revenue",
+      "value": 119768.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          142
+        ]
+      }
+    },
+    {
+      "fact_id": "f70dc6c00397a583",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "短视频",
+      "metric": "category_revenue",
+      "value": 4047651.89,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          139
+        ]
+      }
+    },
+    {
+      "fact_id": "94e6d9e375e301be",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "私域",
+      "metric": "category_revenue",
+      "value": 0.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          140
+        ]
+      }
+    },
+    {
+      "fact_id": "78dd3f039fc31fd4",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "穿搭",
+      "metric": "category_revenue",
+      "value": 384826.03,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          141
+        ]
+      }
+    },
+    {
+      "fact_id": "2c55715aac485af0",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "普拉提",
+      "metric": "category_revenue",
+      "value": 6445516.27,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          133
+        ]
+      }
+    },
+    {
+      "fact_id": "f124ae2096b41296",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "逆龄女神瑜伽",
+      "metric": "category_revenue",
+      "value": 79002.5,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          143
+        ]
+      }
+    },
+    {
+      "fact_id": "2f0367ae32cb5a7c",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "睡眠调理",
+      "metric": "category_revenue",
+      "value": 1048587.34,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          138
+        ]
+      }
+    },
+    {
+      "fact_id": "f0353232d231da26",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "手机摄影",
+      "metric": "category_revenue",
+      "value": 5134121.25,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          132
+        ]
+      }
+    },
+    {
+      "fact_id": "578fcb9b332a2cac",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "唱歌",
+      "metric": "category_revenue",
+      "value": 11313434.25,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          127
+        ]
+      }
+    },
+    {
+      "fact_id": "55b516f3231db369",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "太极",
+      "metric": "category_revenue",
+      "value": 25274385.98,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          130
+        ]
+      }
+    },
+    {
+      "fact_id": "85376b3f651ed7ea",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "塑形流瑜伽",
+      "metric": "category_revenue",
+      "value": 14426.1,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          129
+        ]
+      }
+    },
+    {
+      "fact_id": "8887e6e2e8bd0b90",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "固气活血",
+      "metric": "category_revenue",
+      "value": 1760867.27,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          128
+        ]
+      }
+    },
+    {
+      "fact_id": "753b7e7f43897634",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "古法健身功",
+      "metric": "category_revenue",
+      "value": 9831.5,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          126
+        ]
+      }
+    },
+    {
+      "fact_id": "a15aa7ae3673e1ad",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "儿童健康",
+      "metric": "category_revenue",
+      "value": 253409.09,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          125
+        ]
+      }
+    },
+    {
+      "fact_id": "4dca983d3ceb24f0",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "健康营养",
+      "metric": "category_revenue",
+      "value": 572149.41,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          124
+        ]
+      }
+    },
+    {
+      "fact_id": "4a68cc6f88c50838",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "产研测试",
+      "metric": "category_revenue",
+      "value": 1210.13,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          123
+        ]
+      }
+    },
+    {
+      "fact_id": "366a99e155c83987",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "五禽戏",
+      "metric": "category_revenue",
+      "value": 308718.72,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          122
+        ]
+      }
+    },
+    {
+      "fact_id": "b3be9907bf11065b",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "中医变美",
+      "metric": "category_revenue",
+      "value": 4918292.08,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          121
+        ]
+      }
+    },
+    {
+      "fact_id": "e7fabef4855aceb6",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "东方养正瑜伽",
+      "metric": "category_revenue",
+      "value": 771462.96,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          120
+        ]
+      }
+    },
+    {
+      "fact_id": "e40bffebe77719ca",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "风光摄影",
+      "metric": "category_revenue",
+      "value": 15293.1,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          144
+        ]
+      }
+    },
+    {
+      "fact_id": "dcb07cf850b77e31",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "懒人吃瘦",
+      "metric": "category_revenue",
+      "value": 25276.0,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          131
+        ]
+      }
+    },
+    {
+      "fact_id": "1df036539fd7e719",
+      "capability_id": "category_revenue_share",
+      "dimension": "category",
+      "entity": "食养助长",
+      "metric": "category_revenue",
+      "value": 217251.76,
+      "period": "2024-12",
+      "status": "AVAILABLE",
+      "evidence": {
+        "source": "test_runs\\manual_check_004_agent_native\\category_metrics.csv",
+        "rows": [
+          145
+        ]
+      }
+    }
+  ],
+  "rule_results": [
+    {
+      "module": "S1",
+      "rule_id": "R3",
+      "rule_name": "营收集中度",
+      "hit": false,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-08"
+      },
+      "metrics": {
+        "top1_revenue": 27215599.53,
+        "total_revenue": 105896124.71000001,
+        "top1_share": 0.2570027902770834
+      },
+      "threshold": "Top1品类首单营收占比 > 0.50",
+      "evidence": [
+        "Top1品类 瑜伽",
+        "Top1营收 27215599.53",
+        "全品类营收 105896124.71",
+        "Top1占比 0.257003"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R4",
+      "rule_name": "营收过于分散",
+      "hit": false,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-08"
+      },
+      "metrics": {
+        "top3_revenue": 64111668.93,
+        "total_revenue": 105896124.71000001,
+        "top3_share": 0.6054203504195446
+      },
+      "threshold": "Top3品类首单营收占比 < 0.50",
+      "evidence": [
+        "Top3营收 64111668.93",
+        "全品类营收 105896124.71",
+        "Top3占比 0.605420"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R3",
+      "rule_name": "营收集中度",
+      "hit": false,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-09"
+      },
+      "metrics": {
+        "top1_revenue": 30452592.76,
+        "total_revenue": 99058630.89000002,
+        "top1_share": 0.30741988342051874
+      },
+      "threshold": "Top1品类首单营收占比 > 0.50",
+      "evidence": [
+        "Top1品类 太极",
+        "Top1营收 30452592.76",
+        "全品类营收 99058630.89",
+        "Top1占比 0.307420"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R4",
+      "rule_name": "营收过于分散",
+      "hit": false,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-09"
+      },
+      "metrics": {
+        "top3_revenue": 64191206.59,
+        "total_revenue": 99058630.89000002,
+        "top3_share": 0.6480122530795054
+      },
+      "threshold": "Top3品类首单营收占比 < 0.50",
+      "evidence": [
+        "Top3营收 64191206.59",
+        "全品类营收 99058630.89",
+        "Top3占比 0.648012"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R3",
+      "rule_name": "营收集中度",
+      "hit": false,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-10",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "top1_revenue": 34043076.42,
+        "total_revenue": 109154686.72000003,
+        "top1_share": 0.3118792004536293
+      },
+      "threshold": "Top1品类首单营收占比 > 0.50",
+      "evidence": [
+        "Top1品类 太极",
+        "Top1营收 34043076.42",
+        "全品类营收 109154686.72",
+        "Top1占比 0.311879"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R4",
+      "rule_name": "营收过于分散",
+      "hit": false,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-10",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "top3_revenue": 65689685.41,
+        "total_revenue": 109154686.72000003,
+        "top3_share": 0.601803618185493
+      },
+      "threshold": "Top3品类首单营收占比 < 0.50",
+      "evidence": [
+        "Top3营收 65689685.41",
+        "全品类营收 109154686.72",
+        "Top3占比 0.601804"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R3",
+      "rule_name": "营收集中度",
+      "hit": false,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-11",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "top1_revenue": 30319089.08,
+        "total_revenue": 97076516.27,
+        "top1_share": 0.3123215608157299
+      },
+      "threshold": "Top1品类首单营收占比 > 0.50",
+      "evidence": [
+        "Top1品类 太极",
+        "Top1营收 30319089.08",
+        "全品类营收 97076516.27",
+        "Top1占比 0.312322"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R4",
+      "rule_name": "营收过于分散",
+      "hit": false,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-11",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "top3_revenue": 59876387.94,
+        "total_revenue": 97076516.27,
+        "top3_share": 0.616795804388624
+      },
+      "threshold": "Top3品类首单营收占比 < 0.50",
+      "evidence": [
+        "Top3营收 59876387.94",
+        "全品类营收 97076516.27",
+        "Top3占比 0.616796"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "东方养正瑜伽"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 1903829.86,
+        "previous_revenue": 1677125.16,
+        "current_revenue": 1419385.85
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 1903829.86",
+        "2024-09 首单营收 1677125.16",
+        "2024-10 首单营收 1419385.85"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "东方养正瑜伽"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 1677125.16,
+        "previous_revenue": 1419385.85,
+        "current_revenue": 938598.26
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 1677125.16",
+        "2024-10 首单营收 1419385.85",
+        "2024-11 首单营收 938598.26"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "中医变美"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 4775710.0,
+        "previous_revenue": 5456990.84,
+        "current_revenue": 6197067.41
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 4775710.00",
+        "2024-09 首单营收 5456990.84",
+        "2024-10 首单营收 6197067.41"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "中医变美"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 5456990.84,
+        "previous_revenue": 6197067.41,
+        "current_revenue": 4693418.64
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 5456990.84",
+        "2024-10 首单营收 6197067.41",
+        "2024-11 首单营收 4693418.64"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "五禽戏"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 898382.11,
+        "previous_revenue": 604636.45,
+        "current_revenue": 732083.23
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 898382.11",
+        "2024-09 首单营收 604636.45",
+        "2024-10 首单营收 732083.23"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "五禽戏"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 604636.45,
+        "previous_revenue": 732083.23,
+        "current_revenue": 365346.68
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 604636.45",
+        "2024-10 首单营收 732083.23",
+        "2024-11 首单营收 365346.68"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "产研测试"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 0.04,
+        "previous_revenue": 0.76,
+        "current_revenue": 1.01
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 0.04",
+        "2024-09 首单营收 0.76",
+        "2024-10 首单营收 1.01"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "产研测试"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 0.76,
+        "previous_revenue": 1.01,
+        "current_revenue": 3.09
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 0.76",
+        "2024-10 首单营收 1.01",
+        "2024-11 首单营收 3.09"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "健康营养"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 223451.25,
+        "previous_revenue": 296920.42,
+        "current_revenue": 178550.39
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 223451.25",
+        "2024-09 首单营收 296920.42",
+        "2024-10 首单营收 178550.39"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "健康营养"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 296920.42,
+        "previous_revenue": 178550.39,
+        "current_revenue": 225080.55
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 296920.42",
+        "2024-10 首单营收 178550.39",
+        "2024-11 首单营收 225080.55"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "儿童健康"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 514838.92,
+        "previous_revenue": 473214.99,
+        "current_revenue": 404997.55
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 514838.92",
+        "2024-09 首单营收 473214.99",
+        "2024-10 首单营收 404997.55"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "儿童健康"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 473214.99,
+        "previous_revenue": 404997.55,
+        "current_revenue": 389388.68
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 473214.99",
+        "2024-10 首单营收 404997.55",
+        "2024-11 首单营收 389388.68"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "唱歌"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 5643242.29,
+        "previous_revenue": 7187129.38,
+        "current_revenue": 10071001.3
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 5643242.29",
+        "2024-09 首单营收 7187129.38",
+        "2024-10 首单营收 10071001.30"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "唱歌"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 7187129.38,
+        "previous_revenue": 10071001.3,
+        "current_revenue": 11753526.8
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 7187129.38",
+        "2024-10 首单营收 10071001.30",
+        "2024-11 首单营收 11753526.80"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "固气活血"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 2256817.38,
+        "previous_revenue": 2957807.94,
+        "current_revenue": 2164752.59
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 2256817.38",
+        "2024-09 首单营收 2957807.94",
+        "2024-10 首单营收 2164752.59"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "固气活血"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 2957807.94,
+        "previous_revenue": 2164752.59,
+        "current_revenue": 1907860.14
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 2957807.94",
+        "2024-10 首单营收 2164752.59",
+        "2024-11 首单营收 1907860.14"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "太极"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 25429624.4,
+        "previous_revenue": 30452592.76,
+        "current_revenue": 34043076.42
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 25429624.40",
+        "2024-09 首单营收 30452592.76",
+        "2024-10 首单营收 34043076.42"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "太极"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 30452592.76,
+        "previous_revenue": 34043076.42,
+        "current_revenue": 30319089.08
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 30452592.76",
+        "2024-10 首单营收 34043076.42",
+        "2024-11 首单营收 30319089.08"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "懒人吃瘦"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 1169243.51,
+        "previous_revenue": 47787.9,
+        "current_revenue": 4424.9
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 1169243.51",
+        "2024-09 首单营收 47787.90",
+        "2024-10 首单营收 4424.90"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "懒人吃瘦"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 47787.9,
+        "previous_revenue": 4424.9,
+        "current_revenue": 1.0
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 47787.90",
+        "2024-10 首单营收 4424.90",
+        "2024-11 首单营收 1.00"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "手机摄影"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 11466445.0,
+        "previous_revenue": 10502216.08,
+        "current_revenue": 11343790.7
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 11466445.00",
+        "2024-09 首单营收 10502216.08",
+        "2024-10 首单营收 11343790.70"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "手机摄影"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 10502216.08,
+        "previous_revenue": 11343790.7,
+        "current_revenue": 8628071.82
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 10502216.08",
+        "2024-10 首单营收 11343790.70",
+        "2024-11 首单营收 8628071.82"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "普拉提"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 10523914.74,
+        "previous_revenue": 8776922.88,
+        "current_revenue": 10879248.51
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 10523914.74",
+        "2024-09 首单营收 8776922.88",
+        "2024-10 首单营收 10879248.51"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "普拉提"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 8776922.88,
+        "previous_revenue": 10879248.51,
+        "current_revenue": 7128051.42
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 8776922.88",
+        "2024-10 首单营收 10879248.51",
+        "2024-11 首单营收 7128051.42"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "气血调理"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 9209926.77,
+        "previous_revenue": 5222213.12,
+        "current_revenue": 8348536.77
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 9209926.77",
+        "2024-09 首单营收 5222213.12",
+        "2024-10 首单营收 8348536.77"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "气血调理"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 5222213.12,
+        "previous_revenue": 8348536.77,
+        "current_revenue": 6681041.2
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 5222213.12",
+        "2024-10 首单营收 8348536.77",
+        "2024-11 首单营收 6681041.20"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "瑜伽"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 27215599.53,
+        "previous_revenue": 23236397.75,
+        "current_revenue": 20302818.29
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 27215599.53",
+        "2024-09 首单营收 23236397.75",
+        "2024-10 首单营收 20302818.29"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "瑜伽"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 23236397.75,
+        "previous_revenue": 20302818.29,
+        "current_revenue": 17803772.06
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 23236397.75",
+        "2024-10 首单营收 20302818.29",
+        "2024-11 首单营收 17803772.06"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "短视频"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 988118.55,
+        "previous_revenue": 1370229.64,
+        "current_revenue": 2309445.98
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 988118.55",
+        "2024-09 首单营收 1370229.64",
+        "2024-10 首单营收 2309445.98"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "短视频"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 1370229.64,
+        "previous_revenue": 2309445.98,
+        "current_revenue": 4597767.66
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 1370229.64",
+        "2024-10 首单营收 2309445.98",
+        "2024-11 首单营收 4597767.66"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "私域"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 0.0,
+        "previous_revenue": 0.0,
+        "current_revenue": 0.0
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 0.00",
+        "2024-09 首单营收 0.00",
+        "2024-10 首单营收 0.00"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "私域"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 0.0,
+        "previous_revenue": 0.0,
+        "current_revenue": 0.0
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 0.00",
+        "2024-10 首单营收 0.00",
+        "2024-11 首单营收 0.00"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "穿搭"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 225747.78,
+        "previous_revenue": 171289.3,
+        "current_revenue": 247195.93
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 225747.78",
+        "2024-09 首单营收 171289.30",
+        "2024-10 首单营收 247195.93"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "穿搭"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 171289.3,
+        "previous_revenue": 247195.93,
+        "current_revenue": 486683.05
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 171289.30",
+        "2024-10 首单营收 247195.93",
+        "2024-11 首单营收 486683.05"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "舞蹈"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 66240.0,
+        "previous_revenue": 46979.0,
+        "current_revenue": 899.0
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 66240.00",
+        "2024-09 首单营收 46979.00",
+        "2024-10 首单营收 899.00"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "舞蹈"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 46979.0,
+        "previous_revenue": 899.0,
+        "current_revenue": 0.0
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 46979.00",
+        "2024-10 首单营收 899.00",
+        "2024-11 首单营收 0.00"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "茶道"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 238036.88,
+        "previous_revenue": 19058.0,
+        "current_revenue": 6.0
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 238036.88",
+        "2024-09 首单营收 19058.00",
+        "2024-10 首单营收 6.00"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "风光摄影"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 4554.0,
+        "previous_revenue": 4141.0,
+        "current_revenue": 14878.55
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 4554.00",
+        "2024-09 首单营收 4141.00",
+        "2024-10 首单营收 14878.55"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": false,
+      "dimension": {
+        "type": "category",
+        "name": "风光摄影"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 4141.0,
+        "previous_revenue": 14878.55,
+        "current_revenue": 5153.15
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 4141.00",
+        "2024-10 首单营收 14878.55",
+        "2024-11 首单营收 5153.15"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "食养助长"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "start_revenue": 569931.5,
+        "previous_revenue": 362800.9,
+        "current_revenue": 352835.18
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-08 首单营收 569931.50",
+        "2024-09 首单营收 362800.90",
+        "2024-10 首单营收 352835.18"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R5",
+      "rule_name": "核心品类下行趋势",
+      "hit": true,
+      "dimension": {
+        "type": "category",
+        "name": "食养助长"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "start_revenue": 362800.9,
+        "previous_revenue": 352835.18,
+        "current_revenue": 283776.38
+      },
+      "threshold": "连续3个完整月下降",
+      "evidence": [
+        "2024-09 首单营收 362800.90",
+        "2024-10 首单营收 352835.18",
+        "2024-11 首单营收 283776.38"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R8",
+      "rule_name": "涨跌两极分化",
+      "hit": true,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-09"
+      },
+      "metrics": {
+        "max_growth_rate": 18.0,
+        "min_growth_rate": -0.9591292150939543,
+        "growth_spread": 18.959129215093956
+      },
+      "threshold": "同时存在环比 >30% 与 <-30%",
+      "evidence": [
+        "最大环比品类 产研测试，增速 18.000000",
+        "最小环比品类 懒人吃瘦，增速 -0.959129"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R8",
+      "rule_name": "涨跌两极分化",
+      "hit": true,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "max_growth_rate": 2.5929847862835063,
+        "min_growth_rate": -0.9996851715814881,
+        "growth_spread": 3.5926699578649943
+      },
+      "threshold": "同时存在环比 >30% 与 <-30%",
+      "evidence": [
+        "最大环比品类 风光摄影，增速 2.592985",
+        "最小环比品类 茶道，增速 -0.999685"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R8",
+      "rule_name": "涨跌两极分化",
+      "hit": true,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-10",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "max_growth_rate": 2.1491293364590858,
+        "min_growth_rate": -1.0,
+        "growth_spread": 3.1491293364590858
+      },
+      "threshold": "同时存在环比 >30% 与 <-30%",
+      "evidence": [
+        "最大环比品类 睡眠调理，增速 2.149129",
+        "最小环比品类 舞蹈，增速 -1.000000"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R9",
+      "rule_name": "系统性下跌",
+      "hit": true,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-08",
+        "end": "2024-10"
+      },
+      "metrics": {
+        "declining_category_count": 7
+      },
+      "threshold": "> 3个品类连续3个完整月下降",
+      "evidence": [
+        "满足R5连续下降条件的品类数 7"
+      ]
+    },
+    {
+      "module": "S1",
+      "rule_id": "R9",
+      "rule_name": "系统性下跌",
+      "hit": true,
+      "dimension": {
+        "type": "all_categories",
+        "name": "__ALL__"
+      },
+      "period": {
+        "start": "2024-09",
+        "end": "2024-11"
+      },
+      "metrics": {
+        "declining_category_count": 7
+      },
+      "threshold": "> 3个品类连续3个完整月下降",
+      "evidence": [
+        "满足R5连续下降条件的品类数 7"
+      ]
+    }
+  ],
+  "limitations": []
+}
