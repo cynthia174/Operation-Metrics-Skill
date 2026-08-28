@@ -1,0 +1,1 @@
+{"version":"1.0","metrics":{"channel_metrics":{"fields":["stat_date","channel","leads","first_order_orders","cost","first_order_revenue","first_order_formal_revenue","first_order_net_revenue","first_order_refund_revenue","repeat_leads","repeat_leads_90d"],"screen":"S2"},"category_metrics":{"fields":["stat_date","category","first_order_revenue"],"screen":"S1"}}}

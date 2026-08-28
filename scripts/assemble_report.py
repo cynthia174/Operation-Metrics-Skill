@@ -118,7 +118,7 @@ def main():
     paths = vars(args)
     blocks = [{"type": "document_title", "text": args.title}]
     for key, title in MODULES:
-        source = Path(paths["growth-quality"] if key == "growth_quality" else paths[key])
+        source = Path(paths["growth_quality"] if key == "growth_quality" else paths[key])
         if not source.is_file():
             parser.error(f"module file not found: {source}")
         blocks.extend(parse_markdown(source.read_text(encoding="utf-8"), title))

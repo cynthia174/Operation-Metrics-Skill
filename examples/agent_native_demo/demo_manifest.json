@@ -1,0 +1,20 @@
+{
+  "demo_name": "agent_native_demo",
+  "created_from_run": "manual_check_004_agent_native",
+  "source_excel": "raw_data/兴趣岛五年渠道真实数据_分卷03_20240703-20241229.xlsx",
+  "observation_period": {"start": "2024-07-03", "end": "2024-12-29"},
+  "channel_metrics_rows": 1491,
+  "category_metrics_rows": 144,
+  "rule_results_count": 527,
+  "rule_hits_count": 175,
+  "semantic_blocks_count": 92,
+  "module_names": ["channel", "product", "efficiency", "growth_quality", "summary"],
+  "expected_report_sections": ["渠道全景", "品类营收结构", "获客成本信号", "投放有效性", "总结"],
+  "skill_pipeline_version": null,
+  "schema_version": null,
+  "notes": [
+    "Golden Example only; use for regression, manual comparison, and Skill behavior demonstration.",
+    "The source Excel is referenced, not copied, because it is large and contains real business data.",
+    "Prompt Modules were executed by the current host Agent; no external model API was used."
+  ]
+}

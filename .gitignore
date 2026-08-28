@@ -5,3 +5,14 @@
 # Python runtime artifacts
 __pycache__/
 *.py[cod]
+
+# Local source data, generated reports, QA outputs, and run state
+raw_data/
+outputs/
+test_runs/
+assets/
+expected/
+hallucination_rate/
+*.xlsx
+*.zip
+_input_*.xlsx

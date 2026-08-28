@@ -172,7 +172,8 @@ def main():
     subprocess.run([sys.executable,str(Path(__file__).with_name('docx_to_semantic_blocks.py')),'--input-docx',str(out),'--output',str(rt_json)],check=True,stdout=subprocess.DEVNULL)
     source_roles=[b['type'] for b in data['blocks'] if b['type'] not in ('image','image_caption','table')]
     roundtrip_roles=[b['type'] for b in json.loads(rt_json.read_text(encoding='utf-8'))['blocks'] if b['type'] not in ('image','image_caption','table')]
-    roundtrip={role: ('PASS' if role in roundtrip_roles and source_roles.count(role)==roundtrip_roles.count(role) else 'FAIL') for role in ('document_title','section_heading','module_heading','finding_heading','body','list_item')}
+    # Optional semantic roles must only be checked when the source contains them.
+    roundtrip={role: ('PASS' if source_roles.count(role)==roundtrip_roles.count(role) else 'FAIL') for role in ('document_title','section_heading','module_heading','finding_heading','body','list_item')}
     parsed_blocks=json.loads(rt_json.read_text(encoding='utf-8'))['blocks']
     source_content=content_text(data['blocks']); parsed_content=content_text(parsed_blocks)
     input_titles=[b.get('text','') for b in data['blocks'] if b.get('type')=='document_title']

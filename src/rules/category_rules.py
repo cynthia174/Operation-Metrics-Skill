@@ -17,7 +17,7 @@ def evaluate_category_rules(metrics: pd.DataFrame) -> list[RuleResult]:
     results: list[RuleResult] = []
     complete = metrics.loc[metrics["is_complete_month"]].copy()
     complete = complete.sort_values(["category", "month"])
-    complete["month_ordinal"] = pd.PeriodIndex(complete["month"], freq="M").astype(int)
+    complete["month_ordinal"] = pd.PeriodIndex(complete["month"], freq="M").astype("int64")
 
     for month, group in complete.groupby("month", sort=True):
         ranked = group.sort_values("category_revenue", ascending=False)
@@ -79,7 +79,10 @@ def evaluate_category_rules(metrics: pd.DataFrame) -> list[RuleResult]:
                 {"direction_change_count": int(flips)}, ">= 3次方向切换/6个完整月",
                 [f"6个月营收环比方向切换 {flips} 次"]))
 
-    growth = pd.DataFrame(growth_rows)
+    # A short/incomplete input may have no eligible month-to-month pairs.
+    # Keep the expected schema so the rule evaluates to no results instead of
+    # failing with KeyError('month').
+    growth = pd.DataFrame(growth_rows, columns=["month", "category", "growth"])
     for month, group in growth.groupby("month", sort=True):
         finite = group.loc[group["growth"].map(lambda value: pd.notna(value) and math.isfinite(value))]
         if finite.empty:

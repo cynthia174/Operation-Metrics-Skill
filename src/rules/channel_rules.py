@@ -9,7 +9,7 @@ def evaluate_channel_rules(metrics: pd.DataFrame) -> list[RuleResult]:
     results: list[RuleResult] = []
     complete = metrics.loc[metrics["is_complete_month"]].copy()
     complete = complete.sort_values(["channel", "month"])
-    complete["month_ordinal"] = pd.PeriodIndex(complete["month"], freq="M").astype(int)
+    complete["month_ordinal"] = pd.PeriodIndex(complete["month"], freq="M").astype("int64")
     for lag in (1, 2):
         complete[f"prev{lag}_cac_rate"] = complete.groupby("channel")["cac_rate"].shift(lag)
         complete[f"prev{lag}_month"] = complete.groupby("channel")["month"].shift(lag)
